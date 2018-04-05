@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Flex入门 | MARVEL 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="刘荘">
+    
+    
+
+    <meta name="description" content="前言说到CSS，其实最头疼的就是兼容性问题，所以，要用Flex布局，首先也要先知道它的兼容性。戳这里可以看到Flex的兼容性其实并不理想，对桌面的支持很不理想，但是，对移动端的支持还是可以的，因此，现在越来越多的移动端开始使用Flex进行布局了。本文主要记录了学习阮一峰老师关于Flex布局博客的一些心得。原文戳这里：  Flex 布局教程：语法篇 Flex 布局教程：实例篇  注：开坑一个多月都没">
+<meta name="keywords" content="CSS 布局">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flex入门 | MARVEL">
+<meta property="og:url" content="http://liuz.top/2017/03/03/Flex-入门与实践/index.html">
+<meta property="og:site_name" content="MARVEL">
+<meta property="og:description" content="前言说到CSS，其实最头疼的就是兼容性问题，所以，要用Flex布局，首先也要先知道它的兼容性。戳这里可以看到Flex的兼容性其实并不理想，对桌面的支持很不理想，但是，对移动端的支持还是可以的，因此，现在越来越多的移动端开始使用Flex进行布局了。本文主要记录了学习阮一峰老师关于Flex布局博客的一些心得。原文戳这里：  Flex 布局教程：语法篇 Flex 布局教程：实例篇  注：开坑一个多月都没">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://liuz.top/2017/03/03/Flex-入门与实践/flex1.png">
+<meta property="og:image" content="http://liuz.top/2017/03/03/Flex-入门与实践/flex-direction.png">
+<meta property="og:image" content="http://liuz.top/2017/03/03/Flex-入门与实践/flex-wrap-nowrap.png">
+<meta property="og:image" content="http://liuz.top/2017/03/03/Flex-入门与实践/flex-wrap-wrap.jpg">
+<meta property="og:image" content="http://liuz.top/2017/03/03/Flex-入门与实践/flex-wrap-wrap-reverse.jpg">
+<meta property="og:image" content="http://liuz.top/2017/03/03/Flex-入门与实践/justify-content.png">
+<meta property="og:updated_time" content="2017-04-26T14:52:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Flex入门 | MARVEL">
+<meta name="twitter:description" content="前言说到CSS，其实最头疼的就是兼容性问题，所以，要用Flex布局，首先也要先知道它的兼容性。戳这里可以看到Flex的兼容性其实并不理想，对桌面的支持很不理想，但是，对移动端的支持还是可以的，因此，现在越来越多的移动端开始使用Flex进行布局了。本文主要记录了学习阮一峰老师关于Flex布局博客的一些心得。原文戳这里：  Flex 布局教程：语法篇 Flex 布局教程：实例篇  注：开坑一个多月都没">
+<meta name="twitter:image" content="http://liuz.top/2017/03/03/Flex-入门与实践/flex1.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">MARVEL</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          大叔笔记
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="http://liuz.top" title="" class="">主页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/nicky-lau" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Flex入门</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-03-03" class="post-meta__date date">2017-03-03</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/CSS-布局/">CSS 布局</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>说到CSS，其实最头疼的就是兼容性问题，所以，要用Flex布局，首先也要先知道它的兼容性。戳<a href="http://caniuse.com/#search=flex" target="_blank" rel="noopener">这里</a>可以看到Flex的兼容性其实并不理想，对桌面的支持很不理想，但是，对移动端的支持还是可以的，因此，现在越来越多的移动端开始使用Flex进行布局了。<br>本文主要记录了学习阮一峰老师关于Flex布局博客的一些心得。<br>原文戳这里：</p>
+<ul>
+<li><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="noopener">Flex 布局教程：语法篇</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" target="_blank" rel="noopener">Flex 布局教程：实例篇</a></li>
+</ul>
+<p>注：开坑一个多月都没有写完之后，写小程序的时候益发觉得flex的重要，还是决定先把这个坑填上—2017.04.25</p>
+<h1 id="Flex使用"><a href="#Flex使用" class="headerlink" title="Flex使用"></a>Flex使用</h1><p>使用<code>display:flex</code>即可将该容器指定为”flex”布局。<br>需要注意的是，容器设置为:”flex”布局后，子元素的”float”，”clear”,”vertical-align”属性将失效。</p>
+<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><ul>
+<li>容器：设置了<code>display:flex</code>属性的元素，被称为容器。</li>
+<li>项目：容器内的子元素被称为项目(item)</li>
+<li>主轴：水平轴线(main axis)</li>
+<li>交叉轴：垂直的轴线(cross axis)</li>
+<li>main start: 主轴的开始位置叫main start</li>
+<li>main end: 主轴的结束位置叫main end</li>
+<li>cross start: 交叉轴的开始位置叫做cross start</li>
+<li>cross end: 交叉轴的结束位置叫cross end</li>
+<li>main size: 单个项目占据的主轴空间叫做main size</li>
+<li>cross size: 单个项目占据的交叉轴空间叫做cross size</li>
+</ul>
+<p><img src="flex1.png" alt="flex1"></p>
+<h1 id="容器的属性"><a href="#容器的属性" class="headerlink" title="容器的属性"></a>容器的属性</h1><p>在容器上可以设置以下六个属性：</p>
+<ul>
+<li>flex-direction: 主轴的方向</li>
+<li>flex-wrap: 如何换行</li>
+<li>flex-flow: flex-direction + flex-wrap的简写</li>
+<li>justify-content: 项目在主轴上的对齐方式</li>
+<li>align-items: 项目在交叉轴上的对齐方式</li>
+<li>align-content: 如果有多根轴线的对齐方式，如果项目只有一根轴线，该属性不起作用</li>
+</ul>
+<h2 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a>flex-direction</h2><p>该属性决定了主轴的方向(即项目的排列方向)<br>再说直接点就是水平排列还是垂直排列。<br>该属性可能取4个值：</p>
+<ul>
+<li>row (默认值)： 水平从左到右排列</li>
+<li>row-reverse : 水平从右到左排列</li>
+<li>column : 垂直从上到下排列</li>
+<li>column-reverse : 垂直从下到上排列<br>如下图所示：<br>分别是：column-reverse,column,row,row-reverse<br><img src="flex-direction.png" alt="flex-direction"></li>
+</ul>
+<h2 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a>flex-wrap</h2><p>该属性决定了在主轴上排列不下所有项目时，该如何换行。<br>该属性可能取3个值：</p>
+<ul>
+<li>nowrap (默认值): 不换行</li>
+<li>wrap :  换行，第一行在上面</li>
+<li>wrap-reverse: 换行，第一行在下方<br>如下图所示：<br>nowrap:<br><img src="flex-wrap-nowrap.png" alt="flex-wrap-nowrap"><br>wrap:<br><img src="flex-wrap-wrap.jpg" alt="flex-wrap-wrap.jpg"><br>wrap-reverse:<br><img src="flex-wrap-wrap-reverse.jpg" alt="flex-wrap-wrap-reverse.jpg"></li>
+</ul>
+<p>从<a href="https://github.com/liu-zhuang/flex" target="_blank" rel="noopener">flex示例</a>中可以看出，nowrap时其实并不会出现滚动条，而是将所有项目等比缩放了。</p>
+<h2 id="flex-flow"><a href="#flex-flow" class="headerlink" title="flex-flow"></a>flex-flow</h2><p>该属性是flex-direction和flex-wrap的缩写<br>默认为: flex-flow: row nowrap;</p>
+<h2 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h2><p>该属性定义了项目在主轴上的对齐方式。<br>可取以下几个值：</p>
+<ul>
+<li>flex-start(默认值) : 左对齐</li>
+<li>flex-end : 右对齐</li>
+<li>center : 居中</li>
+<li>space-between: 两端对齐，项目之间的间隔都相等</li>
+<li>space-around: 每个项目的两侧都相等。因此，项目之间的间隔比项目与边框的间隔大一倍。</li>
+</ul>
+<p>比较抽象的是最后两个的区别，可以看下图加强理解：<br><img src="justify-content.png" alt="justify-content.png"></p>
+<h2 id="align-item"><a href="#align-item" class="headerlink" title="align-item"></a>align-item</h2><p>该属性定义项目在交叉轴上如何对齐<br>可取以下几个值：</p>
+<ul>
+<li>flex-start : 交叉轴的起点对齐</li>
+<li>flex-end ： 交叉轴的终点对齐</li>
+<li>center ： 交叉轴的中点对齐</li>
+<li>baseline ： 项目的第一行文字的基线对齐</li>
+<li>stretch（默认值）：如果项目未设置高度或者设为auto，将占满整个容器高度</li>
+</ul>
+<h2 id="align-content"><a href="#align-content" class="headerlink" title="align-content"></a>align-content</h2><p>该属性定义了多跟轴线的对齐方式。如果项目只有一根轴线，则该属性不起作用。<br>可取的值如下：</p>
+<ul>
+<li>flex-start: 交叉轴的起点对齐</li>
+<li>flex-end: 交叉轴的终点对齐</li>
+<li>center: 交叉轴的中点对齐</li>
+<li>space-between: 与交叉轴两端对齐，轴线之间的间隔平均分布</li>
+<li>space-around: 每根轴线两侧的间隔都相等。所以轴线之间的间隔比边框的间隔大一倍</li>
+<li>stretch(默认值): 轴线占满整个交叉轴</li>
+</ul>
+<p>这种情况用的比较少，就不多写了</p>
+<h1 id="项目的属性"><a href="#项目的属性" class="headerlink" title="项目的属性"></a>项目的属性</h1><p>以下6个属性设置在项目上： </p>
+<ul>
+<li>order</li>
+<li>flex-grow</li>
+<li>flex-shrink</li>
+<li>flex-basis</li>
+<li>flex </li>
+<li>align-self</li>
+</ul>
+<h2 id="order"><a href="#order" class="headerlink" title="order"></a>order</h2><p>该属性定义项目的排列顺序，数值越小，排序越靠前，默认为0</p>
+<h2 id="flex-grow"><a href="#flex-grow" class="headerlink" title="flex-grow"></a>flex-grow</h2><p>该属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。<br>如果所有项目的flex-grow均为1，那么所有的项目将均分容器的剩余空间<br>如果一个项目的flex-grow为2，其他为1的话，为2的这个项目分配到的剩余空间是其他项目的2倍</p>
+<h2 id="flex-shrink"><a href="#flex-shrink" class="headerlink" title="flex-shrink"></a>flex-shrink</h2><p>该属性定义了项目的缩写比例，默认为1，记如果容器空间不足，则该项目将缩小<br>如果所有的项目的flex-shrink均为1，那么所有项目将等比缩小<br>如果某一个项目的flex-shrink为0，则该项目不会被缩小<br>注：该属性值负数无效</p>
+<h2 id="flex-basis"><a href="#flex-basis" class="headerlink" title="flex-basis"></a>flex-basis</h2><p>该属性定义了在分配多余空间之前，项目占据的主轴空间，默认为auto，即项目本来的大小</p>
+<h2 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h2><p>该属性是flex-grow, flex-shrink, flex-basis的简写。默认值为 0 1 auto; 意思是不放大不缩小，原始大小<br>建议优先写这个值。<br>比如一个容器里面有两个元素，一个是固定宽度300px，一个是自适应，那么用flex写法就是先将容器定义为<code>display:flex</code>，再将固定宽度300px的项目设置属性为<code>flex:0 1 300px</code>，自适应的设为<code>flex: 1 1 auto</code></p>
+<h2 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h2><p>该属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性</p>
+<p>演示：<a href="https://github.com/liu-zhuang/flex" target="_blank" rel="noopener">地址</a></p>
+<p>备注： 填坑填不动了，实践单独分一篇写吧。</p>
+
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2017/03/03/Flex-入门与实践/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"liuzhuang"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<script>
+
+(function(){
+var bp = document.createElement('script');
+var curProtocol = window.location.protocol.split(':')[0];
+if (curProtocol === 'https') {
+bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+}
+else {
+bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+}
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Hits
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

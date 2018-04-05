@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Ionic2 Study(十一) | MARVEL 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="刘荘">
+    
+    
+
+    <meta name="description" content="Ionci2组件之List The List is a widely used interface element in almost any mobile app, and can include content ranging from basic text all the way to buttons, toggles, icons, and thumbnails.Both the list">
+<meta name="keywords" content="Ionic2 Angular2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ionic2 Study(十一) | MARVEL">
+<meta property="og:url" content="http://liuz.top/2016/12/13/Ionic2-Study-十一/index.html">
+<meta property="og:site_name" content="MARVEL">
+<meta property="og:description" content="Ionci2组件之List The List is a widely used interface element in almost any mobile app, and can include content ranging from basic text all the way to buttons, toggles, icons, and thumbnails.Both the list">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://liuz.top/2016/12/13/Ionic2-Study-十一/list1.png">
+<meta property="og:image" content="http://liuz.top/2016/12/13/Ionic2-Study-十一/list2.png">
+<meta property="og:image" content="http://liuz.top/2016/12/13/Ionic2-Study-十一/list3.png">
+<meta property="og:image" content="http://liuz.top/2016/12/13/Ionic2-Study-十一/list4.png">
+<meta property="og:image" content="http://liuz.top/2016/12/13/Ionic2-Study-十一/list5.png">
+<meta property="og:image" content="http://liuz.top/2016/12/13/Ionic2-Study-十一/list6.png">
+<meta property="og:image" content="http://liuz.top/2016/12/13/Ionic2-Study-十一/list7.png">
+<meta property="og:image" content="http://liuz.top/2016/12/13/Ionic2-Study-十一/list8.png">
+<meta property="og:image" content="http://liuz.top/2016/12/13/Ionic2-Study-十一/list9.png">
+<meta property="og:updated_time" content="2016-12-15T14:15:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ionic2 Study(十一) | MARVEL">
+<meta name="twitter:description" content="Ionci2组件之List The List is a widely used interface element in almost any mobile app, and can include content ranging from basic text all the way to buttons, toggles, icons, and thumbnails.Both the list">
+<meta name="twitter:image" content="http://liuz.top/2016/12/13/Ionic2-Study-十一/list1.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">MARVEL</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          大叔笔记
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="http://liuz.top" title="" class="">主页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/nicky-lau" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Ionic2 Study(十一)</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-12-13" class="post-meta__date date">2016-12-13</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/Ionic2-Angular2/">Ionic2 Angular2</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h1 id="Ionci2组件之List"><a href="#Ionci2组件之List" class="headerlink" title="Ionci2组件之List"></a>Ionci2组件之List</h1><blockquote>
+<p>The List is a widely used interface element in almost any mobile app, and can include content ranging from basic text all the way to buttons, toggles, icons, and thumbnails.<br>Both the list, which contains items, and the list items themselves can be any HTML element.<br>Using the List and Item components make it easy to support various interaction modes such as swipe to edit, drag to reorder, and removing items.</p>
+</blockquote>
+<p>List组件被广泛的用于app，可以包含文字，按钮，滑块,图标和图片。<br>List和List中的item都是HTML元素。<br>使用List和Item组件可以非常方便的支持诸如滑动编辑，拖动排序，或者移除之类的交互操作。</p>
+<h1 id="List类型"><a href="#List类型" class="headerlink" title="List类型"></a>List类型</h1><p><code>ion-list</code>包含以下几种类型：</p>
+<ul>
+<li>Basic Lists</li>
+<li>Inset List</li>
+<li>List Dividers</li>
+<li>List Headers</li>
+<li>Icon List</li>
+<li>Avatar List</li>
+<li>Multi-line List</li>
+<li>Sliding List</li>
+<li>Thumbnail List<br>接下来就分别演示有何区别</li>
+</ul>
+<h2 id="Basic-List"><a href="#Basic-List" class="headerlink" title="Basic List"></a>Basic List</h2><p>顾名思义，就是最基础的应用，在<code>ion-list</code>中嵌套<code>ion-item</code>来使用</p>
+<p>先做一些基础准备：<br>在后台定义一个仓库类<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> WareHouse&#123;</span><br><span class="line">	id:<span class="built_in">number</span>;</span><br><span class="line">	name:<span class="built_in">string</span>;</span><br><span class="line">	desc:<span class="built_in">string</span>;</span><br><span class="line">	img:<span class="built_in">string</span>;</span><br><span class="line">	<span class="keyword">constructor</span>(<span class="params">id:<span class="built_in">number</span>,name:<span class="built_in">string</span>,desc:<span class="built_in">string</span>,img:<span class="built_in">string</span></span>)&#123;</span><br><span class="line">		<span class="keyword">this</span>.id = id;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">		<span class="keyword">this</span>.desc = desc;</span><br><span class="line">		<span class="keyword">this</span>.img  = img;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后模拟通过api获取到了一个<code>WareHouse</code>类型的数组<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">wareHouseList:WareHouse[]=[</span><br><span class="line"><span class="keyword">new</span> WareHouse(<span class="number">1</span>,<span class="string">'上海仓'</span>,<span class="string">'徐汇仓库'</span>,<span class="string">'img/1.jpg'</span>),</span><br><span class="line"><span class="keyword">new</span> WareHouse(<span class="number">2</span>,<span class="string">'北京仓'</span>,<span class="string">'一环仓库'</span>,<span class="string">'img/2.jpg'</span>),</span><br><span class="line"><span class="keyword">new</span> WareHouse(<span class="number">3</span>,<span class="string">'北京二仓'</span>,<span class="string">'二环仓库'</span>,<span class="string">'img/3.jpg'</span>),</span><br><span class="line"><span class="keyword">new</span> WareHouse(<span class="number">4</span>,<span class="string">'北京三仓'</span>,<span class="string">'三环仓库'</span>,<span class="string">'img/4.jpg'</span>),</span><br><span class="line"><span class="keyword">new</span> WareHouse(<span class="number">5</span>,<span class="string">'广州仓'</span>,<span class="string">'小蛮腰'</span>,<span class="string">'img/5.jpg'</span>),</span><br><span class="line"><span class="keyword">new</span> WareHouse(<span class="number">6</span>,<span class="string">'杭州仓'</span>,<span class="string">'西湖美景'</span>,<span class="string">'img/6.jpg'</span>),</span><br><span class="line"><span class="keyword">new</span> WareHouse(<span class="number">7</span>,<span class="string">'苏州仓'</span>,<span class="string">'楼外楼'</span>,<span class="string">'img/7.jpg'</span>),</span><br><span class="line"><span class="keyword">new</span> WareHouse(<span class="number">8</span>,<span class="string">'扬州仓'</span>,<span class="string">'汤包'</span>,<span class="string">'img/8.jpg'</span>),</span><br><span class="line"><span class="keyword">new</span> WareHouse(<span class="number">9</span>,<span class="string">'上海二仓'</span>,<span class="string">'闵行仓库'</span>,<span class="string">'img/9.jpeg'</span>),</span><br><span class="line"><span class="keyword">new</span> WareHouse(<span class="number">10</span>,<span class="string">'上海三仓'</span>,<span class="string">'浦东仓库'</span>,<span class="string">'img/10.jpg'</span>)</span><br><span class="line">];</span><br></pre></td></tr></table></figure></p>
+<p>接下来在前台通过angular2来把这个数组上的数据循环绑定到<code>ion-list</code>上<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ion-list</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ion-item</span> *<span class="attr">ngFor</span>=<span class="string">"let wh of wareHouseList"</span> (<span class="attr">click</span>)=<span class="string">"itemClick($event,wh)"</span>&gt;</span></span><br><span class="line">		&#123;&#123;wh.name&#125;&#125;</span><br><span class="line">	<span class="tag">&lt;/<span class="name">ion-item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ion-list</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>点击item时触发的click事件：<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">itemClick(event,item:WareHouse):<span class="built_in">void</span>&#123;</span><br><span class="line">	alert(item.name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>预览：<br><img src="list1.png" alt="basic list"></p>
+<p>注意：上述代码的循环绑定如<code>*ngFor</code>和<code>(click)</code>使用的是ng2的语法，强类型使用的是typescript的语法</p>
+<h3 id="No-Lines"><a href="#No-Lines" class="headerlink" title="No Lines"></a>No Lines</h3><p>可以看到，每个List Item之间都是有一根线划分开的，可以为<code>ion-list</code>增加一个<code>no-lines</code>属性来移除这些分割线。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ion-list</span> <span class="attr">no-lines</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ion-item</span> *<span class="attr">ngFor</span>=<span class="string">"let wh of wareHouseList"</span> (<span class="attr">click</span>)=<span class="string">"itemClick($event,wh)"</span>&gt;</span></span><br><span class="line">		&#123;&#123;wh.name&#125;&#125;</span><br><span class="line">	<span class="tag">&lt;/<span class="name">ion-item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ion-list</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="list2.png" alt="no-lines"><br>这样就移除了分割线</p>
+<h2 id="Inset-List"><a href="#Inset-List" class="headerlink" title="Inset List"></a>Inset List</h2><p>List本来是没有外边距的，可以通过为List增加<code>inset</code>属性来为List增加外边距<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ion-list</span> <span class="attr">inset</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ion-item</span> *<span class="attr">ngFor</span>=<span class="string">"let wh of wareHouseList"</span> (<span class="attr">click</span>)=<span class="string">"itemClick($event,wh)"</span>&gt;</span></span><br><span class="line">		&#123;&#123;wh.name&#125;&#125;</span><br><span class="line">	<span class="tag">&lt;/<span class="name">ion-item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ion-list</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="list3.png" alt="inset"><br>可以很明显的看出现在list和上面的title有了margin</p>
+<h2 id="List-Dividers"><a href="#List-Dividers" class="headerlink" title="List Dividers"></a>List Dividers</h2><p>当希望把Item分组时，可以使用<code>&lt;ion-item-group&gt;</code>来替代<code>&lt;ion-list&gt;</code>,使用<code>&lt;ion-item-divider&gt;</code>组件来作为分组的组名<br>示例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ion-item-group</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ion-item-divider</span> <span class="attr">color</span>=<span class="string">"light"</span>&gt;</span>A<span class="tag">&lt;/<span class="name">ion-item-divider</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ion-item</span>&gt;</span>Angola<span class="tag">&lt;/<span class="name">ion-item</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ion-item</span>&gt;</span>Argentina<span class="tag">&lt;/<span class="name">ion-item</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ion-item</span>&gt;</span>Australia<span class="tag">&lt;/<span class="name">ion-item</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ion-item-divider</span> <span class="attr">color</span>=<span class="string">"light"</span>&gt;</span>B<span class="tag">&lt;/<span class="name">ion-item-divider</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ion-item</span>&gt;</span>Bangladesh<span class="tag">&lt;/<span class="name">ion-item</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ion-item</span>&gt;</span>Belarus<span class="tag">&lt;/<span class="name">ion-item</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ion-item</span>&gt;</span>Belgium<span class="tag">&lt;/<span class="name">ion-item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ion-item-group</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>其实希望实现的效果是<code>A</code>和<code>B</code>是有灰色背景的<br><img src="list4.png" alt="divider"><br>但是实际上直接生成的是没有的（至少在chrome是如此），因为ionic框架生成出来的代码如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ion-item-divider</span> <span class="attr">class</span>=<span class="string">"item item-md item-md-light"</span> <span class="attr">color</span>=<span class="string">"light"</span> <span class="attr">ng-reflect-color</span>=<span class="string">"light"</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>其中<code>item-md</code>是有<code>background-color</code>属性的，设置为了<code>#fff</code>也就是白色，同时它的优先级比<code>item-md-light</code>，因此就没有显示出来灰色的背景色<br>这个还要再研究下。</p>
+<h2 id="List-Headers"><a href="#List-Headers" class="headerlink" title="List Headers"></a>List Headers</h2><p>每个list都可以有个header在顶部<br>示例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ion-list</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ion-list-header</span>&gt;</span>WareHouse<span class="tag">&lt;/<span class="name">ion-list-header</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ion-item</span> *<span class="attr">ngFor</span>=<span class="string">"let wh of wareHouseList"</span> (<span class="attr">click</span>)=<span class="string">"itemClick($event,wh)"</span>&gt;</span></span><br><span class="line">		&#123;&#123;wh.name&#125;&#125;</span><br><span class="line">	<span class="tag">&lt;/<span class="name">ion-item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ion-list</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="list5.png" alt="list header"></p>
+<h2 id="Icon-List"><a href="#Icon-List" class="headerlink" title="Icon List"></a>Icon List</h2><p>可以为item增加图标来吸引眼球，图标的位置由<code>item-left</code>和<code>item-right</code>来控制，图标默认为大小为“小”，也可以通过为图标增加<code>large</code>属性来将图标变大<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ion-list</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ion-item</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">ion-icon</span> <span class="attr">name</span>=<span class="string">"leaf"</span> <span class="attr">item-left</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-icon</span>&gt;</span></span><br><span class="line">		item-left</span><br><span class="line">	<span class="tag">&lt;/<span class="name">ion-item</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ion-item</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">ion-icon</span> <span class="attr">name</span>=<span class="string">"rose"</span> <span class="attr">item-right</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-icon</span>&gt;</span></span><br><span class="line">		item-right</span><br><span class="line">	<span class="tag">&lt;/<span class="name">ion-item</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ion-item</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">ion-icon</span> <span class="attr">name</span>=<span class="string">"rose"</span> <span class="attr">item-right</span> <span class="attr">large</span>&gt;</span>large<span class="tag">&lt;/<span class="name">ion-icon</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">ion-item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ion-list</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="list6.png" alt="Icon list"></p>
+<h2 id="Avatar-List-Multi-line-List-Thumbnail-List"><a href="#Avatar-List-Multi-line-List-Thumbnail-List" class="headerlink" title="Avatar List/Multi-line List/Thumbnail List"></a>Avatar List/Multi-line List/Thumbnail List</h2><p>这三种都是多行的，区别无非就是昨天是个小图／没有图／和大图<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;ion-list no-lines&gt;</span><br><span class="line">	&lt;ion-item *ngFor=&quot;let wh of wareHouseList&quot;&gt;</span><br><span class="line">		&lt;ion-avatar item-left&gt;</span><br><span class="line">			&lt;img src=&#123;&#123;wh.img&#125;&#125;&gt;</span><br><span class="line">		&lt;/ion-avatar&gt;</span><br><span class="line">		&lt;h2&gt;&#123;&#123;wh.name&#125;&#125;&lt;/h2&gt;</span><br><span class="line">		&lt;p&gt;&#123;&#123;wh.desc&#125;&#125;&lt;/p&gt;</span><br><span class="line">	&lt;/ion-item&gt;</span><br><span class="line">&lt;/ion-list&gt;</span><br></pre></td></tr></table></figure></p>
+<p>Thumbnail list就是把<code>ion-avatar</code>换成<code>ion-thumbnail</code></p>
+<p><img src="list7.png" alt="avatar"></p>
+<h2 id="Sliding-List"><a href="#Sliding-List" class="headerlink" title="Sliding List"></a>Sliding List</h2><p>顾名思义就是list中的item可以向左或向右滑动来出现隐藏的按钮。<br>想实现这个效果，需要首先在<code>&lt;ion-list&gt;</code>内部嵌套<code>ion-item-sliding</code>这个组件，同时在每个<code>&lt;ion-item&gt;</code>下面增加<code>&lt;ion-item-options&gt;</code>组件，<br>直接看示例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ion-list</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">ion-item-sliding</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">ion-item</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">ion-avatar</span> <span class="attr">item-left</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/1.jpg"</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;/<span class="name">ion-avatar</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">h2</span>&gt;</span>Slimer<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">ion-item</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">ion-item-options</span> <span class="attr">side</span>=<span class="string">"left"</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">button</span> <span class="attr">ion-button</span> <span class="attr">color</span>=<span class="string">"primary"</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">ion-icon</span> <span class="attr">name</span>=<span class="string">"text"</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-icon</span>&gt;</span></span><br><span class="line">					Text</span><br><span class="line">				<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">button</span> <span class="attr">ion-button</span> <span class="attr">color</span>=<span class="string">"secondary"</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">ion-icon</span> <span class="attr">name</span>=<span class="string">"call"</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-icon</span>&gt;</span></span><br><span class="line">					Call</span><br><span class="line">				<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">ion-item-options</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">ion-item-options</span> <span class="attr">side</span>=<span class="string">"right"</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">button</span> <span class="attr">ion-button</span> <span class="attr">color</span>=<span class="string">"primary"</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">ion-icon</span> <span class="attr">name</span>=<span class="string">"mail"</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-icon</span>&gt;</span></span><br><span class="line">					Email</span><br><span class="line">				<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">ion-item-options</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">ion-item-sliding</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">ion-list</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>这样就实现了从左向右滑时出现“Text”和“Call”，从右向左滑时出现“Email”<br><img src="list8.png" alt="sliding"><br><img src="list9.png" alt="sliding2"></p>
+
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2016/12/13/Ionic2-Study-十一/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"liuzhuang"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<script>
+
+(function(){
+var bp = document.createElement('script');
+var curProtocol = window.location.protocol.split(':')[0];
+if (curProtocol === 'https') {
+bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+}
+else {
+bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+}
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Hits
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      RESTful Api小记 | MARVEL 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="刘荘">
+    
+    
+
+    <meta name="description" content="何为RESTFULREST是Representational State Transfer的缩写，翻译为中文就是：表现层状态转化。REST这个词是由Roy Fielding在2000年的博士论文中首次提出的。Fielding将他对互联网软件的架构原则定义为:REST，如果一个架构符合REST原则，就称为RESTFUL架构。 如何理解REST要理解REST也就是Representational St">
+<meta name="keywords" content="RESTful API">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RESTful Api小记 | MARVEL">
+<meta property="og:url" content="http://liuz.top/2016/08/25/RESTful-Api小记/index.html">
+<meta property="og:site_name" content="MARVEL">
+<meta property="og:description" content="何为RESTFULREST是Representational State Transfer的缩写，翻译为中文就是：表现层状态转化。REST这个词是由Roy Fielding在2000年的博士论文中首次提出的。Fielding将他对互联网软件的架构原则定义为:REST，如果一个架构符合REST原则，就称为RESTFUL架构。 如何理解REST要理解REST也就是Representational St">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://liuz.top/2016/08/25/RESTful-Api小记/github-api-2.png">
+<meta property="og:image" content="http://liuz.top/2016/08/25/RESTful-Api小记/ARC.png">
+<meta property="og:updated_time" content="2017-03-26T13:03:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RESTful Api小记 | MARVEL">
+<meta name="twitter:description" content="何为RESTFULREST是Representational State Transfer的缩写，翻译为中文就是：表现层状态转化。REST这个词是由Roy Fielding在2000年的博士论文中首次提出的。Fielding将他对互联网软件的架构原则定义为:REST，如果一个架构符合REST原则，就称为RESTFUL架构。 如何理解REST要理解REST也就是Representational St">
+<meta name="twitter:image" content="http://liuz.top/2016/08/25/RESTful-Api小记/github-api-2.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">MARVEL</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          大叔笔记
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="http://liuz.top" title="" class="">主页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/nicky-lau" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">RESTful Api小记</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-08-25" class="post-meta__date date">2016-08-25</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/RESTful-API/">RESTful API</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h1 id="何为RESTFUL"><a href="#何为RESTFUL" class="headerlink" title="何为RESTFUL"></a>何为RESTFUL</h1><p>REST是<a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank" rel="noopener">Representational State Transfer</a>的缩写，翻译为中文就是：表现层状态转化。<br>REST这个词是由<a href="https://en.wikipedia.org/wiki/Roy_Fielding" target="_blank" rel="noopener">Roy Fielding</a>在2000年的<a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm" target="_blank" rel="noopener">博士论文</a>中首次提出的。<br>Fielding将他对互联网软件的架构原则定义为:REST，如果一个架构符合REST原则，就称为RESTFUL架构。</p>
+<h1 id="如何理解REST"><a href="#如何理解REST" class="headerlink" title="如何理解REST"></a>如何理解REST</h1><p>要理解REST也就是<code>Representational State Transfer</code>，首先要理解一个概念：Resources,也就是资源，<br>在REST这个短语中，其实省略了主语：Resources,表现层其实指的是资源的表现层。<br>所谓的资源，就是网络上的一个实体，它可以是一段文本，一首歌曲，一张图片，一个服务，总之是一种真实的存在，可以用URL指向它，每种资源都有自己独一无二的URL，要获取这个资源，访问它的URL即可。<br>接下来说说<code>Representational</code>,因为上面说了，资源是一种实体，它可以有多种外在表现形式，我们把资源表现出来的形式，称之为“表现层“。<br>比如一段文本，可以以txt格式显示，也可以以html或者xml，json等多种格式显示。<br>它具体的表现形式，应该在报文头中用<code>Accept</code>和<code>Content-Type</code>指定，这两个字段是对“表现层“的描述。eg:<br><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">accept</span>: application/json</span><br><span class="line"><span class="attribute">accept-encoding</span>: gzip, deflate</span><br><span class="line"><span class="attribute">accept-language</span>: en-US,en;q=0.8</span><br><span class="line"><span class="attribute">content-type</span>: application/json</span><br><span class="line"><span class="attribute">user-agent</span>: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36</span><br></pre></td></tr></table></figure></p>
+<p>最后就是状态转化了，访问一个网站，就代表了客户端和服务器的一个互动过程。在这个过程中，势必涉及到数据和状态的变化。<br>互联网通信协议HTTP协议，是一个无状态协议。这意味着，所有的状态都保存在服务器端。因此，如果客户端想要操作服务器，必须通过某种手段，让服务器端发生”状态转化”（State Transfer）。而这种转化是建立在表现层之上的，所以就是”表现层状态转化”。<br>客户端用到的手段，只能是HTTP协议。<br>综上所述：所谓的RESTful架构需要满足以下三点:</p>
+<ul>
+<li>每个url代表一种资源</li>
+<li>客户端和服务器之间传递这种资源的某种表现形式</li>
+<li>客户端通过http动词，对服务器上的某种资源进行操作，以实现“表现层状态转化”</li>
+</ul>
+<h1 id="如何设计RESTful-API"><a href="#如何设计RESTful-API" class="headerlink" title="如何设计RESTful API"></a>如何设计RESTful API</h1><p>参考文章:</p>
+<ul>
+<li><a href="https://codeplanet.io/principles-good-restful-api-design/" target="_blank" rel="noopener">Principles of good RESTful API Design</a></li>
+<li><a href="https://bourgeois.me/rest/" target="_blank" rel="noopener">REST best practices</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2014/05/restful_api.html" target="_blank" rel="noopener">RESTful API 设计指南</a><br>主要是学习了阮一峰老师的这篇博客的小结。</li>
+</ul>
+<h2 id="一、协议"><a href="#一、协议" class="headerlink" title="一、协议"></a>一、协议</h2><p>API与用户的通信协议，总是使用HTTPs协议。</p>
+<h2 id="二、域名"><a href="#二、域名" class="headerlink" title="二、域名"></a>二、域名</h2><p>应该尽量将api部署在专门的域名下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://api.example.com</span><br></pre></td></tr></table></figure></p>
+<p>如果api很简单，不需要考虑其扩展性，也可以放在主域名下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://example.com/api/</span><br></pre></td></tr></table></figure></p>
+<h2 id="三、版本"><a href="#三、版本" class="headerlink" title="三、版本"></a>三、版本</h2><p>处理版本号的方式有两种：</p>
+<ul>
+<li><p>将版本号放在放入url:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://api.example/com/v1/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将版本号放在HTTP报文头中，但是不如放在url中只管和方便。<a href="https://developer.github.com/v3/media/#request-specific-version" target="_blank" rel="noopener">Github</a>是采用这种方式的。<br>如下图所示：<br><img src="github-api-2.png" alt="github api 头信息"><br>使用<code>curl https://api.github.com/users/whatever -i</code>命令查看某一个github提供的api，可以从图上看到有这样一行：<code>X-GitHub-Media-Type: github.v3; format=json</code>，（以X-开头的都是自定义头，并不包含于HTTP标准），用以描述当前api的版本信息。</p>
+</li>
+</ul>
+<h2 id="四、路径"><a href="#四、路径" class="headerlink" title="四、路径"></a>四、路径</h2><p>路径又称为<code>终点(endpoint)</code>,(配置过webservice和wcf表示这个词好熟悉-。-)，表示API的具体网址。<br>在RESTful架构中，每个网址代表一种资源（resource），所以网址中不能有动词，只能有名词，而且所用的名词往往与数据库的表格名对应。一般来说，数据库中的表都是同种记录的”集合”（collection），所以API中的名词也应该使用复数。<br>举例来说，有一个API提供动物园（zoo）的信息，还包括各种动物和雇员的信息，则它的路径应该设计成下面这样。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">https://api.example.com/v1/zoos</span><br><span class="line">https://api.example.com/v1/animals</span><br><span class="line">https://api.example.com/v1/employees</span><br></pre></td></tr></table></figure></p>
+<h2 id="五、HTTP动词"><a href="#五、HTTP动词" class="headerlink" title="五、HTTP动词"></a>五、HTTP动词</h2><p>对于资源的具体操作类型，由HTTP动词表示。<br>常见的命令如下：（（括号里是对应的SQL命令）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">GET（SELECT）：从服务器取出资源（一项或多项）</span><br><span class="line">POST（CREATE）：在服务器新建一个资源。</span><br><span class="line">PUT（UPDATE）：在服务器更新资源（客户端提供改变后的完整资源）</span><br><span class="line">PATCH（UPDATE）：在服务器更新资源（客户端提供改变的属性）</span><br><span class="line">DELETE（DELETE）：从服务器删除资源</span><br></pre></td></tr></table></figure></p>
+<p>还有两个不常用的HTTP动词：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HEAD：获取资源的元数据</span><br><span class="line">OPTIONS：获取信息，关于资源的哪些属性是客户端可以改变的</span><br></pre></td></tr></table></figure></p>
+<p>以下是一些示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">GET /zoos：列出所有动物园</span><br><span class="line">POST /zoos：新建一个动物园</span><br><span class="line">GET /zoos/ID：获取某个指定动物园的信息</span><br><span class="line">PUT /zoos/ID：更新某个指定动物园的信息（提供该动物园的全部信息）</span><br><span class="line">PATCH /zoos/ID：更新某个指定动物园的信息（提供该动物园的部分信息）</span><br><span class="line">DELETE /zoos/ID：删除某个动物园</span><br><span class="line">GET /zoos/ID/animals：列出某个指定动物园的所有动物</span><br><span class="line">DELETE /zoos/ID/animals/ID：删除某个指定动物园的指定动物</span><br></pre></td></tr></table></figure></p>
+<h2 id="六、过滤信息"><a href="#六、过滤信息" class="headerlink" title="六、过滤信息"></a>六、过滤信息</h2><p>如果记录数量很多，服务器不可能都将它们返回给用户。API应该提供参数，过滤返回结果。<br>以下是一些常见的过滤参数示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">?limit=10：指定返回记录的数量</span><br><span class="line">?offset=10：指定返回记录的开始位置。</span><br><span class="line">?page=2&amp;per_page=100：指定第几页，以及每页的记录数。</span><br><span class="line">?sortby=name&amp;order=asc：指定返回结果按照哪个属性排序，以及排序顺序。</span><br><span class="line">?animal_type_id=1：指定筛选条件</span><br></pre></td></tr></table></figure></p>
+<p>参数的设计允许存在冗余，即允许API路径和URL参数偶尔有重复。比如，GET /zoo/ID/animals 与 GET /animals?zoo_id=ID 的含义是相同的。</p>
+<h2 id="七、状态码"><a href="#七、状态码" class="headerlink" title="七、状态码"></a>七、状态码</h2><p>服务器向用户返回的状态码和提示信息，常见的有以下一些（方括号中是该状态码对应的HTTP动词）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">200 OK - [GET]：服务器成功返回用户请求的数据，该操作是幂等的（Idempotent）。</span><br><span class="line">201 CREATED - [POST/PUT/PATCH]：用户新建或修改数据成功。</span><br><span class="line">202 Accepted - [*]：表示一个请求已经进入后台排队（异步任务）</span><br><span class="line">204 NO CONTENT - [DELETE]：用户删除数据成功。</span><br><span class="line">400 INVALID REQUEST - [POST/PUT/PATCH]：用户发出的请求有错误，服务器没有进行新建或修改数据的操作，该操作是幂等的。</span><br><span class="line">401 Unauthorized - [*]：表示用户没有权限（令牌、用户名、密码错误）。</span><br><span class="line">403 Forbidden - [*] 表示用户得到授权（与401错误相对），但是访问是被禁止的。</span><br><span class="line">404 NOT FOUND - [*]：用户发出的请求针对的是不存在的记录，服务器没有进行操作，该操作是幂等的。</span><br><span class="line">406 Not Acceptable - [GET]：用户请求的格式不可得（比如用户请求JSON格式，但是只有XML格式）。</span><br><span class="line">410 Gone -[GET]：用户请求的资源被永久删除，且不会再得到的。</span><br><span class="line">422 Unprocesable entity - [POST/PUT/PATCH] 当创建一个对象时，发生一个验证错误。</span><br><span class="line">500 INTERNAL SERVER ERROR - [*]：服务器发生错误，用户将无法判断发出的请求是否成功。</span><br></pre></td></tr></table></figure></p>
+<p>完整的状态码戳<a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html" target="_blank" rel="noopener">这里</a><br>中文的见这里：(摘自网络，仅供参考)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line">Informational 1xx</span><br><span class="line">表示临时响应并需要请求者继续执行操作的状态代码。</span><br><span class="line">100 Continue</span><br><span class="line">（继续）说明部分请求已成功收到，其余的现在应该发出。</span><br><span class="line">101 Switching Protocols</span><br><span class="line">（切换协议） 请求者已要求服务器切换协议，服务器已确认并准备切换。</span><br><span class="line"></span><br><span class="line">Successful 2xx</span><br><span class="line">表示成功处理了请求的状态代码</span><br><span class="line">200 OK</span><br><span class="line">表示成功处理了请求的状态代码。</span><br><span class="line">201 Created</span><br><span class="line">（已创建） 请求成功并且服务器创建了新的资源。</span><br><span class="line">202 Accepted</span><br><span class="line">（已接受） 服务器已接受请求，但尚未处理。</span><br><span class="line">203 Non-Authoritative Information</span><br><span class="line">（非授权信息） 服务器已成功处理了请求，但返回的信息可能来自另一来源。</span><br><span class="line">204 No Content</span><br><span class="line">（无内容） 服务器成功处理了请求，但没有返回任何内容。</span><br><span class="line">205 Reset Content</span><br><span class="line">（重置内容） 服务器成功处理了请求，但没有返回任何内容。 与 204 响应不同，此响应要求请求者重置文档视图（例如，清除表单内容以输入新内容）。</span><br><span class="line">206 Partial Content</span><br><span class="line">服务器成功处理了部分 GET 请求。</span><br><span class="line"></span><br><span class="line">Redirection 3xx</span><br><span class="line">要完成请求，需要进一步操作。 通常，这些状态代码用来重定向。 Google 建议您在每次请求中使用重定向不要超过 5 次。 您可以使用网站管理员工 具查看一下 Googlebot 在抓取重定向网页时是否遇到问题。 诊断下的网络抓取页中列出了由于重定向错误而导致 Googlebot 无法抓取的 网址。</span><br><span class="line">300 Multiple Choices</span><br><span class="line">（多种选择） 针对请求，服务器可执行多种操作。 服务器可根据请求者 (user agent) 选择一项操作，或提供操作列表供请求者选择。</span><br><span class="line">301 Moved Permanently</span><br><span class="line">（永久移动） 请求的网页已永久移动到新位置。 服务器返回此响应（对 GET 或 HEAD 请求的响应）时，会自动将请求者转到新位置。</span><br><span class="line">302 Found</span><br><span class="line">（临时移动） 服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求。 此代码与响应 GET 或 HEAD 请求的 301 代码类似，会自动将请求者转到不同的位置。</span><br><span class="line">303 See Other</span><br><span class="line">（查看其他位置） 请求者应当对不同的位置使用单独的 GET 请求来检索响应时，服务器返回此代码。 对于除 HEAD 之外的所有请求，服务器会自动转到其他位置。</span><br><span class="line">304 Not Modified</span><br><span class="line">（未修改） 自从上次请求后，请求的网页未修改过。 服务器返回此响应时，不会返回网页内容。 如果网页自请求者上次请求后再也没有更改过，您应当将服务器配置为返回此响应（称为 If-Modified-Since HTTP 标头）。</span><br><span class="line">305 Use Proxy</span><br><span class="line">（使用代理） 请求者只能使用代理访问请求的网页。 如果服务器返回此响应，还表示请求者应使用代理。</span><br><span class="line">306 (Unused)</span><br><span class="line">307 Temporary Redirect</span><br><span class="line">（临时重定向） 服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求。 此代码与响应 GET 和 HEAD 请求的 301 代码类似，会自动将请求者转到不同的位置。</span><br><span class="line"></span><br><span class="line">Client Error 4xx</span><br><span class="line">这些状态代码表示请求可能出错，妨碍了服务器的处理。</span><br><span class="line">400 Bad Request</span><br><span class="line">（错误请求） 服务器不理解请求的语法。</span><br><span class="line">401 Unauthorized</span><br><span class="line">（未授权） 请求要求身份验证。 对于需要登录的网页，服务器可能返回此响应。</span><br><span class="line">402 Payment Required</span><br><span class="line">未被使用的代码，被标识为“保留，以备经来使用”</span><br><span class="line">403 Forbidden</span><br><span class="line">（禁止） 服务器拒绝请求。</span><br><span class="line">404 Not Found</span><br><span class="line">（未找到） 服务器找不到请求的网页。</span><br><span class="line">405 Method Not Allowed</span><br><span class="line">（方法禁用） 禁用请求中指定的方法。</span><br><span class="line">406 Not Acceptable</span><br><span class="line">（不接受） 无法使用请求的内容特性响应请求的网页</span><br><span class="line">407 Proxy Authentication Required</span><br><span class="line">（需要代理授权） 此状态代码与 401（未授权）类似，但指定请求者应当授权使用代理。 如果服务器返回此响应，还会指明请求者应当使用的代理。</span><br><span class="line">408 Request Timeout</span><br><span class="line">（请求超时） 服务器等候请求时发生超时。</span><br><span class="line">409 Conflict</span><br><span class="line">（冲突） 服务器在完成请求时发生冲突。 服务器必须在响应中包含有关冲突的信息。 服务器在响应与前一个请求相冲突的 PUT 请求时可能会返回此代码，同时会附上两个请求的差异列表。</span><br><span class="line">410 Gone</span><br><span class="line">（已删除） 如果请求的资源已永久删除，服务器就会返回此响应。 该代码与 404（未找到）代码相似，但在资源以前存在而现在不存在的情况下，有时会用来替代 404 代码。 如果资源已永久删除，您应当使用 301 指定资源的新位置。</span><br><span class="line">411 Length Required</span><br><span class="line">（需要有效长度） 服务器不接受不含有效内容长度标头字段的请求。</span><br><span class="line">412 Precondition Failed</span><br><span class="line">（未满足前提条件） 服务器未满足请求者在请求中设置的其中一个前提条件。</span><br><span class="line">413 Request Entity Too Large</span><br><span class="line">（请求实体过大） 服务器无法处理请求，因为请求实体过大，超出服务器的处理能力。</span><br><span class="line">414 Request-URI Too Long</span><br><span class="line">（不支持的媒体类型） 请求的格式不受请求页面的支持。</span><br><span class="line">415 Unsupported Media Type</span><br><span class="line">（不支持的媒体类型） 请求的格式不受请求页面的支持。</span><br><span class="line">416 Requested Range Not Satisfiable</span><br><span class="line">（请求范围不符合要求） 如果页面无法提供请求的范围，则服务器会返回此状态代码。</span><br><span class="line">417 Expectation Failed</span><br><span class="line">（未满足期望值） 服务器未满足&quot;期望&quot;请求标头字段的要求。</span><br><span class="line"></span><br><span class="line">Server Error 5xx</span><br><span class="line">这些状态代码表示服务器在尝试处理请求时发生内部错误。 这些错误可能是服务器本身的错误，而不是请求出错</span><br><span class="line">500 Internal Server Error</span><br><span class="line">（服务器内部错误） 服务器遇到错误，无法完成请求。</span><br><span class="line">501 Not Implemented</span><br><span class="line">（尚未实施） 服务器不具备完成请求的功能。 例如，服务器无法识别请求方法时可能会返回此代码。</span><br><span class="line">502 Bad Gateway</span><br><span class="line">（错误网关） 服务器作为网关或代理，从上游服务器收到无效响应。</span><br><span class="line">503 Service Unavailable</span><br><span class="line">（服务不可用） 服务器目前无法使用（由于超载或停机维护）。 通常，这只是暂时状态。</span><br><span class="line">504 Gateway Timeout</span><br><span class="line">（网关超时） 服务器作为网关或代理，但是没有及时从上游服务器收到请求。</span><br><span class="line">505 HTTP Version Not Supported</span><br><span class="line">（HTTP 版本不受支持） 服务器不支持请求中所用的 HTTP 协议版本。</span><br></pre></td></tr></table></figure></p>
+<h2 id="八、错误处理"><a href="#八、错误处理" class="headerlink" title="八、错误处理"></a>八、错误处理</h2><p>如果状态码是4xx或者5xx，就应该向用户返回出错信息。一般来说，返回的信息中将error作为键名，出错信息作为键值即可。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    error: &quot;Invalid API key&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="九、返回结果"><a href="#九、返回结果" class="headerlink" title="九、返回结果"></a>九、返回结果</h2><p>针对不同操作，服务器向用户返回的结果应该符合以下规范。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">GET /collection：返回资源对象的列表（数组）</span><br><span class="line">GET /collection/resource：返回单个资源对象</span><br><span class="line">POST /collection：返回新生成的资源对象</span><br><span class="line">PUT /collection/resource：返回完整的资源对象</span><br><span class="line">PATCH /collection/resource：返回完整的资源对象</span><br><span class="line">DELETE /collection/resource：返回一个空文档</span><br></pre></td></tr></table></figure></p>
+<h2 id="十、Hypermedia-API（超媒体API）"><a href="#十、Hypermedia-API（超媒体API）" class="headerlink" title="十、Hypermedia API（超媒体API）"></a>十、Hypermedia API（超媒体API）</h2><p>RESTful API最好做到Hypermedia，即返回结果中提供链接，连向其他API方法，使得用户不查文档，也知道下一步应该做什么。<br>Hypermedia API的设计被称为<a href="https://cn.wikipedia.org/wiki/HATEOAS" target="_blank" rel="noopener">HATEOAS</a>。<br>仍然以github为例，访问<code>https://api.github.com</code>，得到的内容如下：<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"current_user_url"</span>: <span class="string">"https://api.github.com/user"</span>,</span><br><span class="line">  <span class="attr">"current_user_authorizations_html_url"</span>: <span class="string">"https://github.com/settings/connections/applications&#123;/client_id&#125;"</span>,</span><br><span class="line">  <span class="attr">"authorizations_url"</span>: <span class="string">"https://api.github.com/authorizations"</span>,</span><br><span class="line">  <span class="attr">"code_search_url"</span>: <span class="string">"https://api.github.com/search/code?q=&#123;query&#125;&#123;&amp;page,per_page,sort,order&#125;"</span>,</span><br><span class="line">  <span class="attr">"commit_search_url"</span>: <span class="string">"https://api.github.com/search/commits?q=&#123;query&#125;&#123;&amp;page,per_page,sort,order&#125;"</span>,</span><br><span class="line">  <span class="attr">"emails_url"</span>: <span class="string">"https://api.github.com/user/emails"</span>,</span><br><span class="line">  <span class="attr">"emojis_url"</span>: <span class="string">"https://api.github.com/emojis"</span>,</span><br><span class="line">  <span class="attr">"events_url"</span>: <span class="string">"https://api.github.com/events"</span>,</span><br><span class="line">  <span class="attr">"feeds_url"</span>: <span class="string">"https://api.github.com/feeds"</span>,</span><br><span class="line">  <span class="attr">"followers_url"</span>: <span class="string">"https://api.github.com/user/followers"</span>,</span><br><span class="line">  <span class="attr">"following_url"</span>: <span class="string">"https://api.github.com/user/following&#123;/target&#125;"</span>,</span><br><span class="line">  <span class="attr">"gists_url"</span>: <span class="string">"https://api.github.com/gists&#123;/gist_id&#125;"</span>,</span><br><span class="line">  <span class="attr">"hub_url"</span>: <span class="string">"https://api.github.com/hub"</span>,</span><br><span class="line">  <span class="attr">"issue_search_url"</span>: <span class="string">"https://api.github.com/search/issues?q=&#123;query&#125;&#123;&amp;page,per_page,sort,order&#125;"</span>,</span><br><span class="line">  <span class="attr">"issues_url"</span>: <span class="string">"https://api.github.com/issues"</span>,</span><br><span class="line">  <span class="attr">"keys_url"</span>: <span class="string">"https://api.github.com/user/keys"</span>,</span><br><span class="line">  <span class="attr">"notifications_url"</span>: <span class="string">"https://api.github.com/notifications"</span>,</span><br><span class="line">  <span class="attr">"organization_repositories_url"</span>: <span class="string">"https://api.github.com/orgs/&#123;org&#125;/repos&#123;?type,page,per_page,sort&#125;"</span>,</span><br><span class="line">  <span class="attr">"organization_url"</span>: <span class="string">"https://api.github.com/orgs/&#123;org&#125;"</span>,</span><br><span class="line">  <span class="attr">"public_gists_url"</span>: <span class="string">"https://api.github.com/gists/public"</span>,</span><br><span class="line">  <span class="attr">"rate_limit_url"</span>: <span class="string">"https://api.github.com/rate_limit"</span>,</span><br><span class="line">  <span class="attr">"repository_url"</span>: <span class="string">"https://api.github.com/repos/&#123;owner&#125;/&#123;repo&#125;"</span>,</span><br><span class="line">  <span class="attr">"repository_search_url"</span>: <span class="string">"https://api.github.com/search/repositories?q=&#123;query&#125;&#123;&amp;page,per_page,sort,order&#125;"</span>,</span><br><span class="line">  <span class="attr">"current_user_repositories_url"</span>: <span class="string">"https://api.github.com/user/repos&#123;?type,page,per_page,sort&#125;"</span>,</span><br><span class="line">  <span class="attr">"starred_url"</span>: <span class="string">"https://api.github.com/user/starred&#123;/owner&#125;&#123;/repo&#125;"</span>,</span><br><span class="line">  <span class="attr">"starred_gists_url"</span>: <span class="string">"https://api.github.com/gists/starred"</span>,</span><br><span class="line">  <span class="attr">"team_url"</span>: <span class="string">"https://api.github.com/teams"</span>,</span><br><span class="line">  <span class="attr">"user_url"</span>: <span class="string">"https://api.github.com/users/&#123;user&#125;"</span>,</span><br><span class="line">  <span class="attr">"user_organizations_url"</span>: <span class="string">"https://api.github.com/user/orgs"</span>,</span><br><span class="line">  <span class="attr">"user_repositories_url"</span>: <span class="string">"https://api.github.com/users/&#123;user&#125;/repos&#123;?type,page,per_page,sort&#125;"</span>,</span><br><span class="line">  <span class="attr">"user_search_url"</span>: <span class="string">"https://api.github.com/search/users?q=&#123;query&#125;&#123;&amp;page,per_page,sort,order&#125;"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>从上面可以看到，如果想获取当前用户的信息，应该去访问<code>api.github.com/user</code>，然后就得到了下面结果。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;message&quot;: &quot;Not Found&quot;,</span><br><span class="line">  &quot;documentation_url&quot;: &quot;https://developer.github.com/v3&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>从上面的结果可以看出文档的地址。接下来根据文档的描述，可以利用这个api找到我的信息(羞~(@^_^@)~),访问<code>api.github.com/user/nicky-lau</code>，得到以下信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;login&quot;: &quot;nicky-lau&quot;,</span><br><span class="line">  &quot;id&quot;: 12084271,</span><br><span class="line">  &quot;avatar_url&quot;: &quot;https://avatars2.githubusercontent.com/u/12084271?v=3&quot;,</span><br><span class="line">  &quot;gravatar_id&quot;: &quot;&quot;,</span><br><span class="line">  &quot;url&quot;: &quot;https://api.github.com/users/nicky-lau&quot;,</span><br><span class="line">  &quot;html_url&quot;: &quot;https://github.com/nicky-lau&quot;,</span><br><span class="line">  &quot;followers_url&quot;: &quot;https://api.github.com/users/nicky-lau/followers&quot;,</span><br><span class="line">  &quot;following_url&quot;: &quot;https://api.github.com/users/nicky-lau/following&#123;/other_user&#125;&quot;,</span><br><span class="line">  &quot;gists_url&quot;: &quot;https://api.github.com/users/nicky-lau/gists&#123;/gist_id&#125;&quot;,</span><br><span class="line">  &quot;starred_url&quot;: &quot;https://api.github.com/users/nicky-lau/starred&#123;/owner&#125;&#123;/repo&#125;&quot;,</span><br><span class="line">  &quot;subscriptions_url&quot;: &quot;https://api.github.com/users/nicky-lau/subscriptions&quot;,</span><br><span class="line">  &quot;organizations_url&quot;: &quot;https://api.github.com/users/nicky-lau/orgs&quot;,</span><br><span class="line">  &quot;repos_url&quot;: &quot;https://api.github.com/users/nicky-lau/repos&quot;,</span><br><span class="line">  &quot;events_url&quot;: &quot;https://api.github.com/users/nicky-lau/events&#123;/privacy&#125;&quot;,</span><br><span class="line">  &quot;received_events_url&quot;: &quot;https://api.github.com/users/nicky-lau/received_events&quot;,</span><br><span class="line">  &quot;type&quot;: &quot;User&quot;,</span><br><span class="line">  &quot;site_admin&quot;: false,</span><br><span class="line">  &quot;name&quot;: &quot;liu zhuang&quot;,</span><br><span class="line">  &quot;company&quot;: null,</span><br><span class="line">  &quot;blog&quot;: &quot;http://liu-zhuang.github.io&quot;,</span><br><span class="line">  &quot;location&quot;: &quot;Shang Hai,China&quot;,</span><br><span class="line">  &quot;email&quot;: &quot;70458055@qq.com&quot;,</span><br><span class="line">  &quot;hireable&quot;: null,</span><br><span class="line">  &quot;bio&quot;: null,</span><br><span class="line">  &quot;public_repos&quot;: 13,</span><br><span class="line">  &quot;public_gists&quot;: 0,</span><br><span class="line">  &quot;followers&quot;: 4,</span><br><span class="line">  &quot;following&quot;: 9,</span><br><span class="line">  &quot;created_at&quot;: &quot;2015-04-23T12:36:38Z&quot;,</span><br><span class="line">  &quot;updated_at&quot;: &quot;2016-07-21T22:56:52Z&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="十一、其他"><a href="#十一、其他" class="headerlink" title="十一、其他"></a>十一、其他</h2><ul>
+<li>API的身份认证应该使用OAuth 2.0框架。</li>
+<li>服务器返回的数据格式，应该尽量使用JSON，避免使用XML。</li>
+</ul>
+<h1 id="实际应用"><a href="#实际应用" class="headerlink" title="实际应用"></a>实际应用</h1><p>参考某MS大叔的博客，地址戳<a href="http://bitoftech.net/2013/11/25/detailed-tutorial-building-asp-net-web-api-restful-service/" target="_blank" rel="noopener">这里</a><br>demo戳<a href="https://github.com/tjoudeh/eLearning.WebAPI" target="_blank" rel="noopener">这里</a></p>
+<p>不过今天看到在.net core中新建webapi controller的时候，会默认生成”GET POST PUT DELETE”方法，自己要做的事情就是实现就可以了。<br>（家里的台式机坏了，在macbook上装windows系统或者虚拟机实在不能忍，等过段时间新买台pc再把实践代码放出来吧）</p>
+<h2 id="相关"><a href="#相关" class="headerlink" title="相关"></a>相关</h2><ul>
+<li>调试工具：ARC<br>chrome下的一款插件<br><img src="ARC.png" alt="ARC"><br>又忍不住炫耀下蓝灯侠（lantern)真的好用，现在妈妈再也不用担心我不能直接在chrome应用商店下载插件了-。-</li>
+<li>相关学习内容:<a href="http://www.ruanyifeng.com/blog/2014/05/oauth_2_0.html" target="_blank" rel="noopener">理解OAuth 2.0</a></li>
+</ul>
+
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2016/08/25/RESTful-Api小记/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"liuzhuang"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<script>
+
+(function(){
+var bp = document.createElement('script');
+var curProtocol = window.location.protocol.split(':')[0];
+if (curProtocol === 'https') {
+bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+}
+else {
+bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+}
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Hits
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

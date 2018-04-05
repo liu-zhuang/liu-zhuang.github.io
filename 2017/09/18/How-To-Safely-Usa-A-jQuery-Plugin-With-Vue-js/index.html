@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      How To(Safely) Usa A jQuery Plugin With Vue.js | MARVEL 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="刘荘">
+    
+    
+
+    <meta name="description" content="原文地址 前言在同一个UI中同时使用jQuery和Vue并不是一个好主意，如果可以避免的话，尽量不要这样做。但是人在江湖身不由己，现实工作中也会遇到客户强烈坚持你使用某个特定的jQuery插件，但是你却没有时间去把这个插件Vue化的情况。不过虽说勉强没有幸福，但是如果你以正确的方式使用，江湖也不乏勉强在一起却成为神仙眷侣的传说，本文就将用在Vue项目中使用jQjery的Datepicker组件来">
+<meta name="keywords" content="vue jQuery">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How To(Safely) Usa A jQuery Plugin With Vue.js | MARVEL">
+<meta property="og:url" content="http://liuz.top/2017/09/18/How-To-Safely-Usa-A-jQuery-Plugin-With-Vue-js/index.html">
+<meta property="og:site_name" content="MARVEL">
+<meta property="og:description" content="原文地址 前言在同一个UI中同时使用jQuery和Vue并不是一个好主意，如果可以避免的话，尽量不要这样做。但是人在江湖身不由己，现实工作中也会遇到客户强烈坚持你使用某个特定的jQuery插件，但是你却没有时间去把这个插件Vue化的情况。不过虽说勉强没有幸福，但是如果你以正确的方式使用，江湖也不乏勉强在一起却成为神仙眷侣的传说，本文就将用在Vue项目中使用jQjery的Datepicker组件来">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://liuz.top/2017/09/18/How-To-Safely-Usa-A-jQuery-Plugin-With-Vue-js/jQueryInVue.jpeg">
+<meta property="og:updated_time" content="2017-09-18T10:03:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="How To(Safely) Usa A jQuery Plugin With Vue.js | MARVEL">
+<meta name="twitter:description" content="原文地址 前言在同一个UI中同时使用jQuery和Vue并不是一个好主意，如果可以避免的话，尽量不要这样做。但是人在江湖身不由己，现实工作中也会遇到客户强烈坚持你使用某个特定的jQuery插件，但是你却没有时间去把这个插件Vue化的情况。不过虽说勉强没有幸福，但是如果你以正确的方式使用，江湖也不乏勉强在一起却成为神仙眷侣的传说，本文就将用在Vue项目中使用jQjery的Datepicker组件来">
+<meta name="twitter:image" content="http://liuz.top/2017/09/18/How-To-Safely-Usa-A-jQuery-Plugin-With-Vue-js/jQueryInVue.jpeg">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">MARVEL</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          大叔笔记
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="http://liuz.top" title="" class="">主页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/nicky-lau" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">How To(Safely) Usa A jQuery Plugin With Vue.js</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-09-18" class="post-meta__date date">2017-09-18</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/vue-jQuery/">vue jQuery</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p><img src="jQueryInVue.jpeg" alt="pic"></p>
+<p><a href="https://medium.com/js-dojo/how-to-safely-use-a-jquery-plugin-with-vue-js-786acdfb743b" target="_blank" rel="noopener">原文地址</a></p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在同一个UI中同时使用jQuery和Vue并不是一个好主意，如果可以避免的话，尽量不要这样做。<br>但是人在江湖身不由己，现实工作中也会遇到客户强烈坚持你使用某个特定的jQuery插件，但是你却没有时间去把这个插件Vue化的情况。<br>不过虽说勉强没有幸福，但是如果你以正确的方式使用，江湖也不乏勉强在一起却成为神仙眷侣的传说，本文就将用在Vue项目中使用jQjery的Datepicker组件来证明这点。<br>同时还将展示如何在jQuery组件和Vue中传递数据。</p>
+<p>本文用到的插件是：<a href="https://bootstrap-datepicker.readthedocs.io/en/latest/" target="_blank" rel="noopener">bootstrap-datepicker</a></p>
+<p><a href="https://github.com/liu-zhuang/jquery-vue" target="_blank" rel="noopener">示例代码</a></p>
+<h1 id="同时使用Vue和jQuery的问题"><a href="#同时使用Vue和jQuery的问题" class="headerlink" title="同时使用Vue和jQuery的问题"></a>同时使用Vue和jQuery的问题</h1><p>简单的说Vue是通过虚拟Dom来渲染Dom的，而jQuery是直接操作Dom树，这也就意味着当通过jQuery改变了一个Vue控制的元素，比如给该元素增加一个class，Vue并不会关心这些改变，同时在下一个声明周期中会将其覆盖。</p>
+<h1 id="解决方案：-使用组件来包裹"><a href="#解决方案：-使用组件来包裹" class="headerlink" title="解决方案： 使用组件来包裹"></a>解决方案： 使用组件来包裹</h1><p>既然知道了Vue和jQuery永远不会共享对Dom的操作，我们必须告诉Vue来封锁一块区域，并将其传递给jQuery<br>使用组件来包裹jQuery插件有以下几个原因：</p>
+<ul>
+<li>可以利用生命周期钩子函数来加载和卸载jQuery组件</li>
+<li>可以使用props和event来进行vue与jQuery之间的通信</li>
+<li>可以使用v-once来避免多次更新</li>
+</ul>
+<h1 id="设置jQuery组件date-picker"><a href="#设置jQuery组件date-picker" class="headerlink" title="设置jQuery组件date-picker"></a>设置jQuery组件date-picker</h1><p>很显然，你需要先引用jQuery库和datepicker库，引用之后，现在页面上简单的做下测试<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Date</span>: <span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"datepicker"</span>/&gt;</span></span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">$('#datepicker').datepicker();</span></span><br></pre></td></tr></table></figure></p>
+<p>显而易见，datepicker组件会正常工作</p>
+<h1 id="实现Datepicker-组件"><a href="#实现Datepicker-组件" class="headerlink" title="实现Datepicker 组件"></a>实现Datepicker 组件</h1><p>如同上面的使用方式，datepicker组件模板中也只需要<code>input</code>一个元素:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;date-picker&apos;, function() &#123;</span><br><span class="line">  template: &apos;&lt;input/&gt;&apos;</span><br><span class="line">&#125;);</span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: &apos;#app&apos;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>在页面上使用时，只需要如下方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">  Date: &lt;date-picker&gt;&lt;/date-picker&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>注意： 这个组件除了wrapper之外不要有任何其他属性，不要加诸如”data-id”之类的属性， 也不要 或者使用指令(directive)或插槽(slot)</p>
+<h1 id="实例化组件"><a href="#实例化组件" class="headerlink" title="实例化组件"></a>实例化组件</h1><p>在Vue中，不需要通过给这个input指订Id来选择它，我们可以简单的使用<code>this.$el</code>来实现选择器的功能。然后就像在jQuery中做的那样把它”jQuery”化，<br>再调用<code>datepicker()</code>方法来实例化。<br>请注意，必须在<code>mounted</code>这个钩子函数中来进行实例化操作，(因为在此之前<code>this.$el</code>还是undefined)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;date-picker&apos;, function() &#123;</span><br><span class="line">  template: &apos;&lt;input/&gt;&apos;,</span><br><span class="line">  mounted: function() &#123;</span><br><span class="line">    $(this.$el).datepicker();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h1 id="卸载组件"><a href="#卸载组件" class="headerlink" title="卸载组件"></a>卸载组件</h1><p>如同实例化一样，我们也是在生命周期钩子函数中来进行操作,不过这次选择了<code>beforeDestroy</code>,因为在<code>destory</code>中它已经undefined了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;date-picker&apos;, &#123;</span><br><span class="line">  template: &apos;&lt;input/&gt;&apos;,</span><br><span class="line">  mounted: function() &#123;</span><br><span class="line">    $(this.$el).datepicker();</span><br><span class="line">  &#125;,</span><br><span class="line">  beforeDestroy: function() &#123;</span><br><span class="line">    $(this.$el).datepicker(&apos;hide&apos;).datepicker(&apos;destroy&apos;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h1 id="使用props传递参数"><a href="#使用props传递参数" class="headerlink" title="使用props传递参数"></a>使用props传递参数</h1><p>为了使组件可复用，有必要传递一些自定义的config参数给组件，例如format，我们可以使用props<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">'date-picker'</span>, &#123;</span><br><span class="line">  template: <span class="string">'&lt;input/&gt;'</span>,</span><br><span class="line">  props: [ <span class="string">'dateFormat'</span> ],</span><br><span class="line">  mounted: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="keyword">this</span>.$el).datepicker(&#123;</span><br><span class="line">      dateFormat: <span class="keyword">this</span>.dateFormat</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">  beforeDestroy: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; ... &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">  &lt;date-picker date-format=<span class="string">"yy-mm-dd"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">date-picker</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<h1 id="实现双向绑定"><a href="#实现双向绑定" class="headerlink" title="实现双向绑定"></a>实现双向绑定</h1><p>这段原文写的意思就是可以通过双向绑定来实现给props赋值，但是，一旦传给props的值变化了，就会引起jQuery组件的变化，这不是我们希望看到的，因此我们使用了<code>v-once</code>这个指令，<a href="https://cn.vuejs.org/v2/api/#v-once" target="_blank" rel="noopener">详情</a>这个指令简单说就是只渲染一次。</p>
+<h1 id="和组件的通信"><a href="#和组件的通信" class="headerlink" title="和组件的通信"></a>和组件的通信</h1><p>上面实现了通过props向组件传值，接下来要实现的就是接受组件向外的传值了。<br>其实实现原理也很简单，在<code>changeDate</code>事件的时候，派发一个事件，然后在组件上监听该事件即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">&lt;date-picker @update-date=&quot;onUpdateDate&quot; :date-format=&quot;dateformat&quot; :autoclose=&quot;autoclose&quot; v-once&gt;&lt;/date-picker&gt;</span><br><span class="line"></span><br><span class="line">Vue.component(&apos;date-picker&apos;, &#123;</span><br><span class="line">	template: &apos;&lt;input /&gt;&apos;,</span><br><span class="line">	props: &#123;</span><br><span class="line">		dateFormat: &#123;</span><br><span class="line">			type: String,</span><br><span class="line">			default: &apos;yyyy-mm-dd&apos;</span><br><span class="line">		&#125;,</span><br><span class="line">		autoclose: &#123;</span><br><span class="line">			type: Boolean,</span><br><span class="line">			default: false	</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	mounted () &#123;</span><br><span class="line">		$(this.$el).datepicker(&#123;</span><br><span class="line">			language: &apos;zh-CN&apos;,</span><br><span class="line">			format: this.dateFormat,</span><br><span class="line">			autoclose: this.autoclose,</span><br><span class="line">		&#125;);</span><br><span class="line">		$(this.$el).datepicker()</span><br><span class="line">		.on(&quot;changeDate&quot;, (event) =&gt; &#123;</span><br><span class="line">			debugger;</span><br><span class="line">			this.$emit(&apos;update-date&apos;, event.date);</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;,</span><br><span class="line">	beforeDestroy () &#123;</span><br><span class="line">		$(this.$el).datepicker(&apos;hide&apos;).datepicker(&apos;destroy&apos;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">let vm = new Vue(&#123;</span><br><span class="line">			el: &quot;#app&quot;,</span><br><span class="line">			data () &#123;</span><br><span class="line">				return &#123;</span><br><span class="line">					dateformat: &apos;yyyy-mm-dd&apos;,</span><br><span class="line">					autoclose: true,</span><br><span class="line">					date: &apos;&apos;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;,</span><br><span class="line">			methods: &#123;</span><br><span class="line">				onUpdateDate (val) &#123;</span><br><span class="line">					const temp = new Date(val);</span><br><span class="line">					this.date = [temp.getFullYear(), temp.getMonth()+1, temp.getDate()].join(&apos;-&apos;);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>至此，在Vue中使用jQuery组件就实现了。</p>
+
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2017/09/18/How-To-Safely-Usa-A-jQuery-Plugin-With-Vue-js/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"liuzhuang"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<script>
+
+(function(){
+var bp = document.createElement('script');
+var curProtocol = window.location.protocol.split(':')[0];
+if (curProtocol === 'https') {
+bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+}
+else {
+bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+}
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Hits
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

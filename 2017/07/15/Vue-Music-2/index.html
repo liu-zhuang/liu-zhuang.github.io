@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Vue-Music (2) | MARVEL 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="刘荘">
+    
+    
+
+    <meta name="description" content="基本骨架首先需要安装使用npm install --save-dev babel-runtime fastclick babel-polyfill安装这三个组件babel两个就不用多说了，fastclick是为了避免移动设备上点击的300毫秒延迟而导入的组件 然后在index.html页面的head中增加一个meta:1&amp;lt;meta name=&amp;quot;viewport&amp;quot; cont">
+<meta name="keywords" content="vue vue-cli vue-music">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue-Music (2) | MARVEL">
+<meta property="og:url" content="http://liuz.top/2017/07/15/Vue-Music-2/index.html">
+<meta property="og:site_name" content="MARVEL">
+<meta property="og:description" content="基本骨架首先需要安装使用npm install --save-dev babel-runtime fastclick babel-polyfill安装这三个组件babel两个就不用多说了，fastclick是为了避免移动设备上点击的300毫秒延迟而导入的组件 然后在index.html页面的head中增加一个meta:1&amp;lt;meta name=&amp;quot;viewport&amp;quot; cont">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-07-15T16:25:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue-Music (2) | MARVEL">
+<meta name="twitter:description" content="基本骨架首先需要安装使用npm install --save-dev babel-runtime fastclick babel-polyfill安装这三个组件babel两个就不用多说了，fastclick是为了避免移动设备上点击的300毫秒延迟而导入的组件 然后在index.html页面的head中增加一个meta:1&amp;lt;meta name=&amp;quot;viewport&amp;quot; cont">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">MARVEL</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          大叔笔记
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="http://liuz.top" title="" class="">主页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/nicky-lau" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Vue-Music (2)</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-07-15" class="post-meta__date date">2017-07-15</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/vue-vue-cli-vue-music/">vue vue-cli vue-music</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h1 id="基本骨架"><a href="#基本骨架" class="headerlink" title="基本骨架"></a>基本骨架</h1><p>首先需要安装使用<code>npm install --save-dev babel-runtime fastclick babel-polyfill</code>安装这三个组件<br>babel两个就不用多说了，fastclick是为了避免移动设备上点击的300毫秒延迟而导入的组件</p>
+<p>然后在index.html页面的head中增加一个meta:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>移动端开发必备的内容，也不需要赘述了</p>
+<h1 id="header组件"><a href="#header组件" class="headerlink" title="header组件"></a>header组件</h1><p>首先，在”common/less”目录下增加<code>mixin.less</code>文件。<br>里面先增加一个”.bg-image”的定义（在LESS里面，这个叫<a href="http://www.bootcss.com/p/lesscss/" target="_blank" rel="noopener">混合</a>)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 背景图片</span><br><span class="line">.bg-image(@url) &#123;</span><br><span class="line">	background-image: ~&quot;url(@&#123;url&#125;@2x.png)&quot;;</span><br><span class="line">	 @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3) &#123;</span><br><span class="line">	 	background-image: ~&quot;url(@&#123;url&#125;@3x.png)&quot;;	</span><br><span class="line">	 &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>它的作用就是使用<code>@media</code>判断当设备像素比是3的时候，采用”3x”的图片<br>这里有两个注意点:</p>
+<ul>
+<li>less的字符串拼接不能用<code>+</code>，只能用上文中这种类似js模版的方法</li>
+<li>路径前一定要加<code>~</code>,否则返回的是该”.less”文件所在的路径，而不是使用该方法的文件所在路径</li>
+</ul>
+<p>header组件中暂时没有什么需要交互的逻辑，就是一个简单的logo和一个标题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div class=&quot;m-header&quot;&gt;</span><br><span class="line">		&lt;div class=&quot;icon&quot;&gt;&lt;/div&gt;</span><br><span class="line">		&lt;h1 class=&quot;title&quot;&gt;Vue Music&lt;/h1&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">	export default &#123;</span><br><span class="line">		name: &apos;m-header&apos;</span><br><span class="line">	&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;style scoped lang=&quot;less&quot;&gt;</span><br><span class="line">	@import &apos;~less/variable.less&apos;;</span><br><span class="line">	@import &apos;~less/mixin.less&apos;;</span><br><span class="line">	.m-header &#123;</span><br><span class="line">		display: flex;</span><br><span class="line">		flex-direction:row;</span><br><span class="line">		justify-content:center;</span><br><span class="line">		align-items:center;</span><br><span class="line">		position: relative;</span><br><span class="line">		height: 44px;</span><br><span class="line">		font-size: 0;</span><br><span class="line">		color: @color-theme;</span><br><span class="line">		.icon &#123;</span><br><span class="line">			display: inline-block;</span><br><span class="line">			width:30px;</span><br><span class="line">			height: 32px;</span><br><span class="line">			.bg-image(&apos;logo&apos;);</span><br><span class="line">			background-size: 30px 32px;</span><br><span class="line">			margin-right:10px;</span><br><span class="line">		&#125;</span><br><span class="line">		.title &#123;</span><br><span class="line">			display: inline-block;</span><br><span class="line">			font-size: @font-size-large;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<p>然后在<code>app.vue</code>中import该组件就可以使用了</p>
+<h1 id="tab组件"><a href="#tab组件" class="headerlink" title="tab组件"></a>tab组件</h1><p>tab组件用来切换路由<br>这里简单的使用<code>&lt;router-link&gt;</code>来实现路由切换。<br>具体使用见<a href="https://router.vuejs.org/zh-cn/api/router-link.html" target="_blank" rel="noopener">官方文档</a></p>
+<p>这里有个小tips：<br>如果希望在页面初始化的时候，就默认选择某个tab，可以在路由的设置中增加：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	path: &apos;/&apos;,</span><br><span class="line">	redirect: &apos;/recommend&apos; // 默认选中  注意这里是redirect 值是路径 同时注意区分大小写，路由是否选中是根据url路径来判断的</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>需要注意的是，这个<code>redirect</code>是区分大小写的。路由是否选中是通过url中的hash值来决定的，如果大小写不一致，tab就不会有选中状态。</p>
+<p><a href="https://github.com/liu-zhuang/vue-music/tree/路由+顶部导航" target="_blank" rel="noopener">代码</a></p>
+
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2017/07/15/Vue-Music-2/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"liuzhuang"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<script>
+
+(function(){
+var bp = document.createElement('script');
+var curProtocol = window.location.protocol.split(':')[0];
+if (curProtocol === 'https') {
+bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+}
+else {
+bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+}
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Hits
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

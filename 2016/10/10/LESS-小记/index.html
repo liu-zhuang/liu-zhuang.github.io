@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      LESS 小记 | MARVEL 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="刘荘">
+    
+    
+
+    <meta name="description" content="前言几年前第一次在BootStrap中文网上看到LESS的时候，真的有种梦想成真的感觉，一直希望可以像写编程语言一样写CSS的愿望终于实现了。当时随便学了学之后发现现实工作中不大有机会用到（毕竟首先不是专业做前端/美工，其次做的内部系统对css的要求其实没那么高），也就基本荒废了（只记得基本的语法了）正好最近一个项目，有需要稍微修改一下font awesome的样式，就把font awesome的">
+<meta name="keywords" content="LESS CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LESS 小记 | MARVEL">
+<meta property="og:url" content="http://liuz.top/2016/10/10/LESS-小记/index.html">
+<meta property="og:site_name" content="MARVEL">
+<meta property="og:description" content="前言几年前第一次在BootStrap中文网上看到LESS的时候，真的有种梦想成真的感觉，一直希望可以像写编程语言一样写CSS的愿望终于实现了。当时随便学了学之后发现现实工作中不大有机会用到（毕竟首先不是专业做前端/美工，其次做的内部系统对css的要求其实没那么高），也就基本荒废了（只记得基本的语法了）正好最近一个项目，有需要稍微修改一下font awesome的样式，就把font awesome的">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2016-10-12T14:52:07.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LESS 小记 | MARVEL">
+<meta name="twitter:description" content="前言几年前第一次在BootStrap中文网上看到LESS的时候，真的有种梦想成真的感觉，一直希望可以像写编程语言一样写CSS的愿望终于实现了。当时随便学了学之后发现现实工作中不大有机会用到（毕竟首先不是专业做前端/美工，其次做的内部系统对css的要求其实没那么高），也就基本荒废了（只记得基本的语法了）正好最近一个项目，有需要稍微修改一下font awesome的样式，就把font awesome的">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">MARVEL</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          大叔笔记
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="http://liuz.top" title="" class="">主页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/nicky-lau" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">LESS 小记</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-10-10" class="post-meta__date date">2016-10-10</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/LESS-CSS/">LESS CSS</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>几年前第一次在<a href="http://www.bootcss.com" target="_blank" rel="noopener">BootStrap中文网</a>上看到<a href="http://www.bootcss.com/p/lesscss/" target="_blank" rel="noopener">LESS</a>的时候，真的有种梦想成真的感觉，一直希望可以像写编程语言一样写CSS的愿望终于实现了。<br>当时随便学了学之后发现现实工作中不大有机会用到（毕竟首先不是专业做前端/美工，其次做的内部系统对css的要求其实没那么高），也就基本荒废了（只记得基本的语法了）<br>正好最近一个项目，有需要稍微修改一下<a href="http://fontawesome.io" target="_blank" rel="noopener">font awesome</a>的样式，就把font awesome的LESS下载下来研究了一下，发现还是有点意思的，于是重新温故而知新一下。</p>
+<h1 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h1><p>个人感觉最好用的是企鹅公司的一个大牛开发的名为<a href="http://koala-app.com" target="_blank" rel="noopener">koala</a>的桌面app，使用简单方便。不过不更新很久了-。-<br>作者的微博和blog也停更很久了=v=.使用起来很简单，因为一共也没有几个按钮和菜单，同时是多语言版本的，切换到简体中文，重启app即可。</p>
+<h1 id="语法介绍"><a href="#语法介绍" class="headerlink" title="语法介绍"></a>语法介绍</h1><p>下面开始正文-。-</p>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><ul>
+<li>/**/</li>
+<li>//<br>less有以上两种注释方式，第一种在编译为css之后会保留，第二种就是真的注释了，在编译为css之后不会保留<br>ps：这个特指编译出来的是普通版本，如果选择编译出压缩版本，则无论哪种方式书写的注释都不会出现在css文件中</li>
+</ul>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>LESS中使用@作为变量的关键字,”:”作为赋值表达式,例如:<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@myWidth:</span><span class="number">300px</span>; <span class="comment">// 这里声明了@myWidth这个变量，并且赋值为300px</span></span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line"><span class="attribute">width</span>:<span class="variable">@myWidth</span>; <span class="comment">// 直接使用这个变量</span></span><br><span class="line"><span class="attribute">height</span>: <span class="variable">@myWidth</span>;</span><br><span class="line"><span class="attribute">border</span>:solid <span class="number">1px</span> red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出为：(compress)</span></span><br><span class="line"><span class="selector-tag">div</span>&#123;<span class="attribute">width</span>:<span class="number">300px</span>;<span class="attribute">height</span>:<span class="number">300px</span>;<span class="attribute">border</span>:solid <span class="number">1px</span> <span class="number">#f00</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="混合"><a href="#混合" class="headerlink" title="混合"></a>混合</h2><p>在LESS中可以id和class选择器的样式拿来复用。</p>
+<h3 id="混合的基本用法"><a href="#混合的基本用法" class="headerlink" title="混合的基本用法"></a>混合的基本用法</h3><p>例如：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@myWidth:</span><span class="number">300px</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.div1</span>&#123;</span><br><span class="line"><span class="attribute">width</span>:<span class="variable">@myWidth</span>;</span><br><span class="line"><span class="attribute">height</span>: <span class="variable">@myWidth</span>;</span><br><span class="line"><span class="attribute">border</span>:solid <span class="number">1px</span> red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.newDiv</span>&#123;</span><br><span class="line"><span class="selector-class">.div1</span>; <span class="comment">// 在这里可以通过混合来复用.div1的样式</span></span><br><span class="line"><span class="attribute">background-color</span>:blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>但是有几点要注意：</p>
+<ul>
+<li>编译器并不会override</li>
+<li>不支持html标签标记的复用<br>eg:<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@myWidth:</span><span class="number">300px</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.div1</span>&#123;</span><br><span class="line"><span class="attribute">width</span>:<span class="variable">@myWidth</span>;</span><br><span class="line"><span class="attribute">height</span>: <span class="variable">@myWidth</span>;</span><br><span class="line"><span class="attribute">border</span>:solid <span class="number">1px</span> red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.newDiv</span>&#123;</span><br><span class="line"><span class="selector-class">.div1</span>;</span><br><span class="line"><span class="attribute">width</span>:<span class="number">500px</span>;</span><br><span class="line"><span class="attribute">background-color</span>:blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>上面这种写法，希望是可以将width变为500px,但是实际效果是:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.div1</span> &#123;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line"><span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line"><span class="attribute">border</span>: solid <span class="number">1px</span> red;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.newDiv</span> &#123;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line"><span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line"><span class="attribute">border</span>: solid <span class="number">1px</span> red;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">500px</span>;</span><br><span class="line"><span class="attribute">background-color</span>: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>也就是说LESS只会简单的混合。<br>另外,如果尝试混合html标签标识的样式会报错：“ParseError: Unrecognised input”。eg:<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@myWidth:</span><span class="number">300px</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line"><span class="attribute">width</span>:<span class="variable">@myWidth</span>;</span><br><span class="line"><span class="attribute">height</span>: <span class="variable">@myWidth</span>;</span><br><span class="line"><span class="attribute">border</span>:solid <span class="number">1px</span> red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.newDiv</span>&#123;</span><br><span class="line"><span class="selector-tag">div</span>;</span><br><span class="line"><span class="selector-tag">width</span><span class="selector-pseudo">:500px</span>;</span><br><span class="line"><span class="selector-tag">background-color</span><span class="selector-pseudo">:blue</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="带参数的混合"><a href="#带参数的混合" class="headerlink" title="带参数的混合"></a>带参数的混合</h3><p>在混合的时候，还可以带上参数：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.border</span>(<span class="variable">@color</span>)&#123;</span><br><span class="line"><span class="attribute">border</span>:solid <span class="variable">@color</span> <span class="number">2px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.border_y</span>&#123;</span><br><span class="line"><span class="selector-class">.border</span>(yellow);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//输出</span></span><br><span class="line"><span class="selector-class">.border_y</span> &#123;</span><br><span class="line"><span class="attribute">border</span>: solid <span class="number">#ffff00</span> <span class="number">2px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>同时，也可以为参数带上默认值：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.border</span>(<span class="variable">@color</span>:red)&#123;</span><br><span class="line"><span class="attribute">border</span>:solid <span class="variable">@color</span> <span class="number">2px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.border_y</span>&#123;</span><br><span class="line"><span class="selector-class">.border</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 输出：</span></span><br><span class="line"><span class="selector-class">.border_y</span> &#123;</span><br><span class="line"><span class="attribute">border</span>: solid <span class="number">#ff0000</span> <span class="number">2px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>带参数的混合有以下几点需要注意以下：</p>
+<ul>
+<li>带参数的样式是不会编译进css文件的（即使设置了默认值参数值也不行）</li>
+<li>为了和不带参数的样式区分开，最好在混合带参数的样式时，在后面加上括号–即使使用默认值的情况下也这么做。</li>
+</ul>
+<h3 id="混合的用途"><a href="#混合的用途" class="headerlink" title="混合的用途"></a>混合的用途</h3><p>目前想到比较好的场景是在写CSS的兼容性的时候:<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.bor-radius</span>(<span class="variable">@rWidth</span>)&#123;</span><br><span class="line"><span class="attribute">-webkit-border-radius</span>: <span class="variable">@rWidth</span>;</span><br><span class="line"><span class="attribute">-moz-border-radius</span>: <span class="variable">@rWidth</span>;</span><br><span class="line"><span class="attribute">border-radius</span>: <span class="variable">@rWidth</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.r3</span>&#123;</span><br><span class="line"><span class="selector-class">.bor-radius</span>(<span class="number">3px</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出:</span></span><br><span class="line"><span class="selector-class">.r3</span> &#123;</span><br><span class="line"><span class="attribute">-webkit-border-radius</span>: <span class="number">3px</span>;</span><br><span class="line"><span class="attribute">-moz-border-radius</span>: <span class="number">3px</span>;</span><br><span class="line"><span class="attribute">border-radius</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="匹配模式"><a href="#匹配模式" class="headerlink" title="匹配模式"></a>匹配模式</h2><p>匹配模式有点类似于C#里面枚举的感觉？以css画三角来说明：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">.triangle(top,@w:5px,@color:#ccc)&#123;</span><br><span class="line">border-width:@w;</span><br><span class="line">border-color:transparent transparent @color transparent;</span><br><span class="line">border-style: dashed dashed solid dashed;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.triangle(right,@w:5px,@color:#ccc)&#123;</span><br><span class="line">border-width:@w;</span><br><span class="line">border-color: transparent transparent transparent @color;</span><br><span class="line">border-style:dashed dashed dashed solid ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.triangle(bottom,@w:5px,@color:#ccc)&#123;</span><br><span class="line">border-width:@w;</span><br><span class="line">border-color:@color transparent transparent transparent;</span><br><span class="line">border-style:solid dashed dashed dashed;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.triangle(left,@w:5px,@color:#ccc)&#123;</span><br><span class="line">border-width:@w;</span><br><span class="line">border-color: transparent @color transparent transparent;</span><br><span class="line">border-style:dashed solid  dashed dashed;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.triangle(@_,@w:5px,@color:#ccc)&#123;</span><br><span class="line">width:0;</span><br><span class="line">height: 0;</span><br><span class="line">overflow: hidden;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.sj&#123;</span><br><span class="line">.triangle(left);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 输出：</span><br><span class="line">.sj &#123;</span><br><span class="line">border-width: 5px;</span><br><span class="line">border-color: transparent #cccccc transparent transparent;</span><br><span class="line">border-style: dashed solid  dashed dashed;</span><br><span class="line">width: 0;</span><br><span class="line">height: 0;</span><br><span class="line">overflow: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>可以看到上面有.triangle(top…),.triangle(left…),.triangle(right…),.triangle(bottom…)表示三角尖的四个方向，同时还有一个.triangle(@<em>,…),这个表示不管用的是.triangle的哪一种，都要要加上这个样式。<br>因此在.sj中，括号中写哪个方向，就会用哪个方向的样式，同时加上.triangle(@</em>)这个class的样式</p>
+<h2 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h2><p>在LESS中可以对变量进行”+ - * /“运算，例如：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@my:20%;</span><br><span class="line">@my2:200px;</span><br><span class="line"></span><br><span class="line">.d1&#123;</span><br><span class="line">width:@my/2;</span><br><span class="line">height: @my2+20;</span><br><span class="line">&#125;</span><br><span class="line">// 输出:</span><br><span class="line">.d1 &#123;</span><br><span class="line">width: 10%;</span><br><span class="line">height: 220px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="嵌套规则"><a href="#嵌套规则" class="headerlink" title="嵌套规则"></a>嵌套规则</h2><p>LESS还有个很厉害的地方就是可以像写html代码一样嵌套：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>可以看到，html的嵌套就是这样ul里面嵌套li,li里面再嵌套a标签<br>那么LESS的嵌套呢？eg:<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.list</span>&#123;</span><br><span class="line">	<span class="attribute">width</span>:<span class="number">200px</span>;</span><br><span class="line">	<span class="attribute">margin</span>:<span class="number">0</span> auto;</span><br><span class="line">	<span class="attribute">padding</span>:<span class="number">0</span>;</span><br><span class="line">	<span class="attribute">list-style</span>: none;</span><br><span class="line">	<span class="selector-tag">li</span>&#123;</span><br><span class="line">		<span class="attribute">height</span>: <span class="number">30px</span>;</span><br><span class="line">		<span class="attribute">line-height</span>: <span class="number">30px</span>;</span><br><span class="line">		<span class="attribute">background-color</span>: pink;</span><br><span class="line">		<span class="attribute">margin-bottom</span>: <span class="number">5px</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-tag">a</span>&#123;</span><br><span class="line">		<span class="attribute">float</span>: left;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-tag">span</span>&#123;</span><br><span class="line">		<span class="attribute">float</span>: right;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 可以看到，li,a,span嵌套在.list里面，输出如下：</span></span><br><span class="line"><span class="selector-class">.list</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">list-style</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.list</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">30px</span>;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">30px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: pink;</span><br><span class="line">  <span class="attribute">margin-bottom</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.list</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.list</span> <span class="selector-tag">span</span> &#123;</span><br><span class="line">  <span class="attribute">float</span>: right;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>特别方便有木有？</p>
+<h2 id="argument变量"><a href="#argument变量" class="headerlink" title="@argument变量"></a>@argument变量</h2><p>@argument这个用的不是特别多，用法如下：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.br</span>(<span class="variable">@w</span>:<span class="number">30px</span>,<span class="variable">@c</span>:red,<span class="variable">@sytle</span>:solid)&#123;</span><br><span class="line">	<span class="attribute">border</span>:<span class="variable">@arguments</span>;<span class="comment">// 当在这里需要用的所有的三个参数，又懒得三个都在这里再写一遍的时候，就使用@arguments变量</span></span><br><span class="line">	<span class="attribute">height</span>:<span class="variable">@w</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.bor</span>&#123;</span><br><span class="line">	<span class="selector-class">.br</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.bor1</span>&#123;</span><br><span class="line">	<span class="selector-class">.br</span>(<span class="number">40px</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出如下：</span></span><br><span class="line"><span class="selector-class">.bor</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">30px</span> <span class="number">#ff0000</span> solid;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">30px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.bor1</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">40px</span> <span class="number">#ff0000</span> solid;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">40px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="避免编译、-important"><a href="#避免编译、-important" class="headerlink" title="避免编译、!important"></a>避免编译、!important</h2><p>有时候，出于各种原因，不希望LESS编译器编译某些内容，这时候只需要把不希望编译的内容用单引号或者双引号引起来，再在前面加上~即可<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.test</span>&#123;</span><br><span class="line">	<span class="attribute">width</span>:<span class="string">~"(300px-20px)"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出</span></span><br><span class="line"><span class="selector-class">.test</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: (<span class="number">300px</span>-<span class="number">20px</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>同时，也可以像正常写CSS那样写!important</p>
+
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2016/10/10/LESS-小记/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"liuzhuang"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<script>
+
+(function(){
+var bp = document.createElement('script');
+var curProtocol = window.location.protocol.split(':')[0];
+if (curProtocol === 'https') {
+bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+}
+else {
+bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+}
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Hits
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      hello firebase | MARVEL 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="刘荘">
+    
+    
+
+    <meta name="description" content="前言由于多说即将关闭，要给博客找个新的评论工具了，没有找到特别喜欢的，所以打算自己做一个算了。于是，想到了为数不多的被孤🐩(google)收购之后没有改名FireBase（魂淡，虽然名字没有改，但是域名改成google了啊，你懂的），去年还没有自己搭VPS科学上网，蓝灯侠出专业版之后也极其不给力，所以虽然关注过一段时间之后就淡忘了。今年，呵呵，我有梯子我怕谁？ 实战关于firebase的介绍就不">
+<meta name="keywords" content="firebase realtime database google">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hello firebase | MARVEL">
+<meta property="og:url" content="http://liuz.top/2017/04/17/hello-firebase/index.html">
+<meta property="og:site_name" content="MARVEL">
+<meta property="og:description" content="前言由于多说即将关闭，要给博客找个新的评论工具了，没有找到特别喜欢的，所以打算自己做一个算了。于是，想到了为数不多的被孤🐩(google)收购之后没有改名FireBase（魂淡，虽然名字没有改，但是域名改成google了啊，你懂的），去年还没有自己搭VPS科学上网，蓝灯侠出专业版之后也极其不给力，所以虽然关注过一段时间之后就淡忘了。今年，呵呵，我有梯子我怕谁？ 实战关于firebase的介绍就不">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://liuz.top/2017/04/17/hello-firebase/duoshuo.png">
+<meta property="og:image" content="http://liuz.top/2017/04/17/hello-firebase/firebase.png">
+<meta property="og:image" content="http://liuz.top/2017/04/17/hello-firebase/firebase1.png">
+<meta property="og:image" content="http://liuz.top/2017/04/17/hello-firebase/firebase2.png">
+<meta property="og:image" content="http://liuz.top/2017/04/17/hello-firebase/realtime%20database2.gif">
+<meta property="og:updated_time" content="2017-04-17T14:55:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hello firebase | MARVEL">
+<meta name="twitter:description" content="前言由于多说即将关闭，要给博客找个新的评论工具了，没有找到特别喜欢的，所以打算自己做一个算了。于是，想到了为数不多的被孤🐩(google)收购之后没有改名FireBase（魂淡，虽然名字没有改，但是域名改成google了啊，你懂的），去年还没有自己搭VPS科学上网，蓝灯侠出专业版之后也极其不给力，所以虽然关注过一段时间之后就淡忘了。今年，呵呵，我有梯子我怕谁？ 实战关于firebase的介绍就不">
+<meta name="twitter:image" content="http://liuz.top/2017/04/17/hello-firebase/duoshuo.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">MARVEL</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          大叔笔记
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="http://liuz.top" title="" class="">主页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/nicky-lau" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">hello firebase</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-04-17" class="post-meta__date date">2017-04-17</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/firebase-realtime-database-google/">firebase realtime database google</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>由于多说即将关闭，要给博客找个新的评论工具了，没有找到特别喜欢的，所以打算自己做一个算了。<br><img src="duoshuo.png" alt="duoshuo"><br>于是，想到了为数不多的被孤🐩(google)收购之后没有改名FireBase（魂淡，虽然名字没有改，但是域名改成google了啊，你懂的），去年还没有自己搭VPS科学上网，蓝灯侠出专业版之后也极其不给力，所以虽然关注过一段时间之后就淡忘了。今年，呵呵，我有梯子我怕谁？</p>
+<h1 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h1><p>关于firebase的介绍就不多说了，文案写的也是没谁了，开发一个app只需要30秒之类的，不过确实30分钟可以搞个聊天室出来了。<br>跟着官方文档一路下一步完成注册，就来到到Console首页，会问你是想将Firebase应用在什么地方：1.ios 2.android 3.web app。选择web app后将会把使用firebase所需要写的代码的30%贴给你(ノへ￣、)捂脸<br><img src="firebase.png" alt="firebase"><br>当然了，如果是使用module化JavaScript，不能这样写。不过也差不大多。</p>
+<p>接下来利用上图给出的config实例化database:<br><img src="firebase1.png" alt="init"><br>这里用到了vuefire.js（在vue实例中增加了firebase属性,用法和vue原生的data,props一样)<br>然后也有CRUD这些方法:<br><img src="firebase2.png" alt="method"><br>这样就可以实现基本功能了。</p>
+<h1 id="realtime-database"><a href="#realtime-database" class="headerlink" title="realtime database"></a>realtime database</h1><p>来看张动图感受下毫秒级的实时数据库同步吧<br><img src="realtime database2.gif" alt="gif"></p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>猜测firebase是使用Websocket来实现realtime database效果的？<br>正如前面所说，使用Vue + FireBase 仅用30分钟就可以搭建一个聊天室。<br>打算接下来有空搭建一个玩玩。</p>
+
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2017/04/17/hello-firebase/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"liuzhuang"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<script>
+
+(function(){
+var bp = document.createElement('script');
+var curProtocol = window.location.protocol.split(':')[0];
+if (curProtocol === 'https') {
+bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+}
+else {
+bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+}
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Hits
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

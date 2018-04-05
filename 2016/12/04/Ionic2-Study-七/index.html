@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Ionic2 Study(七) | MARVEL 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="刘荘">
+    
+    
+
+    <meta name="description" content="前言已经学了Tabs,Tab,Button,Input,组件，现在就可以做一个简单的Login页面了 新增一个Tab页新增一个tab页需要做以下几步操作：  增加&amp;lt;ion-tab&amp;gt;&amp;lt;/ion-tab&amp;gt;标签 1&amp;lt;ion-tab [root]=&quot;tabLogin&quot; tabTitle=&quot;Login&quot; tabIcon=&quot;person&quot; &amp;gt;&amp;lt;/ion-tab&amp;gt;">
+<meta name="keywords" content="Ionic2 Angular2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ionic2 Study(七) | MARVEL">
+<meta property="og:url" content="http://liuz.top/2016/12/04/Ionic2-Study-七/index.html">
+<meta property="og:site_name" content="MARVEL">
+<meta property="og:description" content="前言已经学了Tabs,Tab,Button,Input,组件，现在就可以做一个简单的Login页面了 新增一个Tab页新增一个tab页需要做以下几步操作：  增加&amp;lt;ion-tab&amp;gt;&amp;lt;/ion-tab&amp;gt;标签 1&amp;lt;ion-tab [root]=&quot;tabLogin&quot; tabTitle=&quot;Login&quot; tabIcon=&quot;person&quot; &amp;gt;&amp;lt;/ion-tab&amp;gt;">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2016-12-05T14:59:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ionic2 Study(七) | MARVEL">
+<meta name="twitter:description" content="前言已经学了Tabs,Tab,Button,Input,组件，现在就可以做一个简单的Login页面了 新增一个Tab页新增一个tab页需要做以下几步操作：  增加&amp;lt;ion-tab&amp;gt;&amp;lt;/ion-tab&amp;gt;标签 1&amp;lt;ion-tab [root]=&quot;tabLogin&quot; tabTitle=&quot;Login&quot; tabIcon=&quot;person&quot; &amp;gt;&amp;lt;/ion-tab&amp;gt;">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">MARVEL</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          大叔笔记
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="http://liuz.top" title="" class="">主页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/nicky-lau" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Ionic2 Study(七)</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-12-04" class="post-meta__date date">2016-12-04</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/Ionic2-Angular2/">Ionic2 Angular2</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>已经学了Tabs,Tab,Button,Input,组件，现在就可以做一个简单的Login页面了</p>
+<h1 id="新增一个Tab页"><a href="#新增一个Tab页" class="headerlink" title="新增一个Tab页"></a>新增一个Tab页</h1><p>新增一个tab页需要做以下几步操作：</p>
+<ol>
+<li><p>增加<code>&lt;ion-tab&gt;&lt;/ion-tab&gt;</code>标签</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ion-tab</span> [<span class="attr">root</span>]=<span class="string">"tabLogin"</span> <span class="attr">tabTitle</span>=<span class="string">"Login"</span> <span class="attr">tabIcon</span>=<span class="string">"person"</span> &gt;</span><span class="tag">&lt;/<span class="name">ion-tab</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在pages文件夹下分别增加<code>login.html</code>,<code>login.ts</code>和<code>login.scss</code>三个文件</p>
+</li>
+<li><p>在<code>login.ts</code>页面中写入以下代码:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; NavController &#125; <span class="keyword">from</span> <span class="string">'ionic-angular'</span>;</span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">	selector:<span class="string">'login-page'</span>,</span><br><span class="line">	templateUrl:<span class="string">'login.html'</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> LoginPage &#123;</span><br><span class="line">	<span class="keyword">constructor</span>(<span class="params"><span class="keyword">public</span> NavCtrl:NavController</span>)&#123;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在app/app.module.ts中做以下修改<br>先在头部引入login</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; LoginPage &#125; <span class="keyword">from</span> <span class="string">'../pages/login/login'</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>在<code>declarations</code>中增加<code>LoginPage</code>,同时在<code>entryComponents</code>中增加<code>entryComponents</code></p>
+<ol start="5">
+<li>在tabs.ts中做以下修改:<br>在头部导入login<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; LoginPage &#125; <span class="keyword">from</span> <span class="string">'../login/login'</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>在<code>TabsPage</code>中增加：<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tabLogin:<span class="built_in">any</span> = LoginPage;</span><br></pre></td></tr></table></figure></p>
+<ol start="6">
+<li>现在login这个tab页就增加好了 </li>
+</ol>
+<h1 id="login的前台页面"><a href="#login的前台页面" class="headerlink" title="login的前台页面"></a>login的前台页面</h1><p>代码如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ion-header</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ion-navbar</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">ion-title</span>&gt;</span>Login In Page<span class="tag">&lt;/<span class="name">ion-title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">ion-navbar</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ion-header</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ion-content</span> <span class="attr">padding</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ion-list</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">ion-item</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">ion-label</span> <span class="attr">floating</span> <span class="attr">color</span>=<span class="string">"danger"</span>&gt;</span>UserName<span class="tag">&lt;/<span class="name">ion-label</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">ion-input</span> <span class="attr">type</span>=<span class="string">"text"</span> [(<span class="attr">ngModel</span>)]=<span class="string">"userInfo.UserName"</span> <span class="attr">clearInput</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-input</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">ion-item</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">ion-item</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">ion-label</span> <span class="attr">floating</span> <span class="attr">color</span>=<span class="string">"danger"</span>&gt;</span>Password<span class="tag">&lt;/<span class="name">ion-label</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">ion-input</span> <span class="attr">type</span>=<span class="string">"password"</span> [(<span class="attr">ngModel</span>)]=<span class="string">"userInfo.PassWord"</span> <span class="attr">clearInput</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-input</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">ion-item</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">ion-item</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">button</span> <span class="attr">ion-button</span> <span class="attr">color</span>=<span class="string">"danger"</span> (<span class="attr">click</span>)=<span class="string">"btnClick()"</span> <span class="attr">block</span>&gt;</span>Login<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">ion-item</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">ion-list</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ion-content</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>上述代码中的<code>(click)</code>和<code>[(ngModel)]</code>均为angular2的使用方式。</p>
+<h1 id="login页面的后台代码"><a href="#login页面的后台代码" class="headerlink" title="login页面的后台代码"></a>login页面的后台代码</h1><p>代码如下：<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; NavController,LoadingController &#125; <span class="keyword">from</span> <span class="string">'ionic-angular'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; HomePage &#125; <span class="keyword">from</span> <span class="string">'../home/home'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">	selector:<span class="string">'login-page'</span>,</span><br><span class="line">	templateUrl:<span class="string">'login.html'</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> LoginPage &#123;</span><br><span class="line">	<span class="keyword">constructor</span>(<span class="params"><span class="keyword">public</span> NavCtrl:NavController,<span class="keyword">public</span> LoadCtrl:LoadingController</span>)&#123;</span><br><span class="line">	&#125;</span><br><span class="line">	userInfo:UserInfo=&#123;</span><br><span class="line">		UserName:<span class="string">'liuzhuang'</span>,</span><br><span class="line">		PassWord:<span class="string">'111111'</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	loadDefault()&#123;</span><br><span class="line">		<span class="keyword">let</span> loading = <span class="keyword">this</span>.LoadCtrl.create(&#123;</span><br><span class="line">			content:<span class="string">"loading..."</span>,<span class="comment">//loading框显示的内容</span></span><br><span class="line">			dismissOnPageChange:<span class="literal">true</span>, <span class="comment">// 是否在切换页面之后关闭loading框</span></span><br><span class="line">			showBackdrop:<span class="literal">false</span> 是否显示遮罩层</span><br><span class="line">		&#125;);</span><br><span class="line">		loading.present();<span class="comment">// 弹出load框</span></span><br><span class="line">		setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">			<span class="keyword">this</span>.NavCtrl.push(HomePage);<span class="comment">//跳转页面</span></span><br><span class="line">		&#125;,<span class="number">1000</span>);</span><br><span class="line">		setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">			loading.dismiss();</span><br><span class="line">		&#125;,<span class="number">3000</span>);</span><br><span class="line">		<span class="comment">// 上面这段代码先是在按下按钮1000毫秒之后挑战页面，再在3000毫秒之后关闭loading框</span></span><br><span class="line">		<span class="comment">// 但是因为设置了切换页面之后关闭loading框，因此在切换页面后则关闭loading框</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	loadCustom()&#123;</span><br><span class="line">		<span class="keyword">let</span> loading = <span class="keyword">this</span>.LoadCtrl.create(&#123;</span><br><span class="line">			spinner:<span class="string">"dots"</span>,<span class="comment">// apinner既是loading框上的图标</span></span><br><span class="line">			<span class="comment">// content:`&lt;div class="custom-spinner-container"&gt;</span></span><br><span class="line">			<span class="comment">// &lt;div class="custom-spinner-box"&gt;&lt;/div&gt;</span></span><br><span class="line">			<span class="comment">// &lt;/div&gt;`,</span></span><br><span class="line">			duration:<span class="number">5000</span> <span class="comment">// loading框持续的时间，默认在触发DidDismiss之后关闭，除非设置了该属性</span></span><br><span class="line">		&#125;);</span><br><span class="line">		loading.onDidDismiss(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">			<span class="built_in">console</span>.log(<span class="string">"Dismissed loading"</span>);</span><br><span class="line">		&#125;);</span><br><span class="line">		loading.present();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	loadText()&#123;</span><br><span class="line">		<span class="keyword">let</span> loading = <span class="keyword">this</span>.LoadCtrl.create(&#123;</span><br><span class="line">			spinner:<span class="string">"hide"</span>,</span><br><span class="line">			content:<span class="string">"loading"</span>,</span><br><span class="line">			duration:<span class="number">3000</span></span><br><span class="line">		&#125;);</span><br><span class="line">		loading.present();</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	btnClick()&#123;</span><br><span class="line">		<span class="keyword">this</span>.loadDefault();</span><br><span class="line">		<span class="comment">// this.loadText();</span></span><br><span class="line">		<span class="comment">// this.loadCustom();</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> UserInfo&#123;</span><br><span class="line">	UserName:<span class="built_in">string</span>;</span><br><span class="line">	PassWord:<span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上述代码主要有以下几个组成部分：</p>
+<ol>
+<li>声明了<code>UserInfo</code>类</li>
+<li>声明了<code>UserInfo</code>类的实例<code>userInfo</code>，并赋予初值，同时实现和前台两个input双向数据绑定</li>
+<li>初始化loading controller</li>
+</ol>
+<h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><p><a href="https://github.com/nicky-lau/Ionic2-demo" target="_blank" rel="noopener">地址</a></p>
+
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2016/12/04/Ionic2-Study-七/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"liuzhuang"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<script>
+
+(function(){
+var bp = document.createElement('script');
+var curProtocol = window.location.protocol.split(':')[0];
+if (curProtocol === 'https') {
+bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+}
+else {
+bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+}
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Hits
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Knockout.js学习(五) | MARVEL 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="刘荘">
+    
+    
+
+    <meta name="description" content="前言 All JavaScript libraries are legally required to offer a “task list” example (note: that’s a joke) so here’s one. Take a moment to play with it - add and remove some tasks - and read through the co">
+<meta name="keywords" content="javascript knockout mvm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Knockout.js学习(五) | MARVEL">
+<meta property="og:url" content="http://liuz.top/2016/10/07/Knockoutjs-5/index.html">
+<meta property="og:site_name" content="MARVEL">
+<meta property="og:description" content="前言 All JavaScript libraries are legally required to offer a “task list” example (note: that’s a joke) so here’s one. Take a moment to play with it - add and remove some tasks - and read through the co">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2016-10-07T14:11:59.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Knockout.js学习(五) | MARVEL">
+<meta name="twitter:description" content="前言 All JavaScript libraries are legally required to offer a “task list” example (note: that’s a joke) so here’s one. Take a moment to play with it - add and remove some tasks - and read through the co">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">MARVEL</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          大叔笔记
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="http://liuz.top" title="" class="">主页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/nicky-lau" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Knockout.js学习(五)</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-10-07" class="post-meta__date date">2016-10-07</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/javascript-knockout-mvm/">javascript knockout mvm</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
+<p>All JavaScript libraries are legally required to offer a “task list” example (note: that’s a joke) so here’s one. Take a moment to play with it - add and remove some tasks - and read through the code to understand how it works. It’s pretty basic and predictable. Next, you’ll load some initial task list from the server, and then see two different ways to save modified data back to the server</p>
+</blockquote>
+<p>官网说，所有的js库都会有一个task List的eg，（我怎么不知道这个梗？）<br>于是，我们也以task list来结束ko的基础学习。</p>
+<h2 id="Loading-and-Saving-Data"><a href="#Loading-and-Saving-Data" class="headerlink" title="Loading and Saving Data"></a>Loading and Saving Data</h2><p>ko是一个很纯粹的client-side的js库，因此，它可以很灵活的和很多服务器端的语言相结合，只要服务器端可以接受/发送JSON数据，那么，就可以和ko结合使用。</p>
+<h3 id="Loading-Data-from-Server"><a href="#Loading-Data-from-Server" class="headerlink" title="Loading Data from Server"></a>Loading Data from Server</h3><p>和其他的js类库没有什么区别，使用$.ajax(),$.getJSON()方法均可<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">self.tasks = ko.observableArray([]);</span><br><span class="line">$.getJSON("/tasks", function(allData) &#123;</span><br><span class="line"> 	var mappedTasks = $.map(allData, function(item) &#123; return new Task(item) &#125;);</span><br><span class="line"> 	self.tasks(mappedTasks);</span><br><span class="line"> &#125;);</span><br></pre></td></tr></table></figure></p>
+<h3 id="Saving-Data-to-Server"><a href="#Saving-Data-to-Server" class="headerlink" title="Saving Data to Server"></a>Saving Data to Server</h3><p>同load数据类似，有两种方式，一种是通过form表单提交：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/tasks/saveform"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"tasks"</span> <span class="attr">data-bind</span>=<span class="string">"value: ko.toJSON(tasks)"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span>Save<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>一种是通过$.ajax:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">self.save = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	$.ajax(<span class="string">"/tasks"</span>, &#123;</span><br><span class="line">		data: ko.toJSON(&#123; <span class="attr">tasks</span>: self.tasks &#125;),</span><br><span class="line">		type: <span class="string">"post"</span>, <span class="attr">contentType</span>: <span class="string">"application/json"</span>,</span><br><span class="line">		success: <span class="function"><span class="keyword">function</span>(<span class="params">result</span>) </span>&#123; alert(result) &#125;</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h3 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h3><p>唯一有一点特别的地方，就是ko提供了destroy方法，以便将数据提交回服务器的时候，很清楚的知道这题数据是要删除的，而不需要服务器端再去判断这条数据到底是update，还是insert还是delete。<br>这样的话稍微修改一下代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 计算还有多少任务没有完成时，不再统计删除的</span></span><br><span class="line"> self.incompleteTasks = ko.computed(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    	<span class="comment">// return ko.utils.arrayFilter(self.tasks(), function(task) &#123; return !task.isDone() &#125;);</span></span><br><span class="line">    	<span class="keyword">return</span> ko.utils.arrayFilter(self.tasks(), <span class="function"><span class="keyword">function</span>(<span class="params">task</span>) </span>&#123; <span class="keyword">return</span> !task.isDone() &amp;&amp; !task._destroy &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line"> <span class="comment">// 不再使用remove而是使用destroy</span></span><br><span class="line"> <span class="comment">// self.removeTask = function(task) &#123; self.tasks.remove(task) &#125;;</span></span><br><span class="line">    self.removeTask = <span class="function"><span class="keyword">function</span>(<span class="params">task</span>) </span>&#123; self.tasks.destroy(task) &#125;;</span><br></pre></td></tr></table></figure></p>
+<p>另外，使用destroy删除的对象，会有一个“_destroy”属性，值为true。<br>这样，在客户端和服务器端均可根据这个属性很方便的判断了。</p>
+<p>国际惯例：<a href="https://github.com/nicky-lau/Knockoutjs/tree/master/LoadingAndSavingData" target="_blank" rel="noopener">源码</a></p>
+
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2016/10/07/Knockoutjs-5/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"liuzhuang"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<script>
+
+(function(){
+var bp = document.createElement('script');
+var curProtocol = window.location.protocol.split(':')[0];
+if (curProtocol === 'https') {
+bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+}
+else {
+bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+}
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Hits
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

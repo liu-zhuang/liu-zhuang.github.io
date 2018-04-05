@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      搬瓦工Centos6 安装Nodejs | MARVEL 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="刘荘">
+    
+    
+
+    <meta name="description" content="前言买了个便宜的VPS–搬瓦工玩玩，只能装开源的OS，因此选了Centos 6。想再配个Node.js一起玩玩，于是开始上网查了。看到很多人都说安装编译版会遇到很多各种各样的坑，懒得折腾，于是找了最简单的二进制安装方法。 下载进入Nodejs下载主页找到Linux Binaries (x86/x64)，它的右边就是32和64位的下载地址，找到自己os对应位数的链接，右键复制地址。我这里获取到的是：">
+<meta name="keywords" content="搬瓦工 BandwagonHost Centos node.js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搬瓦工Centos6 安装Nodejs | MARVEL">
+<meta property="og:url" content="http://liuz.top/2017/03/13/搬瓦工Centos6-安装Nodejs/index.html">
+<meta property="og:site_name" content="MARVEL">
+<meta property="og:description" content="前言买了个便宜的VPS–搬瓦工玩玩，只能装开源的OS，因此选了Centos 6。想再配个Node.js一起玩玩，于是开始上网查了。看到很多人都说安装编译版会遇到很多各种各样的坑，懒得折腾，于是找了最简单的二进制安装方法。 下载进入Nodejs下载主页找到Linux Binaries (x86/x64)，它的右边就是32和64位的下载地址，找到自己os对应位数的链接，右键复制地址。我这里获取到的是：">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-03-14T12:21:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="搬瓦工Centos6 安装Nodejs | MARVEL">
+<meta name="twitter:description" content="前言买了个便宜的VPS–搬瓦工玩玩，只能装开源的OS，因此选了Centos 6。想再配个Node.js一起玩玩，于是开始上网查了。看到很多人都说安装编译版会遇到很多各种各样的坑，懒得折腾，于是找了最简单的二进制安装方法。 下载进入Nodejs下载主页找到Linux Binaries (x86/x64)，它的右边就是32和64位的下载地址，找到自己os对应位数的链接，右键复制地址。我这里获取到的是：">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">MARVEL</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          大叔笔记
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="http://liuz.top" title="" class="">主页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/nicky-lau" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">搬瓦工Centos6 安装Nodejs</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-03-13" class="post-meta__date date">2017-03-13</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/搬瓦工-BandwagonHost-Centos-node-js/">搬瓦工 BandwagonHost Centos node.js</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>买了个便宜的VPS–搬瓦工玩玩，只能装开源的OS，因此选了Centos 6。<br>想再配个Node.js一起玩玩，于是开始上网查了。看到很多人都说安装编译版会遇到很多各种各样的坑，懒得折腾，于是找了最简单的二进制安装方法。</p>
+<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>进入Nodejs<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">下载主页</a><br>找到Linux Binaries (x86/x64)，它的右边就是32和64位的下载地址，找到自己os对应位数的链接，右键复制地址。<br>我这里获取到的是：<a href="https://nodejs.org/dist/v6.10.0/node-v6.10.0-linux-x64.tar.xz" target="_blank" rel="noopener">https://nodejs.org/dist/v6.10.0/node-v6.10.0-linux-x64.tar.xz</a><br>然后在命令行输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://nodejs.org/dist/v6.10.0/node-v6.10.0-linux-x64.tar.xz</span><br></pre></td></tr></table></figure></p>
+<p>即可下载至当前目录</p>
+<h1 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h1><p>由于下载下来的是.tar.xz文件，因此要进行两步解压<br>使用xz -d xxx.tar.xz 将 xxx.tar.xz解压成 xxx.tar<br>再用tar -xvf xxx.tar解压:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xz -d node-v6.10.0-linux-x64.tar.xz</span><br><span class="line">tar -xvf node-v6.10.0-linux-x64.tar</span><br></pre></td></tr></table></figure></p>
+<h1 id="移动目录"><a href="#移动目录" class="headerlink" title="移动目录"></a>移动目录</h1><p>使用以下命令将其移至<code>opt</code>目录下，并改名为<code>node</code>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv node-v6.10.0-linux-x64 /opt/node</span><br></pre></td></tr></table></figure></p>
+<h1 id="全局变量链接"><a href="#全局变量链接" class="headerlink" title="全局变量链接"></a>全局变量链接</h1><p>如果不在全局变量中进行配置，<code>node</code>命令将只能在<code>opt/node/bin</code>下使用，因此需要使用以下命令将<code>node/bin</code>和全局变量链接起来：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ln -s /opt/node/bin/node /usr/local/bin/node</span><br><span class="line">ln -s /opt/node/bin/npm /usr/local/bin/npm</span><br></pre></td></tr></table></figure></p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>至此，Centos 6下的Nodejs安装就完成了。<br>可以在任意目录下使用<code>node -v</code>来测试是否安装/配置成功。</p>
+
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2017/03/13/搬瓦工Centos6-安装Nodejs/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"liuzhuang"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<script>
+
+(function(){
+var bp = document.createElement('script');
+var curProtocol = window.location.protocol.split(':')[0];
+if (curProtocol === 'https') {
+bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+}
+else {
+bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+}
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Hits
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

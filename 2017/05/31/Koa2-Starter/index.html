@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Koa2 Starter | MARVEL 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="刘荘">
+    
+    
+
+    <meta name="description" content="Koa2入门本来是想Express入门的，但是既然都是要学，干嘛不学最新的呢？其实我想说，我本来只是想学个小程序开发，现在已经陆陆续续开了好多坑了。。本文参考廖雪峰教程 Async最新的Koa2已经使用async来作为中间件(middleware)了，具体用法这里不赘述，可以参考阮一峰老师的Es6教程之前使用的Generator函数 使用async时，要求node的版本大于等于7.6.0因此如果发">
+<meta name="keywords" content="koa koa2 node javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Koa2 Starter | MARVEL">
+<meta property="og:url" content="http://liuz.top/2017/05/31/Koa2-Starter/index.html">
+<meta property="og:site_name" content="MARVEL">
+<meta property="og:description" content="Koa2入门本来是想Express入门的，但是既然都是要学，干嘛不学最新的呢？其实我想说，我本来只是想学个小程序开发，现在已经陆陆续续开了好多坑了。。本文参考廖雪峰教程 Async最新的Koa2已经使用async来作为中间件(middleware)了，具体用法这里不赘述，可以参考阮一峰老师的Es6教程之前使用的Generator函数 使用async时，要求node的版本大于等于7.6.0因此如果发">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-05-31T13:29:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Koa2 Starter | MARVEL">
+<meta name="twitter:description" content="Koa2入门本来是想Express入门的，但是既然都是要学，干嘛不学最新的呢？其实我想说，我本来只是想学个小程序开发，现在已经陆陆续续开了好多坑了。。本文参考廖雪峰教程 Async最新的Koa2已经使用async来作为中间件(middleware)了，具体用法这里不赘述，可以参考阮一峰老师的Es6教程之前使用的Generator函数 使用async时，要求node的版本大于等于7.6.0因此如果发">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">MARVEL</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          大叔笔记
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="http://liuz.top" title="" class="">主页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/nicky-lau" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Koa2 Starter</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-05-31" class="post-meta__date date">2017-05-31</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/koa-koa2-node-javascript/">koa koa2 node javascript</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h1 id="Koa2入门"><a href="#Koa2入门" class="headerlink" title="Koa2入门"></a>Koa2入门</h1><p>本来是想Express入门的，但是既然都是要学，干嘛不学最新的呢？<br>其实我想说，我本来只是想学个小程序开发，现在已经陆陆续续开了好多坑了。。<br>本文参考<a href="http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001471087582981d6c0ea265bf241b59a04fa6f61d767f6000#0" target="_blank" rel="noopener">廖雪峰教程</a></p>
+<h1 id="Async"><a href="#Async" class="headerlink" title="Async"></a>Async</h1><p>最新的Koa2已经使用async来作为中间件(middleware)了，具体用法这里不赘述，可以参考<a href="http://es6.ruanyifeng.com/#docs/async" target="_blank" rel="noopener">阮一峰老师的Es6教程</a><br>之前使用的Generator函数</p>
+<p>使用async时，要求node的版本大于等于7.6.0<br>因此如果发现错误，可以使用nvm（window系统），n（mac系统）来切换node版本</p>
+<p>mac系统的n已经用的很多了，这里放出window系统下的nvm的一些介绍：<br><a href="https://github.com/coreybutler/nvm-windows/releases" target="_blank" rel="noopener">下载</a><br><a href="https://segmentfault.com/a/1190000007612011" target="_blank" rel="noopener">nvm使用说明</a></p>
+<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><p>一. 使用<code>npm init</code>命令初始化<code>package.json</code></p>
+<p>二. 使用<code>npm install --save-dev koa koa-bodyparser koa-router</code>安装koa2<br>其中koa和koa-router毋庸置疑字面含义已经很清楚了，koa-bodyparser是因为无论是原生的node还是koa都无法直接解析request的body，因此需要引用这个插件</p>
+<p>三. 在根目录创建文件夹：<code>controllers</code>,在该文件夹中保存所有的路由文件</p>
+<p>四. 在<code>controllers</code>文件夹中新增一个名为<code>index.js</code>的文件，内容如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fn_index = <span class="keyword">async</span> (ctx, next) =&gt; &#123;</span><br><span class="line">	<span class="comment">// let appID = 'wx5db51f3c5c381ed2',</span></span><br><span class="line">	<span class="comment">// appsecret = '4c797335101c71a01c1713b3f83fd26d',</span></span><br><span class="line">	<span class="comment">// Token = 'xiaoyebaomemeda';</span></span><br><span class="line">	</span><br><span class="line">	<span class="built_in">console</span>.log(ctx.querystring);</span><br><span class="line">	ctx.response.body = <span class="string">`&lt;h1&gt;Index &lt;/h1&gt;&lt;h3&gt;koa1&lt;/h3&gt;&lt;h4&gt;<span class="subst">$&#123;ctx.querystring&#125;</span>&lt;/h4&gt;`</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fn_hello = <span class="keyword">async</span> (ctx, next) =&gt; &#123;</span><br><span class="line">	<span class="keyword">var</span> name = ctx.params.name;</span><br><span class="line">	ctx.response.type = <span class="string">'text/html'</span>;</span><br><span class="line">	ctx.response.body = <span class="string">`&lt;h3&gt;Hello <span class="subst">$&#123;name&#125;</span>&lt;/h3&gt;`</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">	<span class="string">'Get /'</span>: fn_index,</span><br><span class="line">	<span class="string">'Get /hello/:name'</span>: fn_hello</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>可以看出，这个文件输出的对象中包含两个”路由“，分别是”Get /“和”Get /hello/:name”<br>“Get”表示method是”get”,”/“是url路径<br>关于ctx的介绍详见<a href="http://www.koacn.com/#context" target="_blank" rel="noopener">官网</a><br>五. 在<code>controllers</code>文件夹再新建一个名为<code>user.js</code>的文件,内容如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fn_get_register = <span class="keyword">async</span> (ctx, next) =&gt; &#123;</span><br><span class="line">	<span class="keyword">var</span> html = <span class="string">`</span></span><br><span class="line"><span class="string">	&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="string">	&lt;html&gt;</span></span><br><span class="line"><span class="string">	&lt;head&gt;</span></span><br><span class="line"><span class="string">	&lt;title&gt;register&lt;/title&gt;</span></span><br><span class="line"><span class="string">	&lt;/head&gt;</span></span><br><span class="line"><span class="string">	&lt;body&gt;</span></span><br><span class="line"><span class="string">	&lt;form action="/register" method="post"&gt;</span></span><br><span class="line"><span class="string">	姓名：&lt;input type="text" name='name' value=''&gt;</span></span><br><span class="line"><span class="string">	年龄：&lt;input type="" name="age"&gt;</span></span><br><span class="line"><span class="string">	&lt;button type="submit"&gt;submit&lt;/button&gt;</span></span><br><span class="line"><span class="string">	&lt;/form&gt;</span></span><br><span class="line"><span class="string">	&lt;/body&gt;</span></span><br><span class="line"><span class="string">	&lt;/html&gt;		</span></span><br><span class="line"><span class="string">	`</span>;</span><br><span class="line">	ctx.response.type = <span class="string">'text/html'</span>;</span><br><span class="line">	ctx.response.body = html;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fn_post_register = <span class="keyword">async</span> (ctx, next) =&gt; &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">`name:<span class="subst">$&#123;ctx.request.body.name&#125;</span></span></span><br><span class="line"><span class="string">		age: <span class="subst">$&#123;ctx.request.body.age&#125;</span>`</span>);</span><br><span class="line">	ctx.response.body = <span class="string">`&lt;span&gt;submited!&lt;/span&gt;</span></span><br><span class="line"><span class="string">	name:<span class="subst">$&#123;ctx.request.body.name&#125;</span></span></span><br><span class="line"><span class="string">	age:<span class="subst">$&#123;ctx.request.body.age&#125;</span>`</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">	<span class="string">'Get /register'</span>: fn_get_register,</span><br><span class="line">	<span class="string">'Post /register'</span>: fn_post_register</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>这次分别创建了”Get”和”Post”方法的路由</p>
+<p>六. 在根目录创建controller.js,用来读取controller文件夹中的所有路由文件，反射出路由,内容如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 返回path路径下的所有js文件</span></span><br><span class="line"><span class="keyword">var</span> readFile = <span class="function"><span class="keyword">function</span> (<span class="params">path</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line">	<span class="keyword">var</span> files = fs.readdirSync(<span class="string">'./'</span>+path);</span><br><span class="line">	<span class="keyword">var</span> jsFiles = files.filter(<span class="function">(<span class="params">f</span>) =&gt;</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> f.endsWith(<span class="string">'.js'</span>);</span><br><span class="line">	&#125;);</span><br><span class="line">	<span class="keyword">return</span> jsFiles;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 根据.js文件反射路由</span></span><br><span class="line"><span class="keyword">var</span> SetRouter = <span class="function"><span class="keyword">function</span> (<span class="params">path</span>) </span>&#123;</span><br><span class="line">	<span class="comment">// 声明路由</span></span><br><span class="line">	<span class="keyword">var</span> router = <span class="built_in">require</span>(<span class="string">'koa-router'</span>)();</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> jsFiles = readFile(path);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> js <span class="keyword">of</span> jsFiles) &#123;</span><br><span class="line">		<span class="keyword">let</span> mapping = <span class="built_in">require</span>(__dirname + <span class="string">'/'</span> + path + <span class="string">'/'</span> + js); <span class="comment">//分别引入每个js文件</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">var</span> url <span class="keyword">in</span> mapping) &#123;</span><br><span class="line">			<span class="comment">// 遍历每个controller文件中的路由</span></span><br><span class="line">			<span class="keyword">if</span>(url.startsWith(<span class="string">'Get'</span>)) &#123;</span><br><span class="line">				<span class="comment">// method: get</span></span><br><span class="line">				router.get(url.replace(<span class="string">'Get '</span>,<span class="string">''</span>), mapping[url]);</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (url.startsWith(<span class="string">'Post'</span>),mapping[url]) &#123;</span><br><span class="line">				<span class="comment">// method: post</span></span><br><span class="line">				router.post(url.replace(<span class="string">'Post '</span>,<span class="string">''</span>), mapping[url]);</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="comment">// 非路由的</span></span><br><span class="line">				<span class="built_in">console</span>.log(<span class="string">'this is not router file'</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> router.routes();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> (<span class="params">path</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> SetRouter( path || <span class="string">'controllers'</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>七. 在根目录新建app.js,内容如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Koa = <span class="built_in">require</span>(<span class="string">'koa'</span>);</span><br><span class="line"><span class="keyword">var</span> app = <span class="keyword">new</span> Koa();</span><br><span class="line"><span class="keyword">var</span> router = <span class="built_in">require</span>(<span class="string">'./controller.js'</span>)();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> sha1 = <span class="built_in">require</span>(<span class="string">'sha1'</span>);</span><br><span class="line"><span class="keyword">var</span> bodyParser = <span class="built_in">require</span>(<span class="string">'koa-bodyparser'</span>);</span><br><span class="line"></span><br><span class="line">app.use(<span class="keyword">async</span> (ctx,next) =&gt; &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Date</span>());</span><br><span class="line">	<span class="keyword">await</span> next ();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">app.use(bodyParser());</span><br><span class="line">app.use(router);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'listening port 3000'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>八. 在命令行使用命令：<code>node app.js</code>即可启动服务</p>
+<p>九. 在浏览器输入：<code>localhost:3000</code>即可访问</p>
+<h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><p><a href="https://github.com/liu-zhuang/wechat/" target="_blank" rel="noopener">github地址</a><br><a href="wwww.liuzhuang.tech">个人网站</a></p>
+
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2017/05/31/Koa2-Starter/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"liuzhuang"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<script>
+
+(function(){
+var bp = document.createElement('script');
+var curProtocol = window.location.protocol.split(':')[0];
+if (curProtocol === 'https') {
+bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+}
+else {
+bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+}
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Hits
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

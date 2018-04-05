@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Ionic2 Study(五) | MARVEL 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="刘荘">
+    
+    
+
+    <meta name="description" content="Ionic2 组件之Button Buttons are simple components in Ionic. They can consist of text and icons and be enhanced by a wide range of attributes.  button是简单的组件，包含文字和图标以及很多属性。 属性先不管按钮的click事件，简单的学习下控制按钮样式的一些属">
+<meta name="keywords" content="Ionic2 Angular2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ionic2 Study(五) | MARVEL">
+<meta property="og:url" content="http://liuz.top/2016/11/30/Ionic2-Study-五/index.html">
+<meta property="og:site_name" content="MARVEL">
+<meta property="og:description" content="Ionic2 组件之Button Buttons are simple components in Ionic. They can consist of text and icons and be enhanced by a wide range of attributes.  button是简单的组件，包含文字和图标以及很多属性。 属性先不管按钮的click事件，简单的学习下控制按钮样式的一些属">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://liuz.top/2016/11/30/Ionic2-Study-五/ionic2.png">
+<meta property="og:image" content="http://liuz.top/2016/11/30/Ionic2-Study-五/ionic1.png">
+<meta property="og:updated_time" content="2016-12-01T14:19:41.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ionic2 Study(五) | MARVEL">
+<meta name="twitter:description" content="Ionic2 组件之Button Buttons are simple components in Ionic. They can consist of text and icons and be enhanced by a wide range of attributes.  button是简单的组件，包含文字和图标以及很多属性。 属性先不管按钮的click事件，简单的学习下控制按钮样式的一些属">
+<meta name="twitter:image" content="http://liuz.top/2016/11/30/Ionic2-Study-五/ionic2.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">MARVEL</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          大叔笔记
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="http://liuz.top" title="" class="">主页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/nicky-lau" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Ionic2 Study(五)</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-11-30" class="post-meta__date date">2016-11-30</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/Ionic2-Angular2/">Ionic2 Angular2</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h1 id="Ionic2-组件之Button"><a href="#Ionic2-组件之Button" class="headerlink" title="Ionic2 组件之Button"></a>Ionic2 组件之Button</h1><blockquote>
+<p>Buttons are simple components in Ionic. They can consist of text and icons and be enhanced by a wide range of attributes.</p>
+</blockquote>
+<p>button是简单的组件，包含文字和图标以及很多属性。</p>
+<h1 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h1><p>先不管按钮的click事件，简单的学习下控制按钮样式的一些属性:</p>
+<h2 id="color"><a href="#color" class="headerlink" title="color"></a>color</h2><p>顾名思义，就是控制按钮的颜色<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Colors --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">button</span> <span class="attr">ion-button</span>&gt;</span>Default<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">button</span> <span class="attr">ion-button</span> <span class="attr">color</span>=<span class="string">"secondary"</span>&gt;</span>Secondary<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">button</span> <span class="attr">ion-button</span> <span class="attr">color</span>=<span class="string">"danger"</span>&gt;</span>Danger<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">button</span> <span class="attr">ion-button</span> <span class="attr">color</span>=<span class="string">"light"</span>&gt;</span>Light<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">button</span> <span class="attr">ion-button</span> <span class="attr">color</span>=<span class="string">"dark"</span>&gt;</span>Dark<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>多说明一句，上面使用的color,都是定义在<code>src/theme/variables.scss</code>文件中的<br><img src="ionic2.png" alt="variables"></p>
+<h2 id="shape"><a href="#shape" class="headerlink" title="shape"></a>shape</h2><p>有以下三种形状：</p>
+<ul>
+<li>full</li>
+<li>block</li>
+<li>round</li>
+</ul>
+<p>前两个我没有发现什么大的区别，好像都是撑满父容器，有了解区别的还请指教<br>round顾名思义就是圆角按钮的意思<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Shapes --&gt;</span></span><br><span class="line">Shapes:</span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">td</span>&gt;</span>	</span><br><span class="line">			<span class="tag">&lt;<span class="name">button</span> <span class="attr">ion-button</span> <span class="attr">block</span>&gt;</span>Block Button<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">ion-button</span> <span class="attr">round</span>&gt;</span>Round Button<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="outline"><a href="#outline" class="headerlink" title="outline"></a>outline</h2><p>使用该属性将使按钮只有边框。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Outline --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">button</span> <span class="attr">ion-button</span> <span class="attr">full</span> <span class="attr">outline</span>&gt;</span>Outline + Full<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">button</span> <span class="attr">ion-button</span> <span class="attr">block</span> <span class="attr">outline</span>&gt;</span>Outline + Block<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">button</span> <span class="attr">ion-button</span> <span class="attr">round</span> <span class="attr">outline</span>&gt;</span>Outline + Round<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Icons"><a href="#Icons" class="headerlink" title="Icons"></a>Icons</h2><p>在按钮中增加图标的属性,有以下三个值:</p>
+<ul>
+<li>icon-left  : 图标在文字左边</li>
+<li>icon-right ：图标在文字右边</li>
+<li>icon-only  ：只有图标</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Icons --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">ion-button</span> <span class="attr">icon-left</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ion-icon</span> <span class="attr">name</span>=<span class="string">"star"</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-icon</span>&gt;</span></span><br><span class="line">	Left Icon</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">ion-button</span> <span class="attr">icon-right</span>&gt;</span></span><br><span class="line">	Right Icon</span><br><span class="line">	<span class="tag">&lt;<span class="name">ion-icon</span> <span class="attr">name</span>=<span class="string">"star"</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-icon</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">ion-button</span> <span class="attr">icon-only</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ion-icon</span> <span class="attr">name</span>=<span class="string">"star"</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-icon</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="Size"><a href="#Size" class="headerlink" title="Size"></a>Size</h2><p>这个很简单，就是制定按钮的大小，有以下三个值：</p>
+<ul>
+<li>Large</li>
+<li>Default</li>
+<li>small<br>大，默认，小<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Sizes --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">ion-button</span> <span class="attr">large</span>&gt;</span>Large<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">ion-button</span>&gt;</span>Default<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">ion-button</span> <span class="attr">small</span>&gt;</span>Small<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="高级用法"><a href="#高级用法" class="headerlink" title="高级用法"></a>高级用法</h2><p>其实就是和angular2一起使用动态设置样式的用法<br>直接上示例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">ion-button</span> [<span class="attr">color</span>]=<span class="string">"isDanger?'danger':'primary'"</span>&gt;</span>advanced<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!-- Bind the color and round inputs to an expression --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">button</span> <span class="attr">ion-button</span> [<span class="attr">color</span>]=<span class="string">"myColor"</span> [<span class="attr">round</span>]=<span class="string">"isRound"</span>&gt;</span></span><br><span class="line">		Secondary (Round)</span><br><span class="line">	<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!-- Bind the color and clear inputs to an expression --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">button</span> <span class="attr">ion-button</span> [<span class="attr">color</span>]=<span class="string">"isSecondary ? 'secondary' : 'primary'"</span>  [<span class="attr">clear</span>]=<span class="string">"isClear"</span>&gt;</span></span><br><span class="line">		Primary (Clear)</span><br><span class="line">	<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!-- Bind the color, outline and round inputs to an expression --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">button</span> <span class="attr">ion-button</span> [<span class="attr">color</span>]=<span class="string">"myColor2"</span> [<span class="attr">outline</span>]=<span class="string">"isOutline"</span> [<span class="attr">round</span>]=<span class="string">"isRound"</span>&gt;</span></span><br><span class="line">		Dark (Solid + Round)</span><br><span class="line">	<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>在ts中如下使用：<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> ButtonPage &#123;</span><br><span class="line">	<span class="keyword">constructor</span>(<span class="params"><span class="keyword">public</span> navCtrl: NavController,<span class="keyword">public</span> navParams:NavParams</span>) &#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	isDanger: <span class="built_in">boolean</span> = <span class="literal">true</span>;</span><br><span class="line">	isSecondary: <span class="built_in">boolean</span> = <span class="literal">false</span>;</span><br><span class="line">	isRound: <span class="built_in">boolean</span> = <span class="literal">true</span>;</span><br><span class="line">	isOutline: <span class="built_in">boolean</span> = <span class="literal">false</span>;</span><br><span class="line">	isClear: <span class="built_in">boolean</span> = <span class="literal">true</span>;</span><br><span class="line">	myColor: <span class="built_in">string</span> = <span class="string">'secondary'</span>;</span><br><span class="line">	myColor2: <span class="built_in">string</span> = <span class="string">'dark'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="预览"><a href="#预览" class="headerlink" title="预览"></a>预览</h1><p><img src="ionic1.png" alt="preview"></p>
+
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2016/11/30/Ionic2-Study-五/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"liuzhuang"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<script>
+
+(function(){
+var bp = document.createElement('script');
+var curProtocol = window.location.protocol.split(':')[0];
+if (curProtocol === 'https') {
+bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+}
+else {
+bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+}
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Hits
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

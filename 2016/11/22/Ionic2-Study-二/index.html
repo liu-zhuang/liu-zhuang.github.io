@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Ionic2-Study(二) | MARVEL 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="刘荘">
+    
+    
+
+    <meta name="description" content="Ionic页面的生命周期官方文档:Lifecycle events 如官网文档所示，常用的生命周期有如下6个：     Event Desc     ionViewDidLoad 当页面加载的时候触发，仅在页面创建的时候触发一次，如果被缓存了，那么下次再打开这个页面则不会触发   ionViewWillEnter 顾名思义，当将要进入页面时触发   ionViewDidEnter 当进入页面时触发">
+<meta name="keywords" content="Ionic Ionic2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ionic2-Study(二) | MARVEL">
+<meta property="og:url" content="http://liuz.top/2016/11/22/Ionic2-Study-二/index.html">
+<meta property="og:site_name" content="MARVEL">
+<meta property="og:description" content="Ionic页面的生命周期官方文档:Lifecycle events 如官网文档所示，常用的生命周期有如下6个：     Event Desc     ionViewDidLoad 当页面加载的时候触发，仅在页面创建的时候触发一次，如果被缓存了，那么下次再打开这个页面则不会触发   ionViewWillEnter 顾名思义，当将要进入页面时触发   ionViewDidEnter 当进入页面时触发">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://liuz.top/2016/11/22/Ionic2-Study-二/ionic1.png">
+<meta property="og:image" content="http://liuz.top/2016/11/22/Ionic2-Study-二/ionic-log.png">
+<meta property="og:updated_time" content="2016-11-24T12:46:09.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ionic2-Study(二) | MARVEL">
+<meta name="twitter:description" content="Ionic页面的生命周期官方文档:Lifecycle events 如官网文档所示，常用的生命周期有如下6个：     Event Desc     ionViewDidLoad 当页面加载的时候触发，仅在页面创建的时候触发一次，如果被缓存了，那么下次再打开这个页面则不会触发   ionViewWillEnter 顾名思义，当将要进入页面时触发   ionViewDidEnter 当进入页面时触发">
+<meta name="twitter:image" content="http://liuz.top/2016/11/22/Ionic2-Study-二/ionic1.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">MARVEL</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          大叔笔记
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="http://liuz.top" title="" class="">主页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/nicky-lau" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Ionic2-Study(二)</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-11-22" class="post-meta__date date">2016-11-22</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/Ionic-Ionic2/">Ionic Ionic2</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h1 id="Ionic页面的生命周期"><a href="#Ionic页面的生命周期" class="headerlink" title="Ionic页面的生命周期"></a>Ionic页面的生命周期</h1><p><a href="http://ionicframework.com/docs/v2/api/navigation/NavController/" target="_blank" rel="noopener">官方文档:Lifecycle events</a><br><img src="ionic1.png" alt="document"></p>
+<p>如官网文档所示，常用的生命周期有如下6个： </p>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Desc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ionViewDidLoad</td>
+<td>当页面加载的时候触发，仅在页面创建的时候触发一次，如果被缓存了，那么下次再打开这个页面则不会触发</td>
+</tr>
+<tr>
+<td>ionViewWillEnter</td>
+<td>顾名思义，当将要进入页面时触发</td>
+</tr>
+<tr>
+<td>ionViewDidEnter</td>
+<td>当进入页面时触发</td>
+</tr>
+<tr>
+<td>ionViewWillLeave</td>
+<td>当将要从页面离开时触发</td>
+</tr>
+<tr>
+<td>ionViewDidLeave</td>
+<td>离开页面时触发</td>
+</tr>
+<tr>
+<td>ionViewWillUnload</td>
+<td>当页面将要销毁同时页面上元素移除时触发</td>
+</tr>
+</tbody>
+</table>
+<p>在demo中加入以下代码：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">ionViewLoaded()&#123;</span><br><span class="line">		debugger;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"1.0 homepage loaded!"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	ionViewWillEnter()&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"2.0 homepage will Enter!"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	ionViewDidEnter()&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"3.0 homepage did enter"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	ionViewWillLeave()&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"4.0 homepage will leave"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	ionViewDidLeave()&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"5.0 homepage did leave"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	ionViewWillUnload()&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"6.0 homepage did leave"</span>);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>加载页面和切换页面并不会触发ionViewLoaded和ionViewWillUnload这两个方法。具体怎么才能触发还要再去研究。<br>但是ionViewLoaded方法可以使用angular的生命周期方法替换，如下所示：<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ngOnInit()&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"ng on init..."</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>可以看到日志文件如下所示：</p>
+<p><img src="ionic-log.png" alt="log"></p>
+
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2016/11/22/Ionic2-Study-二/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"liuzhuang"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<script>
+
+(function(){
+var bp = document.createElement('script');
+var curProtocol = window.location.protocol.split(':')[0];
+if (curProtocol === 'https') {
+bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+}
+else {
+bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+}
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Hits
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

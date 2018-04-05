@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Vue Music (1) | MARVEL 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="刘荘">
+    
+    
+
+    <meta name="description" content="前言继仿造饿了么之后的使用Vue全家桶的高级练习 初始化项目框架既然是全家桶，初始化没什么好说的，使用webpack框架1vue init webpack vue-music 项目代码统统写在src目录下，同时在原有目录结构下增加一些目录├── src│   ├── App.vue     =&amp;gt; 入口视图│   ├── api         =&amp;gt; api│   ├── common│">
+<meta name="keywords" content="vue vue-cli vue-music">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue Music (1) | MARVEL">
+<meta property="og:url" content="http://liuz.top/2017/07/15/Vue-Music-1/index.html">
+<meta property="og:site_name" content="MARVEL">
+<meta property="og:description" content="前言继仿造饿了么之后的使用Vue全家桶的高级练习 初始化项目框架既然是全家桶，初始化没什么好说的，使用webpack框架1vue init webpack vue-music 项目代码统统写在src目录下，同时在原有目录结构下增加一些目录├── src│   ├── App.vue     =&amp;gt; 入口视图│   ├── api         =&amp;gt; api│   ├── common│">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-07-15T06:12:49.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue Music (1) | MARVEL">
+<meta name="twitter:description" content="前言继仿造饿了么之后的使用Vue全家桶的高级练习 初始化项目框架既然是全家桶，初始化没什么好说的，使用webpack框架1vue init webpack vue-music 项目代码统统写在src目录下，同时在原有目录结构下增加一些目录├── src│   ├── App.vue     =&amp;gt; 入口视图│   ├── api         =&amp;gt; api│   ├── common│">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">MARVEL</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          大叔笔记
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="http://liuz.top" title="" class="">主页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/nicky-lau" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Vue Music (1)</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-07-15" class="post-meta__date date">2017-07-15</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/vue-vue-cli-vue-music/">vue vue-cli vue-music</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>继仿造饿了么之后的使用Vue全家桶的高级练习</p>
+<h1 id="初始化项目框架"><a href="#初始化项目框架" class="headerlink" title="初始化项目框架"></a>初始化项目框架</h1><p>既然是全家桶，初始化没什么好说的，使用webpack框架<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue init webpack vue-music</span><br></pre></td></tr></table></figure></p>
+<p>项目代码统统写在<code>src</code>目录下，同时在原有目录结构下增加一些目录<br>├── src<br>│   ├── App.vue     =&gt; 入口视图<br>│   ├── api         =&gt; api<br>│   ├── common<br>│   │   ├── fonts   =&gt; 字体<br>│   │   ├── image   =&gt; 图片<br>│   │   ├── js        =&gt; js库<br>│   │   └── less    =&gt; 样式文件<br>│   ├── components  =&gt; 组件<br>│   ├── main.js     =&gt; 入口js<br>│   ├── router      =&gt; 路由<br>│   └── store       =&gt; vuex状态管理</p>
+<h2 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h2><p>mac os下生成上面这种目录结构方法如下：</p>
+<ul>
+<li>使用<code>brew install tree</code>安装tree</li>
+<li>使用<code>tree -L 2</code>查看2个层级的树形目录结构（当然数字可以任意)</li>
+<li>也可以使用<code>tree -L 2 &gt;Tree.md</code> 来将目录结构直接导出</li>
+</ul>
+<h2 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h2><p>由于vue-cli已经在<code>build\utils</code>中为less,stylus,sass进行了预设，因此可以无障碍直接使用less,只需要在style标签上写明<code>lang=&#39;less&#39;</code>以及<code>rel=&quot;stylesheet/less&quot;</code>即可。</p>
+<h2 id="alias"><a href="#alias" class="headerlink" title="alias"></a>alias</h2><p>在使用<code>import</code>或者<code>require</code>引入js或者样式文件的时候，路径过长是个比较麻烦的问题，因此如果使用webpack中的别名(alias)可以提高不少效率。这里需要注意的是有两个坑：</p>
+<ul>
+<li>在<code>build\webpack.base.conf.js</code>中修改别名后，一定要停掉当前服务，重新执行<code>npm run dev</code>才会生效</li>
+<li>在js环境中直接使用别名即可，在style环境中使用别名要在前面加上波浪线<code>~</code><br>如下所示：<br>webpack.base.conf.js:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alias: &#123;</span><br><span class="line">       &apos;less&apos;: resolve(&apos;src/common/less&apos;), // 设置less别名</span><br><span class="line">       &apos;com&apos;: resolve(&apos;src/components&apos;) // 设置组件别名</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>main.js:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;;</span><br><span class="line">import App from &apos;./App&apos;;</span><br><span class="line">import router from &apos;./router&apos;;</span><br><span class="line">import &apos;less/index.less&apos;; // 引入样式文件</span><br></pre></td></tr></table></figure></p>
+<p>app.vue:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;style scoped lang=&quot;less&quot; rel=&quot;stylesheet/less&quot;&gt;</span><br><span class="line"> @import &apos;~less/variable.less&apos;; // less别名</span><br><span class="line">#app &#123;</span><br><span class="line">  color: @color-theme;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<p>至此，项目的基本框架就搭建好了。<br><a href="https://github.com/liu-zhuang/vue-music/tree/init" target="_blank" rel="noopener">代码地址</a><br>项目的init分支</p>
+
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2017/07/15/Vue-Music-1/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"liuzhuang"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<script>
+
+(function(){
+var bp = document.createElement('script');
+var curProtocol = window.location.protocol.split(':')[0];
+if (curProtocol === 'https') {
+bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+}
+else {
+bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+}
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Hits
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

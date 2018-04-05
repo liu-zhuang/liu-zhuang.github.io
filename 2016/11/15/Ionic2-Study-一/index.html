@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Ionic2 Study(一) | MARVEL 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="刘荘">
+    
+    
+
+    <meta name="description" content="前言做app的心由来已久了，身为一个大叔程序猿怎么可以不会做app，当年swift刚出的时候，跟着斯坦福大学的白胡子学过几天。。但是没有坚持下去。。这次希望可以坚持久点-。-app开发现在无外乎三种，native,Hybrid和web app，首先排除掉了web app，因为日常开发虽然没有mobile first，但是响应式已经是需求的一部分的，native也有考虑过，要不要把swift坚持下去">
+<meta name="keywords" content="Ionic Ionic2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ionic2 Study(一) | MARVEL">
+<meta property="og:url" content="http://liuz.top/2016/11/15/Ionic2-Study-一/index.html">
+<meta property="og:site_name" content="MARVEL">
+<meta property="og:description" content="前言做app的心由来已久了，身为一个大叔程序猿怎么可以不会做app，当年swift刚出的时候，跟着斯坦福大学的白胡子学过几天。。但是没有坚持下去。。这次希望可以坚持久点-。-app开发现在无外乎三种，native,Hybrid和web app，首先排除掉了web app，因为日常开发虽然没有mobile first，但是响应式已经是需求的一部分的，native也有考虑过，要不要把swift坚持下去">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://liuz.top/2016/11/15/Ionic2-Study-一/ionic1.png">
+<meta property="og:image" content="http://liuz.top/2016/11/15/Ionic2-Study-一/ionic2.png">
+<meta property="og:updated_time" content="2016-11-22T13:32:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ionic2 Study(一) | MARVEL">
+<meta name="twitter:description" content="前言做app的心由来已久了，身为一个大叔程序猿怎么可以不会做app，当年swift刚出的时候，跟着斯坦福大学的白胡子学过几天。。但是没有坚持下去。。这次希望可以坚持久点-。-app开发现在无外乎三种，native,Hybrid和web app，首先排除掉了web app，因为日常开发虽然没有mobile first，但是响应式已经是需求的一部分的，native也有考虑过，要不要把swift坚持下去">
+<meta name="twitter:image" content="http://liuz.top/2016/11/15/Ionic2-Study-一/ionic1.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">MARVEL</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          大叔笔记
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="http://liuz.top" title="" class="">主页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/nicky-lau" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Ionic2 Study(一)</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-11-15" class="post-meta__date date">2016-11-15</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/Ionic-Ionic2/">Ionic Ionic2</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>做app的心由来已久了，身为一个大叔程序猿怎么可以不会做app，当年swift刚出的时候，跟着斯坦福大学的白胡子学过几天。。但是没有坚持下去。。这次希望可以坚持久点-。-<br>app开发现在无外乎三种，native,Hybrid和web app，首先排除掉了web app，因为日常开发虽然没有mobile first，但是响应式已经是需求的一部分的，native也有考虑过，要不要把swift坚持下去，但是考虑到毕竟不是科班出身，半路出家做输在起跑线上了。。<br>最终还是决定用Hybrid。<br>另外，其实也有考虑过react native,但是由于react本身就没学过，angular虽然不精通，但至少也算是入门了的，考虑到ionic2用的是ng2，将来对web开发也能有所帮助，所以决定先以Ionic入手。</p>
+<h1 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h1><p>Ionic2已经Release了，现在安装已经不需要像测试的时候后面加什么Beta啦，版本号啦之类的。<br>直接安装官网的说明：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g ionic cordova</span><br></pre></td></tr></table></figure></p>
+<p>在终端(mac)或者命令行工具(windows)输入以上命令即可<br>含义就是使用npm，在全局安装ionic和cordova<br>当然啦，考虑到我大天朝的网络环境，如果不翻墙，以上安装过程基本上是很难完成的，所以我大天朝的苦逼程序猿们就想到了使用镜像的方式来复制npm。<br>毕竟有名的是淘宝源和cnpm，cnpm似乎刷新的不是很快，而淘宝源据说是10分钟就去npm拉一次。<br>话说第一次使用淘宝源的时候也不靠谱，都打算放弃在找经济实惠的梯子的时候，突然淘宝源又给力起来了。。。（说明也不稳定？）<br><a href="https://npm.taobao.org" target="_blank" rel="noopener">淘宝源地址</a><br>一般用户（需要向npm发布的用户除外），最简单的使用方法就是在npmrc文件中增加:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">registry = http://registry.npm.taobao.org</span><br></pre></td></tr></table></figure></p>
+<p>上面这句话即可。mac系统一般默认是没有这个文件的，需要自己手动写touch npmrc先生成这个文件才行<br>另外，mac系统的路径如下：”usr/local/lib/node_modules/npm”<br>完成上述操作之后，再执行npm install 就会有飞一般的感觉。。。速度快到感动的想哭。。</p>
+<h1 id="初始化项目"><a href="#初始化项目" class="headerlink" title="初始化项目"></a>初始化项目</h1><p>老生常谈，如果你在没有使用淘宝源的情况下（真的不是在做广告），艰难的安装好了Ionic和cordova，那么初始化项目你如果不使用淘宝源绝对会痛不欲生。。<br>初始化项目使用的命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ionic start demo1 --v2</span><br></pre></td></tr></table></figure></p>
+<p>在demo1处替换为你的项目名即可。执行该命令会去github上下载一些模版和众多的npm包。<br>（ps：在项目名（demo1）后面可以加上预制模版名的，比如：tutorial，如果不加特殊说明，则会使用tabs的模版来初始化项目）<br>后面加的–v2表示用Ionic2来初始化项目<br><img src="ionic1.png" alt="项目目录"><br>初始化结束之后的目录结构如上图所示。<br>hooks:顾名思义就是钩子的意思，放的是Cordova的钩子，主要是build用的吧？（我猜），一般情况下不会去改<br>npm_modules:放的是从npm下载的需要用到的包<br>platforms:放的是为ios和Android平台生成的开发包<br>plugins：放的是cordova的一些插件<br>resources:资源文件，主要是一些图片<br>src：源码<br>www：入口文件</p>
+<h1 id="运行项目"><a href="#运行项目" class="headerlink" title="运行项目"></a>运行项目</h1><p>在上面的初始化项目结束之后<br>在终端输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd demo1</span><br><span class="line">ionic serve</span><br></pre></td></tr></table></figure></p>
+<p>就会在浏览器运行起来了<br><img src="ionic2.png" alt="预览"></p>
+
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2016/11/15/Ionic2-Study-一/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"liuzhuang"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<script>
+
+(function(){
+var bp = document.createElement('script');
+var curProtocol = window.location.protocol.split(':')[0];
+if (curProtocol === 'https') {
+bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+}
+else {
+bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+}
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Hits
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

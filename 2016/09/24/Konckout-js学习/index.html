@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Konckout.js学习(一) | MARVEL 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="刘荘">
+    
+    
+
+    <meta name="description" content="前言knockout.js火的时候为对前端开发并不感冒，最近对前端开发感兴趣的时候在学更火的angular,可是造化弄人最近公司新项目选的是knockoutjs，没办法也只能学习一下了，好在技多不压身，反正人已经很胖了，多学一样东西体重不会更重。 －。－ 官网教程先贴下地址：官网教程地址虽然中文也有汤姆大叔写的教程，但是版本实在太老了汤姆大叔的链接好在官网现在的教程也是由浅入深，浅显易懂，但是比较">
+<meta name="keywords" content="javascript knockout mvm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Konckout.js学习(一) | MARVEL">
+<meta property="og:url" content="http://liuz.top/2016/09/24/Konckout-js学习/index.html">
+<meta property="og:site_name" content="MARVEL">
+<meta property="og:description" content="前言knockout.js火的时候为对前端开发并不感冒，最近对前端开发感兴趣的时候在学更火的angular,可是造化弄人最近公司新项目选的是knockoutjs，没办法也只能学习一下了，好在技多不压身，反正人已经很胖了，多学一样东西体重不会更重。 －。－ 官网教程先贴下地址：官网教程地址虽然中文也有汤姆大叔写的教程，但是版本实在太老了汤姆大叔的链接好在官网现在的教程也是由浅入深，浅显易懂，但是比较">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2016-09-24T16:16:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Konckout.js学习(一) | MARVEL">
+<meta name="twitter:description" content="前言knockout.js火的时候为对前端开发并不感冒，最近对前端开发感兴趣的时候在学更火的angular,可是造化弄人最近公司新项目选的是knockoutjs，没办法也只能学习一下了，好在技多不压身，反正人已经很胖了，多学一样东西体重不会更重。 －。－ 官网教程先贴下地址：官网教程地址虽然中文也有汤姆大叔写的教程，但是版本实在太老了汤姆大叔的链接好在官网现在的教程也是由浅入深，浅显易懂，但是比较">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">MARVEL</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          大叔笔记
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="http://liuz.top" title="" class="">主页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/nicky-lau" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Konckout.js学习(一)</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-09-24" class="post-meta__date date">2016-09-24</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/javascript-knockout-mvm/">javascript knockout mvm</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>knockout.js火的时候为对前端开发并不感冒，最近对前端开发感兴趣的时候在学更火的angular,可是造化弄人最近公司新项目选的是knockoutjs，没办法也只能学习一下了，好在技多不压身，反正人已经很胖了，多学一样东西体重不会更重。 －。－</p>
+<h1 id="官网教程"><a href="#官网教程" class="headerlink" title="官网教程"></a>官网教程</h1><p>先贴下地址：<a href="learn.knockoutjs.com">官网教程地址</a><br>虽然中文也有汤姆大叔写的教程，但是版本实在太老了<a href="http://www.cnblogs.com/TomXu/archive/2011/11/21/2257154.html" target="_blank" rel="noopener">汤姆大叔的链接</a><br>好在官网现在的教程也是由浅入深，浅显易懂，但是比较坑爹的是它引用的jQuery是google的cdn。于是不翻墙是打不开的。。<br>好吧，话不多说，就在官网从头开始学起吧。<br>官网的教程是分以下五步的：</p>
+<ol>
+<li>Introduction: Getting started with MVVM and knockout.js</li>
+<li>Working with List and Collections: Building a dynamic UI where elements are added or removed</li>
+<li>Single Page Application: Enabling navigation within the page,with back/forward support</li>
+<li>Creating Custom bindings: Gaining more control over the UI,and integrating with third-part Components</li>
+<li>Loading and saving Data: Ways to integrate your client-side code with your sever-side code</li>
+</ol>
+<h2 id="Introduction-简介－开始使用MVVM模式和knockout-js"><a href="#Introduction-简介－开始使用MVVM模式和knockout-js" class="headerlink" title="Introduction 简介－开始使用MVVM模式和knockout.js"></a>Introduction 简介－开始使用MVVM模式和knockout.js</h2><p>和angular类似，knockout(以下简称ko)也是使用MVVM模式的，即Model-View-ViewModel，和ng有所不同的是，ng会使用ng-app来限定controller的作用范围，同时一个页面可以用多个controller,但是ko一个页面只能用一个viewmodel。<br>吐槽结束，开始最基础的hello，world。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">data-bind</span>=<span class="string">"text:hello"</span> &gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span>	</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">data-bind</span>=<span class="string">"value:hello"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> appViewModel = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> self = <span class="keyword">this</span>;</span></span><br><span class="line"><span class="javascript">		self.hello = <span class="string">"Hello World!"</span></span></span><br><span class="line"><span class="undefined">	&#125;;</span></span><br><span class="line"><span class="javascript">	ko.applyBindings(<span class="keyword">new</span> appViewModel());</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>如上述代码所见，在js中声明一个ViewData的构造函数，然后再把这个构造函数的实例传给ko.applyBindings()这个方法，就实现了view和appViewModel的绑定。页面上p标签内会自动出现”Hello World!”,输入框中也会出现同样内容。<br>然后在html标签上使用<code>data-bind=&quot;text:hello&quot;</code>的方式来实现和viewmodel中数据的绑定。<br>注意一点，使用text绑定是将值写在html标签中间,<code>&lt;p&gt;text&lt;/p&gt;</code>,使用value绑定则是在html标签的value属性中赋值<code>&lt;p value=&#39;xx&#39;&gt;&lt;/p&gt;</code>。<br>但是这个时候，viewmodel中的属性仅仅只是无格式的JavaScript字符串，当属性发生变化的时候，并没有办法通知任何人发生了变化，因此还是静态UI。<br>（好吧，这里是去尝试意译官方的一段文档，整理了几遍还是感觉不够信达雅，就这样吧）简单的说，上面的代码，只实现了单向数据绑定。<br>如果想要实现双向数据绑定，需要做以下这个操作。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">data-bind</span>=<span class="string">"text:hello"</span> &gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span>	</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">data-bind</span>=<span class="string">"value:hello"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> appViewData = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> self = <span class="keyword">this</span>;</span></span><br><span class="line"><span class="javascript">		<span class="comment">// 在这里，把hello变为observable的</span></span></span><br><span class="line"><span class="javascript">		self.hello =  ko.observable(<span class="string">"Hello World!"</span>);</span></span><br><span class="line"><span class="undefined">	&#125;;</span></span><br><span class="line"><span class="javascript">	ko.applyBindings(<span class="keyword">new</span> appViewData());</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>这样，当我在input框中修改hello的值之后，p标签的内容也会随之改变（即实现了双向数据绑定）<br>但是这里还是比不上ng，因为ko的双向数据绑定需要鼠标离开输入框才会同步，而ng在你输入的同时，实时就进行了双向绑定。</p>
+<p>注意：当viewmodel中的属性被observable化了之后，他们就被变成了一个函数，我的理解是类似于{getter;setter;}的函数。当需要使用它们的时候，需要采用函数调用的方式：<code>self.hello()</code>。<br>接下来，再介绍一个ko中的常用方法，<code>ko.computed(func,thisObj)</code>，这个方法有两个参数，第一个就是执行的函数，第二个就是传入的对象，改变作用域用的，类似于js中的call。<br>computed observables依赖一个或者多个观察者（observable），并且当这些依赖观察者发生变化时也会随之发生变化。<br><a href="http://www.xiaoboy.com/detail/2015031517.html" target="_blank" rel="noopener">computed详解</a><br>举例如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">data-bind</span>=<span class="string">"text:sayHello"</span> &gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span>	</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">data-bind</span>=<span class="string">"value:hello"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">data-bind</span>=<span class="string">"value:name"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> appViewData = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> self = <span class="keyword">this</span>;</span></span><br><span class="line"><span class="javascript">		self.hello =  ko.observable(<span class="string">"Hello World!"</span>);</span></span><br><span class="line"><span class="javascript">		self.name = ko.observable(<span class="string">"lz"</span>);</span></span><br><span class="line"><span class="javascript">		self.sayHello = ko.computed(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">			<span class="keyword">return</span> <span class="keyword">this</span>.hello() + <span class="string">" "</span> + <span class="keyword">this</span>.name();</span></span><br><span class="line"><span class="javascript">			<span class="comment">// 如果hello改变不需要更新则可以用peek方法</span></span></span><br><span class="line"><span class="javascript">			<span class="comment">//return this.hello.peek() + " " + this.name();</span></span></span><br><span class="line"><span class="undefined">		&#125;,self);</span></span><br><span class="line"><span class="undefined">	&#125;;</span></span><br><span class="line"><span class="javascript">	ko.applyBindings(<span class="keyword">new</span> appViewData());</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>如上面代码所示，sayHello方法将把hello和name的值拼接起来。当然了，computed()方法也是会生成可双向数据绑定的observable的function。<br>最后再写一个demo，来实现动态修改viewModel属性的方法<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">data-bind</span>=<span class="string">"text:sayHello"</span> &gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span>	</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">data-bind</span>=<span class="string">"value:hello"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">data-bind</span>=<span class="string">"value:name"</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 增加一个按钮 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">data-bind</span>=<span class="string">"click:upperName"</span>&gt;</span>upper<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> appViewData = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> self = <span class="keyword">this</span>;</span></span><br><span class="line"><span class="javascript">		self.hello =  ko.observable(<span class="string">"Hello World!"</span>);</span></span><br><span class="line"><span class="javascript">		self.name = ko.observable(<span class="string">"lz"</span>);</span></span><br><span class="line"><span class="javascript">		self.sayHello = ko.computed(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">			<span class="keyword">return</span> <span class="keyword">this</span>.hello() + <span class="string">" "</span> + <span class="keyword">this</span>.name();</span></span><br><span class="line"><span class="undefined">		&#125;,self);</span></span><br><span class="line"><span class="javascript">		<span class="comment">// 当按下upper按钮时，把name变为大写</span></span></span><br><span class="line"><span class="javascript">		self.upperName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">			<span class="keyword">var</span> currentValue = self.name();</span></span><br><span class="line"><span class="undefined">			self.name(currentValue.toUpperCase());</span></span><br><span class="line"><span class="undefined">		&#125;;</span></span><br><span class="line"><span class="undefined">	&#125;;</span></span><br><span class="line"><span class="javascript">	ko.applyBindings(<span class="keyword">new</span> appViewData());</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>好了，Introduction的教程就结束了。<br><a href="https://github.com/nicky-lau/Knockoutjs/tree/master/Introduction" target="_blank" rel="noopener">源代码</a></p>
+
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2016/09/24/Konckout-js学习/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"liuzhuang"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<script>
+
+(function(){
+var bp = document.createElement('script');
+var curProtocol = window.location.protocol.split(':')[0];
+if (curProtocol === 'https') {
+bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+}
+else {
+bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+}
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Hits
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

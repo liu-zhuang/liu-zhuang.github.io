@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      使用Vue.js仿饿了么页面 | MARVEL 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="刘荘">
+    
+    
+
+    <meta name="description" content="前言使用Vue.js脚手架来一步步构建一个仿饿了么的单页面应用(SPA)。   初始化项目参考文件第一步,安装Vue.js的脚手架工具Vue-Cli1$ npm install -g vue-cli 第二步，使用webpack模板来初始化项目1$ npm init webpack Vue-Eleme 注：现在的cli版本为2.8.1然后会提示你输入项目名：Project name,项目描述：Pro">
+<meta name="keywords" content="Vue.js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用Vue.js仿饿了么页面 | MARVEL">
+<meta property="og:url" content="http://liuz.top/2017/02/19/使用Vue-js仿饿了么页面/index.html">
+<meta property="og:site_name" content="MARVEL">
+<meta property="og:description" content="前言使用Vue.js脚手架来一步步构建一个仿饿了么的单页面应用(SPA)。   初始化项目参考文件第一步,安装Vue.js的脚手架工具Vue-Cli1$ npm install -g vue-cli 第二步，使用webpack模板来初始化项目1$ npm init webpack Vue-Eleme 注：现在的cli版本为2.8.1然后会提示你输入项目名：Project name,项目描述：Pro">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://liuz.top/2017/02/19/使用Vue-js仿饿了么页面/外卖01_商品页.jpg">
+<meta property="og:updated_time" content="2017-03-14T12:25:15.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用Vue.js仿饿了么页面 | MARVEL">
+<meta name="twitter:description" content="前言使用Vue.js脚手架来一步步构建一个仿饿了么的单页面应用(SPA)。   初始化项目参考文件第一步,安装Vue.js的脚手架工具Vue-Cli1$ npm install -g vue-cli 第二步，使用webpack模板来初始化项目1$ npm init webpack Vue-Eleme 注：现在的cli版本为2.8.1然后会提示你输入项目名：Project name,项目描述：Pro">
+<meta name="twitter:image" content="http://liuz.top/2017/02/19/使用Vue-js仿饿了么页面/外卖01_商品页.jpg">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">MARVEL</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          大叔笔记
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="http://liuz.top" title="" class="">主页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/nicky-lau" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">使用Vue.js仿饿了么页面</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-02-19" class="post-meta__date date">2017-02-19</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/Vue-js/">Vue.js</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>使用Vue.js脚手架来一步步构建一个仿饿了么的单页面应用(SPA)。</p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=25706282&auto=1&height=66"></iframe>
+
+<h1 id="初始化项目"><a href="#初始化项目" class="headerlink" title="初始化项目"></a>初始化项目</h1><p><a href="https://github.com/vuejs/vue-cli" target="_blank" rel="noopener">参考文件</a><br>第一步,安装Vue.js的脚手架工具Vue-Cli<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g vue-cli</span><br></pre></td></tr></table></figure></p>
+<p>第二步，使用webpack模板来初始化项目<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm init webpack Vue-Eleme</span><br></pre></td></tr></table></figure></p>
+<p>注：现在的cli版本为2.8.1<br>然后会提示你输入项目名：Project name,<br>项目描述：Project description,<br>作者：Author,<br>构建方式：Vue build ,通过↑和↓来选择，默认选择Runtime +Compiler,<br>是否安装vue-router:是否安装路由库,输入y,表示安装<br>是否使用ESLint来监管你的代码:Use ESlint to lint your code? 为了代码的规范，这里输入y表示“是”,<br>然后就会让你选择Eslint的预设值，默认使用标准的Standard。按回车继续<br>是否使用karma和mocha来进行单元测试：Setup unit tests with Karma + Mocha,输入n<br>是否使用Nightwatch来进行e2e(end to end)的测试：Setup e2e test with Nightwatch,输入n</p>
+<p>这时候就会提示你，项目已经构建好了，<br>同时还会温馨的提示你，如何启动这个项目：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">vue-cli · Generated &quot;Vue-Eleme&quot;.</span><br><span class="line"></span><br><span class="line">To get started:</span><br><span class="line"></span><br><span class="line">cd Vue-Eleme</span><br><span class="line">npm install</span><br><span class="line">npm run dev</span><br><span class="line"></span><br><span class="line">Documentation can be found at https://vuejs-templates.github.io/webpack</span><br></pre></td></tr></table></figure></p>
+<h1 id="项目目录设计"><a href="#项目目录设计" class="headerlink" title="项目目录设计"></a>项目目录设计</h1><p>在<code>src</code>目录下，分别新建”fonts”、”js”和”less”文件夹，用来存放字体文件，通用js文件和同样样式文件</p>
+<h1 id="Mock数据"><a href="#Mock数据" class="headerlink" title="Mock数据"></a>Mock数据</h1><p>在文件夹的根目录增加”data.json”文件，json数据中分别保护”seller”、”goods”和”ratings”三个对象，每个对象都是一个数组。<br>使用<code>express</code>的路由功能来获取这个mock数据<br>在”dev-server.js”文件中，找到“var app = express()”，在它下面写以下代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取Mock数据</span></span><br><span class="line"><span class="keyword">var</span> appMockData = <span class="built_in">require</span>(<span class="string">'../data.json'</span>);</span><br><span class="line"><span class="keyword">var</span> sellerData = appMockData.seller;</span><br><span class="line"><span class="keyword">var</span> goodsData = appMockData.goods;</span><br><span class="line"><span class="keyword">var</span> ratingsData = appMockData.ratings;</span><br><span class="line"><span class="comment">// 定义路由</span></span><br><span class="line"><span class="keyword">var</span> apiRoutes = express.Router();</span><br><span class="line"><span class="comment">// 定义访问seller时返回的数据</span></span><br><span class="line">apiRoutes.get(<span class="string">'/seller'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">res.json(&#123;</span><br><span class="line">errno:<span class="number">0</span>,</span><br><span class="line">data:sellerData</span><br><span class="line">&#125;);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 定义访问goods时返回的数据</span></span><br><span class="line">apiRoutes.get(<span class="string">'/goods'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">res.json(&#123;</span><br><span class="line">errno:<span class="number">0</span>,</span><br><span class="line">data:goodsData</span><br><span class="line">&#125;);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 定义访问ratings路由时的数据</span></span><br><span class="line">apiRoutes.get(<span class="string">'/ratings'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">res.json(&#123;</span><br><span class="line">errno:<span class="number">0</span>,</span><br><span class="line">data:ratingsData</span><br><span class="line">&#125;);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 使用这个路由  路径为api/goods 或api/seller api/ratings</span></span><br><span class="line">app.use(<span class="string">'/api'</span>,apiRoutes);</span><br></pre></td></tr></table></figure></p>
+<p>完成上面代码之后，再重新执行<code>npm run dev</code>,就可以通过路由的方式查看mock数据了<br>在浏览器中分别输入’<a href="http://localhost:8080/api/seller&#39;,&#39;http://localhost:8080/api/goods&#39;和&#39;http://localhost:8080/api/ratings&#39;即可看到对应的数据" target="_blank" rel="noopener">http://localhost:8080/api/seller&#39;,&#39;http://localhost:8080/api/goods&#39;和&#39;http://localhost:8080/api/ratings&#39;即可看到对应的数据</a></p>
+<h1 id="基础准备工作"><a href="#基础准备工作" class="headerlink" title="基础准备工作"></a>基础准备工作</h1><p>首先从<a href="http://cssreset.com" target="_blank" rel="noopener">cssreset</a>下载resetcss样式表，放在static文件夹下的css目录中。<br>resetcss的作用不用赘述了，使各个浏览器的基础样式保持一致。<br>接下来在入口文件”index.html”的<code>head</code>部分以<code>link</code>的形式将<code>reset.css</code>引入进来。<br>由于这个是个移动端的项目，因此，还需要在<code>head</code>中增加<code>viewport</code>的设置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no&quot;&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;static/css/reset.css&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>宽度等于设备宽度，初始化缩放为100%,最大／最小缩放比例均为100%,不允许用户缩放</p>
+<p>在<code>.eslintrc.js</code>文件中的<code>rules</code>对象中，增加以下几行行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&apos;semi&apos;: [&apos;error&apos;,&apos;always&apos;],// 强制使用分号，否则报错</span><br><span class="line">&apos;indent&apos;:0,// 不check 缩进</span><br><span class="line">&apos;no-tabs&apos;:0,// 不check no-tabs也就是允许使用tab缩进</span><br></pre></td></tr></table></figure></p>
+<p>因为默认的ESlint是要求不使用分号的，但是还是更喜欢习惯使用分号。<br>接下来编译会报错，根据提示，去把所有地方都加上分号。<br>下面两个缩进相关的，由于使用Sublime自带的自动缩进，而且已经养成习惯了，因此也就先这样配置了。<br>（其实是修改Sublime的配置的，不过暂时懒得弄）</p>
+<h1 id="组件拆分"><a href="#组件拆分" class="headerlink" title="组件拆分"></a>组件拆分</h1><p>先看下效果图<br><img src="外卖01_商品页.jpg" alt="商品页"><br>如图所示，商品页由三个部分组成，页头，tabs和内容详情<br>页头是通用部分，因此可以抽象出来作为组件</p>
+<h2 id="页面头部"><a href="#页面头部" class="headerlink" title="页面头部"></a>页面头部</h2><p>在”components”目录下增加”header”文件夹，并增加”header.vue”文件，作为页头组件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div&gt;i&apos;m header&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">	export default &#123;</span><br><span class="line">		name: &apos;header&apos;</span><br><span class="line">	&#125;;</span><br><span class="line">	// ES6 Module</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">	</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<p>其中export default是ES6的语法，就是ES6中的Module用法，default关键字用于指定模块的默认输出，详情见阮一峰的ES6教程中的<a href="https://github.com/ruanyf/es6tutorial/blob/gh-pages/docs/module.md" target="_blank" rel="noopener">Module语法</a></p>
+<p>接下来就可以在App.vue中引入<code>header</code>组件了，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">export default &#123;</span><br><span class="line">name: &apos;app&apos;,</span><br><span class="line">components: &#123; &apos;v-header&apos;: header &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">import header from &apos;./components/header/header&apos;;</span><br></pre></td></tr></table></figure></p>
+<p>通过import的方式引入header,再在export中的<code>components</code>注册header即可使用该组件了。<br>但是有一个地方需要注意的是，如果不使用别名，使用原始的<code>header</code>在页面中使用的话就是<code>&lt;header&gt;&lt;/header&gt;</code>，这样的话就会和原生的html标签冲突，因此，在这里需要给它起个别名：”v-header”,在上面使用的时候也是使用<code>&lt;v-header&gt;&lt;/v-header&gt;</code>.</p>
+<h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><p>由于是单页面应用，因此使用路由来切换显示内容。<br>html:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"tab"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">router-link</span> <span class="attr">tag</span>=<span class="string">"div"</span> <span class="attr">to</span>=<span class="string">"/good"</span> <span class="attr">class</span>=<span class="string">"tabItem"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">a</span>&gt;</span>商品<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">router-link</span> <span class="attr">tag</span>=<span class="string">"div"</span> <span class="attr">to</span>=<span class="string">"/ratings"</span> <span class="attr">class</span>=<span class="string">"tabItem"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">a</span>&gt;</span>评论<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">router-link</span> <span class="attr">tag</span>=<span class="string">"div"</span> <span class="attr">to</span>=<span class="string">"/seller"</span> <span class="attr">class</span>=<span class="string">"tabItem"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">a</span>&gt;</span>商家<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">router-view</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>样式文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#app .tab&#123;</span><br><span class="line">display:flex;</span><br><span class="line">width:100%;</span><br><span class="line">height: 40px;</span><br><span class="line">line-height: 40px;</span><br><span class="line">&#125;</span><br><span class="line">#app .tab .tabItem&#123;</span><br><span class="line">flex:1;</span><br><span class="line">text-align: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用flex布局来使3个tab页均等分。<br>参照router-vue<a href="http://router.vuejs.org/zh-cn/essentials/getting-started.html" target="_blank" rel="noopener">官网</a>的说明，设置路由。<br>分别将商品，评论和商家设置为三个组件，放置于”components”文件夹下，再在”router”文件夹下的”index.js”中做以下修改：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span>;</span><br><span class="line"><span class="keyword">import</span> Router <span class="keyword">from</span> <span class="string">'vue-router'</span>;</span><br><span class="line"><span class="keyword">import</span> good <span class="keyword">from</span> <span class="string">'../components/good/good'</span>;</span><br><span class="line"><span class="keyword">import</span> ratings <span class="keyword">from</span> <span class="string">'../components/ratings/ratings'</span>;</span><br><span class="line"><span class="keyword">import</span> seller <span class="keyword">from</span> <span class="string">'../components/seller/seller'</span>;</span><br><span class="line">Vue.use(Router);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Router(&#123;</span><br><span class="line">routes: [</span><br><span class="line">&#123; <span class="attr">path</span>: <span class="string">'/good'</span>, <span class="attr">component</span>: good &#125;,</span><br><span class="line">&#123; <span class="attr">path</span>: <span class="string">'/ratings'</span>, <span class="attr">component</span>: ratings &#125;,</span><br><span class="line">&#123; <span class="attr">path</span>: <span class="string">'/seller'</span>, <span class="attr">component</span>: seller &#125;</span><br><span class="line">]</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>上述代码的功能就是设置了路由路径和组件之间的映射关系。同时启用了路由。</p>
+<p>根据<a href="http://router.vuejs.org/zh-cn/essentials/navigation.html" target="_blank" rel="noopener">官方文档</a>，调用<code>router.push(path)</code>方法，在页面加载时，跳转到第一个tab页:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">router.push(<span class="string">'/good'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>另外，在router被选中时，会自动增加<code>router-link-active</code>样式，该样式会增加在<code>a</code>标签上，如果想让该样式作用在其父级元素上，则可以使用以下方法：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">tag</span>=<span class="string">"div"</span> <span class="attr">to</span>=<span class="string">"/good"</span> <span class="attr">class</span>=<span class="string">"tabItem"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">a</span>&gt;</span>商品<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>即将<code>&lt;router-link</code>上提。<br>最后，为了使点击整个tab区域都是有效点击范围，还需要给a标签样式<code>display:block</code>。这样整个tab区域都可以点击切换路由了。</p>
+<h2 id="axios-vs-Vue-resource"><a href="#axios-vs-Vue-resource" class="headerlink" title="axios vs Vue-resource"></a>axios vs Vue-resource</h2><p>在vue2.0点官方文档中，已经不再使用Vue-resource，而开始使用axios来进行进行发起promise式的ajax请求了。<br>但是这里有个小坑，在使用webpack的时候，和直接引入还是有点区别的，如果直接使用以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install axios --save-dev</span><br></pre></td></tr></table></figure></p>
+<p>虽然编译可以通过，但是在打开页面的时候会报错：<br>“Uncaught (in promise) TypeError: Cannot read property ‘protocol’ of undefine”,<br>最终在axios的github<a href="https://github.com/mzabriskie/axios/issues/118" target="_blank" rel="noopener">issues</a>中找到了解决方案，<br>说是在Vue中使用axios时，要再在外面包个壳<a href="https://github.com/imcvampire/vue-axios" target="_blank" rel="noopener">vue-axios</a><br>于是最终的解决方案是在<code>index.js</code>中写入如下代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span>;</span><br><span class="line"><span class="keyword">import</span> VueAxios <span class="keyword">from</span> <span class="string">'vue-axios'</span>;</span><br><span class="line">Vue.use(VueAxios, axios);</span><br></pre></td></tr></table></figure></p>
+<h2 id="将数据传递至组件"><a href="#将数据传递至组件" class="headerlink" title="将数据传递至组件"></a>将数据传递至组件</h2><p>在app.vue的添加钩子函数<code>mounted</code>来将通过axios获取到的数据传递给<code>header.vue</code>组件：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">data: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    seller: &#123;&#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;,</span><br><span class="line">mounted: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.$nextTick(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.axios.get(<span class="string">'/api/seller'</span>)</span><br><span class="line">    .then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (res.data.errno === <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">this</span>.seller = res.data.data;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'axios error...'</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样，就可以将<code>seller</code>数据通过<code>props</code>传递给<code>header</code>组件了:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">v-header</span> <span class="attr">:seller</span>=<span class="string">"seller"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-header</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>在<code>header.vue</code>组件中定义”seller”:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">props: [<span class="string">'seller'</span>],</span><br></pre></td></tr></table></figure></p>
+<p>这样就可以通过”seller”来使用数据了。</p>
+<h2 id="stick-footer布局"><a href="#stick-footer布局" class="headerlink" title="stick footer布局"></a>stick footer布局</h2><p>在弹出层显示关闭按钮时，最下面的“X”需要以<code>stick footer</code>的布局来展示，否则如果仅仅是使用<code>postion:fixed</code>的话，如果上面文字过长，会盖住关闭按钮的。<br>经典的<code>stick footer</code>布局方法见<a href="http://www.w3cplus.com/css3/css-secrets/sticky-footers.html" target="_blank" rel="noopener">CSS Secrets</a>所述。<br>这里我们采用<code>padding-bottom</code>的方式来实现固定底部<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-show</span>=<span class="string">"detailShow"</span> <span class="attr">class</span>=<span class="string">"detail"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"detail-wrapper clearfix"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"detail-content"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"detail-footer"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"icon-close"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css"><span class="selector-class">.detail</span> &#123;</span></span><br><span class="line"><span class="undefined">	position: fixed;</span></span><br><span class="line"><span class="undefined">	z-index: 100;</span></span><br><span class="line"><span class="undefined">	height: 100%;</span></span><br><span class="line"><span class="undefined">	width: 100%;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">left</span><span class="selector-pseudo">:0</span>;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">top</span><span class="selector-pseudo">:0</span>;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">background</span>: <span class="selector-tag">rgba</span>(7,17,27,0<span class="selector-class">.8</span>);</span></span><br><span class="line"><span class="undefined">	overflow: auto;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css"><span class="selector-class">.detail-wrapper</span> &#123;</span></span><br><span class="line"><span class="undefined">	min-height: 100%;</span></span><br><span class="line"><span class="undefined">	overflow: auto;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css"><span class="selector-class">.detail-content</span> &#123;</span></span><br><span class="line"><span class="undefined">	margin-top: 64px;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">padding-bottom</span><span class="selector-pseudo">:64px</span>;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="css"><span class="selector-class">.detail-footer</span> &#123;</span></span><br><span class="line"><span class="undefined">	position: relative;</span></span><br><span class="line"><span class="undefined">	width: 32px;</span></span><br><span class="line"><span class="undefined">	height: 32px;</span></span><br><span class="line"><span class="undefined">	margin: -64px auto 0 auto;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">clear</span><span class="selector-pseudo">:both</span>;</span></span><br><span class="line"><span class="undefined">	font-size: 32px;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="过渡效果"><a href="#过渡效果" class="headerlink" title="过渡效果"></a>过渡效果</h2><p>在切换商家详细信息显示／隐藏时，如果不加过渡效果会显得略微生硬，这时就要用到Vue的过渡效果了<br>详见<a href="https://cn.vuejs.org/v2/guide/transitions.html" target="_blank" rel="noopener">中文官网</a><br>这里我们就用下最简单的<code>transition</code>效果：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">transition</span> <span class="attr">name</span>=<span class="string">"fade"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">"show"</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">transition</span>&gt;</span></span><br><span class="line"> .fade-enter-active, .fade-leave-active &#123;</span><br><span class="line">   transition: opacity .5s</span><br><span class="line"> &#125;</span><br><span class="line"> .fade-enter, .fade-leave-active &#123;</span><br><span class="line">   opacity: 0</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>即在<code>v-if</code>或者<code>v-show</code>的区域外再包裹一层<code>transition</code>,同时增加相对应的样式即可实现。</p>
+<h2 id="使用星星来展示商家分数"><a href="#使用星星来展示商家分数" class="headerlink" title="使用星星来展示商家分数"></a>使用星星来展示商家分数</h2><p>考虑到有几处地方使用✨来表示商家评分，因此将这个封装为组件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div class=&quot;ratings&quot;&gt;</span><br><span class="line">		&lt;ul  :class=&quot;starType&quot;&gt;</span><br><span class="line">			&lt;li v-for=&quot;star in starList&quot; class=&quot;starCommon starItem&quot; :class=&quot;star&quot;&gt;</span><br><span class="line">			&lt;/li&gt;</span><br><span class="line">		&lt;/ul&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">	const LENGTH = 5;</span><br><span class="line">	const CLS_ON = &apos;on&apos;;</span><br><span class="line">	const CLS_HALF = &apos;half&apos;;</span><br><span class="line">	const CLS_OFF = &apos;off&apos;;</span><br><span class="line">	export default &#123;</span><br><span class="line">		props: &#123;</span><br><span class="line">			starSize: Number,</span><br><span class="line">			score: Number</span><br><span class="line">		&#125;,</span><br><span class="line">		computed: &#123;</span><br><span class="line">			starType: function () &#123;</span><br><span class="line">				return &apos;starSize-&apos; + this.starSize;</span><br><span class="line">			&#125;,</span><br><span class="line">			starList: function () &#123;</span><br><span class="line">				// 通过向下取整的方式计算一共有几颗星</span><br><span class="line">				var starCnt = Math.floor(this.score);</span><br><span class="line">				var result = [];</span><br><span class="line">				// 有几颗星加几个&apos;on&apos;</span><br><span class="line">				for (let i = 0; i &lt; starCnt; i++) &#123;</span><br><span class="line">					result.push(CLS_ON);</span><br><span class="line">				&#125;</span><br><span class="line">				// 分数减去星数获取剩余小数点后面的分数</span><br><span class="line">				var leftVal = this.score - starCnt;</span><br><span class="line">				// 如果大于等于0.5增增加一个半星</span><br><span class="line">				if (leftVal &gt;= 0.5) &#123;</span><br><span class="line">					result.push(CLS_HALF);</span><br><span class="line">				&#125;</span><br><span class="line">				// 如果结果数组的长度小于5，则补空星</span><br><span class="line">				while (result.length &lt; LENGTH) &#123;</span><br><span class="line">					result.push(CLS_OFF);</span><br><span class="line">				&#125;</span><br><span class="line">				return result;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;style type=&quot;text/css&quot; lang=&quot;less&quot;&gt;</span><br><span class="line">	.ratings &#123;</span><br><span class="line">		.starCommon &#123;</span><br><span class="line">			display: inline-block;</span><br><span class="line">			background-repeat: no-repeat;</span><br><span class="line">			-moz-background-size:100% 100%;</span><br><span class="line">			background-size:100% 100%;</span><br><span class="line">			-webkit-background-size:100% 100%;</span><br><span class="line">		&#125;</span><br><span class="line">		.starSize-24 &#123;			</span><br><span class="line">			.starItem &#123;</span><br><span class="line">				width:10px;</span><br><span class="line">				height: 10px;</span><br><span class="line">				margin-right: 3px;	</span><br><span class="line">			&#125;</span><br><span class="line">			.starItem:last-child &#123;</span><br><span class="line">				margin-right: 0px;</span><br><span class="line">			&#125;	</span><br><span class="line">			.on &#123;</span><br><span class="line">				background-image: url(&apos;star24_on@2x.png&apos;);</span><br><span class="line">			&#125;</span><br><span class="line">			.half &#123;</span><br><span class="line">				background-image: url(&apos;star24_half@2x.png&apos;);</span><br><span class="line">			&#125;</span><br><span class="line">			.off &#123;</span><br><span class="line">				background-image: url(&apos;star24_off@2x.png&apos;);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		.starSize-36 &#123;</span><br><span class="line">			.starItem &#123;</span><br><span class="line">				width:15px;</span><br><span class="line">				height: 15px;</span><br><span class="line">				margin-right: 6px;	</span><br><span class="line">			&#125;</span><br><span class="line">			.starItem:last-child &#123;</span><br><span class="line">				margin-right: 0px;</span><br><span class="line">			&#125;	</span><br><span class="line">			.on &#123;</span><br><span class="line">				background-image: url(&apos;star36_on@2x.png&apos;);</span><br><span class="line">			&#125;</span><br><span class="line">			.half &#123;</span><br><span class="line">				background-image: url(&apos;star36_half@2x.png&apos;);</span><br><span class="line">			&#125;</span><br><span class="line">			.off &#123;</span><br><span class="line">				background-image: url(&apos;star36_off@2x.png&apos;);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		.starSize-48 &#123;</span><br><span class="line">			.starItem &#123;</span><br><span class="line">				width:20px;</span><br><span class="line">				height: 20px;</span><br><span class="line">				margin-right: 22px;	</span><br><span class="line">			&#125;</span><br><span class="line">			.starItem:last-child &#123;</span><br><span class="line">				margin-right: 0px;</span><br><span class="line">			&#125;	</span><br><span class="line">			.on &#123;</span><br><span class="line">				background-image: url(&apos;star48_on@2x.png&apos;);</span><br><span class="line">			&#125;</span><br><span class="line">			.half &#123;</span><br><span class="line">				background-image: url(&apos;star48_half@2x.png&apos;);</span><br><span class="line">			&#125;</span><br><span class="line">			.off &#123;</span><br><span class="line">				background-image: url(&apos;star48_off@2x.png&apos;);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="backdrop-filter"><a href="#backdrop-filter" class="headerlink" title="backdrop-filter"></a>backdrop-filter</h2><p>在给弹出的商家详情页添加模糊背景时，发现如果增加了<code>filter(blur10px)</code>样式，则除了背景色外，所有的文字也都模糊了，因此需要使用<code>backdrop-filter</code>这个样式来单单为背景色添加模糊效果。关于<code>backdrop-filter</code>的详情戳<a href="http://www.w3cplus.com/blog/tags/497.html" target="_blank" rel="noopener">这里</a></p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>功能做完了，但是感觉要写的东西好多，没空写了。。<br>演示地址：<a href="http://liuzhuang.tech/eleme/eleme.html#/good" target="_blank" rel="noopener">demo</a><br>源码: <a href="https://github.com/liu-zhuang/Eleme" target="_blank" rel="noopener">github</a><br>好心人给大叔来个star呗。。。</p>
+
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2017/02/19/使用Vue-js仿饿了么页面/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"liuzhuang"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<script>
+
+(function(){
+var bp = document.createElement('script');
+var curProtocol = window.location.protocol.split(':')[0];
+if (curProtocol === 'https') {
+bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+}
+else {
+bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+}
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Hits
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

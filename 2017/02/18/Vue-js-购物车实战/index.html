@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Vue.js 购物车实战 | MARVEL 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="刘荘">
+    
+    
+
+    <meta name="description" content="前言虽然Vue最强大的是组件化开发，但是其实多页面开发也蛮适合的。看了慕课网的使用Vue2.0开发购物车的教程之后，自己也实现了一遍。 初始化package.json使用npm init命令来自动生成package.json文件。会依次让你输入:  name: 你的项目名称(默认会使用你的文件夹名称，不更改的话直接回车跳过) version: 版本号（默认1.0.0,不更改直接回车跳过) desc">
+<meta name="keywords" content="Vue.js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue.js 购物车实战 | MARVEL">
+<meta property="og:url" content="http://liuz.top/2017/02/18/Vue-js-购物车实战/index.html">
+<meta property="og:site_name" content="MARVEL">
+<meta property="og:description" content="前言虽然Vue最强大的是组件化开发，但是其实多页面开发也蛮适合的。看了慕课网的使用Vue2.0开发购物车的教程之后，自己也实现了一遍。 初始化package.json使用npm init命令来自动生成package.json文件。会依次让你输入:  name: 你的项目名称(默认会使用你的文件夹名称，不更改的话直接回车跳过) version: 版本号（默认1.0.0,不更改直接回车跳过) desc">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-02-18T13:43:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue.js 购物车实战 | MARVEL">
+<meta name="twitter:description" content="前言虽然Vue最强大的是组件化开发，但是其实多页面开发也蛮适合的。看了慕课网的使用Vue2.0开发购物车的教程之后，自己也实现了一遍。 初始化package.json使用npm init命令来自动生成package.json文件。会依次让你输入:  name: 你的项目名称(默认会使用你的文件夹名称，不更改的话直接回车跳过) version: 版本号（默认1.0.0,不更改直接回车跳过) desc">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">MARVEL</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          大叔笔记
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="http://liuz.top" title="" class="">主页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/nicky-lau" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Vue.js 购物车实战</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-02-18" class="post-meta__date date">2017-02-18</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/Vue-js/">Vue.js</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>虽然Vue最强大的是组件化开发，但是其实多页面开发也蛮适合的。看了慕课网的使用Vue2.0开发购物车的教程之后，自己也实现了一遍。</p>
+<h1 id="初始化package-json"><a href="#初始化package-json" class="headerlink" title="初始化package.json"></a>初始化package.json</h1><p>使用<code>npm init</code>命令来自动生成package.json文件。<br>会依次让你输入:</p>
+<ul>
+<li>name: 你的项目名称(默认会使用你的文件夹名称，不更改的话直接回车跳过)</li>
+<li>version: 版本号（默认1.0.0,不更改直接回车跳过)</li>
+<li>description: 项目描述（可为空，不写直接回车跳过)</li>
+<li>entry point: 入口文件（默认为index.js)</li>
+<li>test command: 测试命令行（回车跳过)</li>
+<li>git repository: git仓库地址（回车跳过)</li>
+<li>keywords: 关键字</li>
+<li>author: 作者</li>
+<li>license: 所用协议<br>接下来会让你预览package.json文件，输入<code>yes</code>即可生成package.json文件</li>
+</ul>
+<p>因为该项目会用到<code>vue</code>,<code>axios</code>(在Vue2.0中取代vue-resource)和<code>http-server</code>(用来将文件夹转为服务器，避免跨域问题),<br>因此再使用以下命令，在package.json中把上面三个库引入进来<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install vue --save-dev</span><br><span class="line">npm install axios --save-dev</span><br><span class="line">npm install http-server --save-dev</span><br></pre></td></tr></table></figure></p>
+<p>这样在项目文件夹下就会出现”node_modules”文件夹，我们需要的三个库也会下载下来了<br>同时，package.json文件中会多出以下这段内容：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">"devDependencies": &#123;</span><br><span class="line">  "axios": "^0.15.3",</span><br><span class="line">  "http-server": "^0.9.0",</span><br><span class="line">  "vue": "^2.1.10"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样，下次就可以直接使用<code>npm install</code>来安装所需的依赖的</p>
+<p>接下来,再在package.json中修改”scripts”，增加以下内容:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">"scripts": &#123;</span><br><span class="line">  "start":"http-server -a localhost -p 8080"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样就可以通过<code>npm start</code>的方式来启动项目了，在浏览器输入<code>localhost:8080</code>即可访问</p>
+<p>附上<code>http-server</code>的参数说明:<br>-p 端口号 (默认 8080)<br>-a IP 地址 (默认 0.0.0.0)<br>-d 显示目录列表 (默认 ‘True’)<br>-i 显示 autoIndex (默认 ‘True’)<br>-e or –ext 如果没有提供默认的文件扩展名(默认 ‘html’)<br>-s or –silent 禁止日志信息输出<br>–cors 启用 CORS via the Access-Control-Allow-Origin header<br>-o 在开始服务后打开浏览器<br>-c 为 cache-control max-age header 设置Cache time(秒) , e.g. -c10 for 10 seconds (defaults to ‘3600’). 禁用 caching, 则使用 -c-1.<br>-U 或 –utc 使用UTC time 格式化log消息<br>-P or –proxy Proxies all requests which can’t be resolved locally to the given url. e.g.: -P <a href="http://someurl.com" target="_blank" rel="noopener">http://someurl.com</a><br>-S or –ssl 启用 https<br>-C or –cert ssl cert 文件路径 (default: cert.pem)<br>-K or –key Path to ssl key file (default: key.pem).<br>-r or –robots Provide a /robots.txt (whose content defaults to ‘User-agent: *\nDisallow: /‘)<br>-h or –help 打印以上列表并退出</p>
+<h1 id="购物车"><a href="#购物车" class="headerlink" title="购物车"></a>购物车</h1><p>在Vue的生命周期钩子函数中，<code>mounted</code>就相当于jQuery的<code>.ready</code>方法,但是使用<code>mounted</code>并不能保证钩子函数中的<code>this.$el</code>在document中，为此还需要引入<code>Vue.nextTick/vm.$nextTick</code>，见<a href="https://cn.vuejs.org/v2/guide/migration.html#ready-替换" target="_blank" rel="noopener">官方文档</a><br>所以购物车的初始化方法如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">mounted:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> _this = <span class="keyword">this</span>;</span><br><span class="line">	<span class="keyword">this</span>.$nextTick(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		axios.get(<span class="string">'http://localhost:8080/data/cartData.json'</span>)</span><br><span class="line">		.then(</span><br><span class="line">		<span class="comment">// 使用箭头函数的话，this的作用域并不会变，还是指向vmCart</span></span><br><span class="line">		<span class="comment">// 	(retObj)=&gt;&#123;</span></span><br><span class="line">		<span class="comment">// 	if(retObj.status == 200)&#123;</span></span><br><span class="line">		<span class="comment">// 		this.totalMoney = retObj.data.result.totalMoney;</span></span><br><span class="line">		<span class="comment">// 		this.list = retObj.data.result.list;</span></span><br><span class="line">		<span class="comment">// 	&#125;</span></span><br><span class="line">		<span class="comment">// &#125;</span></span><br><span class="line">		<span class="comment">// 不使用箭头函数的场合</span></span><br><span class="line">		<span class="comment">// 如果要使用vmCart实例，</span></span><br><span class="line">		<span class="comment">// 就必须在mounted钩子函数里再调用一次$nextTick方法才能保证el被render在dom中</span></span><br><span class="line">		<span class="function"><span class="keyword">function</span>(<span class="params">retObj</span>)</span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(retObj.status == <span class="number">200</span>)&#123;</span><br><span class="line">				vmCart.list = retObj.data.result.list;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		)</span><br><span class="line">		.catch(<span class="function"><span class="keyword">function</span>(<span class="params">errorObj</span>)</span>&#123;</span><br><span class="line">			<span class="built_in">console</span>.log(<span class="string">"get data error..."</span>);</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
+<p>购物车的json数据如下：<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"productId"</span>:<span class="string">"600100002115"</span>,</span><br><span class="line">  <span class="attr">"productName"</span>:<span class="string">"黄鹤楼香烟"</span>,</span><br><span class="line">  <span class="attr">"productPrice"</span>:<span class="number">19</span>,</span><br><span class="line">  <span class="attr">"productQuentity"</span>:<span class="number">1</span>,</span><br><span class="line">  <span class="attr">"productImage"</span>:<span class="string">"img/goods-1.jpg"</span>,</span><br><span class="line">  <span class="attr">"parts"</span>:[</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"partsId"</span>:<span class="string">"10001"</span>,</span><br><span class="line">      <span class="attr">"partsName"</span>:<span class="string">"打火机"</span>,</span><br><span class="line">      <span class="attr">"img"</span>:<span class="string">"img/part-1.jpg"</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>可以看到，从服务器返回的数据，都是业务逻辑数据(虽然此处是mock的)，并不会包含一些页面上的状态信息，那么如何通过为购物车中的商品增加一些属性来记录诸如是否选中的状态呢？<br>就需要用到<code>Vue.set</code>方法了，详见<a href="https://cn.vuejs.org/v2/api/#vm-set" target="_blank" rel="noopener">官网</a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">methods:&#123;</span><br><span class="line">	selectGood:<span class="function"><span class="keyword">function</span>(<span class="params">goodObj,index</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(goodObj.isChecked == <span class="keyword">void</span> <span class="number">0</span>)&#123;</span><br><span class="line">			<span class="keyword">this</span>.$set(goodObj,<span class="string">"isChecked"</span>,<span class="literal">true</span>)</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			goodObj.isChecked = !goodObj.isChecked;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">this</span>.isCheckAll();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如上述代码所示，如果产品被选中，同时该产品没有”isChecked”属性，则为其添加该属性，并设为”true”<br>至于选中的所有产品的价格，可以使用<code>computed</code>属性来计算:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">computed:&#123;</span><br><span class="line">	totalPrice:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">var</span> total = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">this</span>.list.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">good</span>)</span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(good.isChecked)&#123;</span><br><span class="line">				total += good.productPrice * good.productQuentity;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">		<span class="keyword">return</span> total;</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
+<p>最后，可以使用<code>filters</code>来为页面上的金额添加单位：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">filters:&#123;</span><br><span class="line">	Currency:<span class="function"><span class="keyword">function</span>(<span class="params">val</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> val + <span class="string">" 元"</span>;</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="地址"><a href="#地址" class="headerlink" title="地址"></a>地址</h1><p>地址页面的大部分功能和购物车类似<br>只有一个默认地址的设置，可以采用watch的方法来监控当前默认地址的变化，发现变化之后，把老的默认地址取消即可，<br>这样就不需要遍历所有的地址，将非当前选中的地址都设为“非默认地址”了<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">watch:&#123;</span><br><span class="line">	currentDefaultAddress:<span class="function"><span class="keyword">function</span>(<span class="params">newVal,oldVal</span>)</span>&#123;</span><br><span class="line">		oldVal.isDefault = <span class="literal">false</span>;</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>还有一个小技巧是”more”更多地址的设置,目前是通过计算属性来过滤数组的方式:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">computed:&#123;</span><br><span class="line">	filteAddress:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.addressList.slice(<span class="number">0</span>,<span class="keyword">this</span>.limitNum);</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>默认是指返回指定数量地址，在按了“more”之后，再将<code>limitNum</code>设置为数组的长度，这样就可以显示所有的地址了：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"shipping-addr-more"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"addr-more-btn up-down-btn"</span> <span class="attr">href</span>=<span class="string">"javascript:;"</span> @<span class="attr">click</span>=<span class="string">"limitNum=(limitNum == addressList.length?3:addressList.length)"</span>&gt;</span></span><br><span class="line">        more</span><br><span class="line">        <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"i-up-down"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"i-up-down-l"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"i-up-down-r"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><p><a href="https://github.com/liu-zhuang/Vue-Demo" target="_blank" rel="noopener">github</a></p>
+<h1 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h1><p><a href="http://liuzhuang.tech/vue/vue.html" target="_blank" rel="noopener">url</a></p>
+
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2017/02/18/Vue-js-购物车实战/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"liuzhuang"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<script>
+
+(function(){
+var bp = document.createElement('script');
+var curProtocol = window.location.protocol.split(':')[0];
+if (curProtocol === 'https') {
+bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+}
+else {
+bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+}
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Hits
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Knockout.js学习(三) | MARVEL 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="刘荘">
+    
+    
+
+    <meta name="description" content="前言基本数据双向绑定和数组双向绑定掌握了之后，实际应用中50%的场景应该可以支持了。接下来就来完成官方Tutorial第三站：Single Page Application吧 Building a webMail client通过创建一个邮箱的案例来实现Single Page Application 创建邮箱的文件夹123456789101112131415&amp;lt;!-- 最基本的无序列表，加上一">
+<meta name="keywords" content="javascript knockout mvm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Knockout.js学习(三) | MARVEL">
+<meta property="og:url" content="http://liuz.top/2016/09/27/Knockoutjs-3/index.html">
+<meta property="og:site_name" content="MARVEL">
+<meta property="og:description" content="前言基本数据双向绑定和数组双向绑定掌握了之后，实际应用中50%的场景应该可以支持了。接下来就来完成官方Tutorial第三站：Single Page Application吧 Building a webMail client通过创建一个邮箱的案例来实现Single Page Application 创建邮箱的文件夹123456789101112131415&amp;lt;!-- 最基本的无序列表，加上一">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://liuz.top/2016/09/27/Knockoutjs-3/Knockoutjs-3/webmail.jpg">
+<meta property="og:updated_time" content="2016-09-28T16:57:05.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Knockout.js学习(三) | MARVEL">
+<meta name="twitter:description" content="前言基本数据双向绑定和数组双向绑定掌握了之后，实际应用中50%的场景应该可以支持了。接下来就来完成官方Tutorial第三站：Single Page Application吧 Building a webMail client通过创建一个邮箱的案例来实现Single Page Application 创建邮箱的文件夹123456789101112131415&amp;lt;!-- 最基本的无序列表，加上一">
+<meta name="twitter:image" content="http://liuz.top/2016/09/27/Knockoutjs-3/Knockoutjs-3/webmail.jpg">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">MARVEL</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          大叔笔记
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="http://liuz.top" title="" class="">主页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/nicky-lau" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Knockout.js学习(三)</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-09-27" class="post-meta__date date">2016-09-27</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/javascript-knockout-mvm/">javascript knockout mvm</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>基本数据双向绑定和数组双向绑定掌握了之后，实际应用中50%的场景应该可以支持了。<br>接下来就来完成官方Tutorial第三站：Single Page Application吧</p>
+<h2 id="Building-a-webMail-client"><a href="#Building-a-webMail-client" class="headerlink" title="Building a webMail client"></a>Building a webMail client</h2><p>通过创建一个邮箱的案例来实现Single Page Application</p>
+<h2 id="创建邮箱的文件夹"><a href="#创建邮箱的文件夹" class="headerlink" title="创建邮箱的文件夹"></a>创建邮箱的文件夹</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 最基本的无序列表，加上一个简单的样式 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"folders"</span> <span class="attr">data-bind</span>=<span class="string">"foreach: folders"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">data-bind</span>=<span class="string">"text:$data"</span> &gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="comment">// 最基本的单向数据绑定</span></span></span><br><span class="line"><span class="javascript">	<span class="function"><span class="keyword">function</span> <span class="title">WebmailViewModel</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">    <span class="comment">// Data</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> self = <span class="keyword">this</span>;</span></span><br><span class="line"><span class="javascript">    self.folders = [<span class="string">'Inbox'</span>, <span class="string">'Archive'</span>, <span class="string">'Sent'</span>, <span class="string">'Spam'</span>];</span></span><br><span class="line"><span class="undefined">&#125;;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">ko.applyBindings(<span class="keyword">new</span> WebmailViewModel());</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>再为其增加点击事件，和选中后的样式<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"folders"</span> <span class="attr">data-bind</span>=<span class="string">"foreach: folders"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">data-bind</span>=<span class="string">"text:$data,</span></span></span><br><span class="line"><span class="tag"><span class="string">                   css:&#123;selected: $data == $root.chosenFolderItem()&#125;,</span></span></span><br><span class="line"><span class="tag"><span class="string">                   click: $root.goToFolder"</span> &gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="function"><span class="keyword">function</span> <span class="title">WebmailViewModel</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">    <span class="comment">// Data</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> self = <span class="keyword">this</span>;</span></span><br><span class="line"><span class="javascript">    self.folders = [<span class="string">'Inbox'</span>, <span class="string">'Archive'</span>, <span class="string">'Sent'</span>, <span class="string">'Spam'</span>];</span></span><br><span class="line"><span class="undefined">    self.chosenFolderItem = ko.observable();</span></span><br><span class="line"><span class="undefined">    </span></span><br><span class="line"><span class="javascript">    self.goToFolder = <span class="function"><span class="keyword">function</span>(<span class="params">folder</span>)</span>&#123;</span></span><br><span class="line"><span class="undefined">        self.chosenFolderItem(folder);</span></span><br><span class="line"><span class="undefined">    &#125;;</span></span><br><span class="line"><span class="undefined">&#125;;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">ko.applyBindings(<span class="keyword">new</span> WebmailViewModel());</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>实现效果如图所示：<br><img src="Knockoutjs-3/webmail.jpg" alt="webmail"></p>
+<h2 id="选中文件夹显示该文件夹下的所有邮件"><a href="#选中文件夹显示该文件夹下的所有邮件" class="headerlink" title="选中文件夹显示该文件夹下的所有邮件"></a>选中文件夹显示该文件夹下的所有邮件</h2><p>接下来完善点击文件夹的功能。<br>在点击不同的文件夹之后，出来将文件夹设置为选中状态外，同时显示该文件夹内的邮件<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 这里使用with绑定，这样在table内部所有的数据绑定都是with指定的数据 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">class</span>=<span class="string">"mails"</span> <span class="attr">data-bind</span>=<span class="string">"with:chosenFolderData"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">thead</span>&gt;</span><span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">th</span>&gt;</span>From<span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;<span class="name">th</span>&gt;</span>To<span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;<span class="name">th</span>&gt;</span>Subject<span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;<span class="name">th</span>&gt;</span>Date<span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span><span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">tbody</span> <span class="attr">data-bind</span>=<span class="string">"foreach:mails"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span> <span class="attr">data-bind</span>=<span class="string">"text: from"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span> <span class="attr">data-bind</span>=<span class="string">"text: to"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span> <span class="attr">data-bind</span>=<span class="string">"text: subject"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span> <span class="attr">data-bind</span>=<span class="string">"text: date"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">tr</span>&gt;</span>     </span><br><span class="line">		<span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="comment">// 懒得做api了，就直接在js内部模拟ajax获取数据了</span></span></span><br><span class="line"><span class="javascript">	<span class="comment">// 以下只是一部分dummy数据，具体见源码</span></span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> mails=[</span></span><br><span class="line"><span class="undefined">		&#123;</span></span><br><span class="line"><span class="javascript">			<span class="string">"id"</span>: <span class="string">"Inbox"</span>,</span></span><br><span class="line"><span class="javascript">			<span class="string">"mails"</span>: [</span></span><br><span class="line"><span class="undefined">			&#123;</span></span><br><span class="line"><span class="javascript">				<span class="string">"id"</span>: <span class="number">1</span>,</span></span><br><span class="line"><span class="javascript">				<span class="string">"from"</span>: <span class="string">"Abbot &lt;oliver@smoke-stage.xyz&gt;"</span>,</span></span><br><span class="line"><span class="javascript">				<span class="string">"to"</span>: <span class="string">"steve@example.com"</span>,</span></span><br><span class="line"><span class="javascript">				<span class="string">"date"</span>: <span class="string">"May 25, 2011"</span>,</span></span><br><span class="line"><span class="javascript">				<span class="string">"subject"</span>: <span class="string">"Booking confirmation #389629244"</span>,</span></span><br><span class="line"><span class="javascript">				<span class="string">"folder"</span>: <span class="string">"Inbox"</span></span></span><br><span class="line"><span class="undefined">			&#125;]&#125;;</span></span><br><span class="line"><span class="javascript">	<span class="comment">// 根据选中文件夹的名称获取相对应的邮件列表</span></span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> filterMails = <span class="function"><span class="keyword">function</span>(<span class="params">id</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">			<span class="keyword">return</span> mails.filter(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123;<span class="keyword">return</span> item.id == id;&#125;);</span></span><br><span class="line"><span class="undefined">		&#125;;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">		self.goToFolder = <span class="function"><span class="keyword">function</span>(<span class="params">folder</span>)</span>&#123;</span></span><br><span class="line"><span class="undefined">				self.chosenFolderId(folder);</span></span><br><span class="line"><span class="javascript">				 <span class="comment">// 在goToFolder方法中增加加载self.chosenFolderData的方法</span></span></span><br><span class="line"><span class="javascript">				 <span class="keyword">if</span>(folder)&#123;</span></span><br><span class="line"><span class="javascript">				 	<span class="keyword">var</span> temp = filterMails(folder.name);</span></span><br><span class="line"><span class="javascript">				 	<span class="comment">// 上述方法因为使用的是filter，因此返回的数组，所以需要用temp[0]</span></span></span><br><span class="line"><span class="undefined">				 	self.chosenFolderData(temp[0]);	</span></span><br><span class="line"><span class="undefined">				 &#125;				 </span></span><br><span class="line"><span class="undefined">			&#125;;</span></span><br><span class="line"><span class="javascript">			<span class="comment">// 设置chosenFolderData为双向数据绑定</span></span></span><br><span class="line"><span class="undefined">			self.chosenFolderData = ko.observable();</span></span><br><span class="line"><span class="javascript">			<span class="comment">// 页面初次加载默认选中第一个文件夹</span></span></span><br><span class="line"><span class="undefined">			self.goToFolder(self.folders()[0]);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>这样就实现了选中不同的文件夹加载该文件夹下所有邮件的功能。</p>
+<h2 id="点击邮件显示邮件内容"><a href="#点击邮件显示邮件内容" class="headerlink" title="点击邮件显示邮件内容"></a>点击邮件显示邮件内容</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">	<span class="comment">&lt;!-- Chosen mail --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"viewMail"</span> <span class="attr">data-bind</span>=<span class="string">"with: chosenMailData"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"mailInfo"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">h1</span> <span class="attr">data-bind</span>=<span class="string">"text: subject"</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">label</span>&gt;</span>From<span class="tag">&lt;/<span class="name">label</span>&gt;</span>: <span class="tag">&lt;<span class="name">span</span> <span class="attr">data-bind</span>=<span class="string">"text: from"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">label</span>&gt;</span>To<span class="tag">&lt;/<span class="name">label</span>&gt;</span>: <span class="tag">&lt;<span class="name">span</span> <span class="attr">data-bind</span>=<span class="string">"text: to"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">label</span>&gt;</span>Date<span class="tag">&lt;/<span class="name">label</span>&gt;</span>: <span class="tag">&lt;<span class="name">span</span> <span class="attr">data-bind</span>=<span class="string">"text: date"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"message"</span> <span class="attr">data-bind</span>=<span class="string">"html: messageContent"</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="comment">// viewModel中增加goToMail方法</span></span></span><br><span class="line"><span class="javascript">	<span class="comment">// 将chosenFolderData设为空，table就不会再显示了</span></span></span><br><span class="line"><span class="javascript">	<span class="comment">// 同理，在goToFolder时也要将chosenMailData设为空</span></span></span><br><span class="line"><span class="javascript">	self.goToMail = <span class="function"><span class="keyword">function</span>(<span class="params">mail</span>)</span>&#123;</span></span><br><span class="line"><span class="undefined">					self.chosenFolderId(mail.folder);</span></span><br><span class="line"><span class="javascript">					self.chosenFolderData(<span class="literal">null</span>);</span></span><br><span class="line"><span class="undefined">					self.chosenMailData(emailContent);</span></span><br><span class="line"><span class="undefined">				&#125;;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>Single Page Application就到此结束了，官网的demo中还引用了sammy.js以实现路由等高级功能<br>就不多做研究了，如果需要这些，就直接用angular了</p>
+<p><a href="https://github.com/nicky-lau/Knockoutjs/tree/master/SinglePageApp" target="_blank" rel="noopener">源码</a></p>
+
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2016/09/27/Knockoutjs-3/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"liuzhuang"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<script>
+
+(function(){
+var bp = document.createElement('script');
+var curProtocol = window.location.protocol.split(':')[0];
+if (curProtocol === 'https') {
+bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+}
+else {
+bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+}
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Hits
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

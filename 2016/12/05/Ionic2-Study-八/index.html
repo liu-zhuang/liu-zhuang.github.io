@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Ionic2 Study(八) | MARVEL 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="刘荘">
+    
+    
+
+    <meta name="description" content="Ionic2 基础组件之Alert An Alert is a dialog that presents users with information or collects information from the user using inputs. An alert appears on top of the app’s content, and must be manually dismi">
+<meta name="keywords" content="Ionic2 Angular2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ionic2 Study(八) | MARVEL">
+<meta property="og:url" content="http://liuz.top/2016/12/05/Ionic2-Study-八/index.html">
+<meta property="og:site_name" content="MARVEL">
+<meta property="og:description" content="Ionic2 基础组件之Alert An Alert is a dialog that presents users with information or collects information from the user using inputs. An alert appears on top of the app’s content, and must be manually dismi">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2016-12-06T15:51:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ionic2 Study(八) | MARVEL">
+<meta name="twitter:description" content="Ionic2 基础组件之Alert An Alert is a dialog that presents users with information or collects information from the user using inputs. An alert appears on top of the app’s content, and must be manually dismi">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">MARVEL</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          大叔笔记
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="http://liuz.top" title="" class="">主页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/nicky-lau" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Ionic2 Study(八)</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-12-05" class="post-meta__date date">2016-12-05</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/Ionic2-Angular2/">Ionic2 Angular2</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h1 id="Ionic2-基础组件之Alert"><a href="#Ionic2-基础组件之Alert" class="headerlink" title="Ionic2 基础组件之Alert"></a>Ionic2 基础组件之Alert</h1><blockquote>
+<p>An Alert is a dialog that presents users with information or collects information from the user using inputs. An alert appears on top of the app’s content, and must be manually dismissed by the user before they can resume interaction with the app. It can also optionally have a title, subTitle and message.<br>You can pass all of the alert’s options in the first argument of the create method: create(opts). Otherwise the alert’s instance has methods to add options, such as setTitle() or addButton().</p>
+</blockquote>
+<p>Alert组件是一个用来收集用户信息的弹出对话框，出现在app的最顶层，只有用户手动把它关闭之后，才能继续和app进行交互。它有可选的title，subTitle以及message，可以在初始化alert的时候在create方法中设置这些参数，也可以对alert的实例使用诸如setTitle()或addButton()等方法来设置这些属性。<br>上面是官方直译版，民间意译就是，alert组件其实就是我们js中常用的alert，只不过它有很多扩展属性，可以设置按钮，设置input等等。。（有点类似于modal)</p>
+<h2 id="Alert的options"><a href="#Alert的options" class="headerlink" title="Alert的options"></a>Alert的options</h2><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>alert的标题</td>
+</tr>
+<tr>
+<td>subTitle</td>
+<td>string</td>
+<td>alert的副标题</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>alert的内容</td>
+</tr>
+<tr>
+<td>cssClass</td>
+<td>string</td>
+<td>自定义样式，以空格分割（但是暂时没研究出来怎么用)</td>
+</tr>
+<tr>
+<td>inputs</td>
+<td>array</td>
+<td>alert中的input组合，具体见下面的说明</td>
+</tr>
+<tr>
+<td>buttons</td>
+<td>array</td>
+<td>alert中的按钮组合，具体见下面的说明</td>
+</tr>
+<tr>
+<td>enableBackdropDismiss</td>
+<td>boolean</td>
+<td>是否允许按空白处关闭alert</td>
+</tr>
+</tbody>
+</table>
+<h1 id="Alert-Buttons"><a href="#Alert-Buttons" class="headerlink" title="Alert Buttons"></a>Alert Buttons</h1><p>在Alert组件中，有一个buttons属性，既然带s了，显而易见是个数组，因此这个属性的值当然是个数组。<br>比较形象的类比就是js中的confirm,会有两个按钮，“是”和“否”，在这里就是在buttons中设置[“yes”,”no”],当然了，这是最基础的设置。</p>
+<blockquote>
+<p>In the array of buttons, each button includes properties for its text, and optionally a handler. If a handler returns false then the alert will not automatically be dismissed when the button is clicked. All buttons will show up in the order they have been added to the buttons array, from left to right. Note: The right most button (the last one in the array) is the main button.<br>Optionally, a role property can be added to a button, such as cancel. If a cancel role is on one of the buttons, then if the alert is dismissed by tapping the backdrop, then it will fire the handler from the button with a cancel role.</p>
+</blockquote>
+<p>在按钮组合中，每个按钮都有<code>text</code>属性，和可选的<code>handler</code>属性，当h某个按钮的handler返回<code>false</code>时，按下该按钮后，alert组件不会被关闭。<br>按钮组合按先后顺序从左到右排列在alert组件的最下面。 Note:最右边的按钮即数组中最后一个按钮被认为是主要按钮。<br>按钮还有一个可选属性叫做<code>role</code>,要么被赋值为<code>cancel</code>,要么被赋值为<code>null</code>,当被赋值为<code>cancel</code>的时候，如果alert因点击背景而被关闭，也会触发该按钮的handler事件。</p>
+<h2 id="Alert-Button-的options"><a href="#Alert-Button-的options" class="headerlink" title="Alert Button 的options"></a>Alert Button 的options</h2><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>text</td>
+<td>string</td>
+<td>按钮上显示的文本</td>
+</tr>
+<tr>
+<td>handler</td>
+<td>any</td>
+<td>官方文档给出的是any，我认为应该是个function,用来处理该按钮的click事件</td>
+</tr>
+<tr>
+<td>cssClass</td>
+<td>string</td>
+<td>该按钮的样式</td>
+</tr>
+<tr>
+<td>role</td>
+<td>string</td>
+<td>按钮的角色，<code>null</code>或<code>cancel</code></td>
+</tr>
+</tbody>
+</table>
+<h1 id="Alert-Inputs"><a href="#Alert-Inputs" class="headerlink" title="Alert Inputs"></a>Alert Inputs</h1><blockquote>
+<p>Alerts can also include several different inputs whose data can be passed back to the app. Inputs can be used as a simple way to prompt users for information. Radios, checkboxes and text inputs are all accepted, but they cannot be mixed. For example, an alert could have all radio button inputs, or all checkbox inputs, but the same alert cannot mix radio and checkbox inputs. Do note however, different types of “text”” inputs can be mixed, such as url, email, text, etc. If you require a complex form UI which doesn’t fit within the guidelines of an alert then we recommend building the form within a modal instead.</p>
+</blockquote>
+<p>Alert组件也可以包含不同的input组件，用来和app交互信息.包括text input,radio,checkbox等。<br>但是类型不能混合，也就是说要么全部都是text input,要么全部都是radio,或者全部都是checkbox，如果有需要混合使用的场合，建议创建一个form，使用modal来代替。</p>
+<h2 id="Alert-Input-的options"><a href="#Alert-Input-的options" class="headerlink" title="Alert Input 的options"></a>Alert Input 的options</h2><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+<td><code>text</code>,<code>radio</code>,<code>checkbox</code>等</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>控件的name</td>
+</tr>
+<tr>
+<td>placeholder</td>
+<td>string</td>
+<td>placeholder的内容（只有当类型为text或number时才生效)</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>value</td>
+</tr>
+<tr>
+<td>label</td>
+<td>string</td>
+<td>input的label(只有当类型为<code>radio</code>或<code>checkbox</code>时才生效)</td>
+</tr>
+<tr>
+<td>checked</td>
+<td>boolean</td>
+<td>是否选中</td>
+</tr>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>id</td>
+</tr>
+</tbody>
+</table>
+<h1 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h1><p>根据上面的文档，写两个基础的alert<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="keyword">this</span>.userInfo.UserName == <span class="string">""</span> )&#123;</span><br><span class="line">		<span class="keyword">let</span> alertUserNameError = <span class="keyword">this</span>.alertCtrl.create(&#123;</span><br><span class="line">			title:<span class="string">"Login Info"</span>,</span><br><span class="line">			subTitle:<span class="string">"please enter a valid UserName"</span>,</span><br><span class="line">			message:<span class="string">'UserName can not be empty...'</span>,</span><br><span class="line">			buttons:[<span class="string">"OK"</span>],</span><br><span class="line">			cssClass:<span class="string">'danger'</span>,</span><br><span class="line">			inputs:[<span class="string">"text"</span>,<span class="string">"password"</span>],</span><br><span class="line">			enableBackdropDismiss:<span class="literal">false</span></span><br><span class="line">		&#125;);</span><br><span class="line">		alertUserNameError.present();</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">this</span>.userInfo.PassWord == <span class="string">""</span>)&#123;</span><br><span class="line">		<span class="keyword">let</span> alertPwdError = <span class="keyword">this</span>.alertCtrl.create(&#123;</span><br><span class="line">			title:<span class="string">'Login Info'</span>,</span><br><span class="line">			subTitle:<span class="string">'please enter a valid Password'</span>,</span><br><span class="line">			message:<span class="string">'password can not be empty...'</span>,</span><br><span class="line">			buttons:[&#123;</span><br><span class="line">				text:<span class="string">'I see'</span>,</span><br><span class="line">				handler:<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">					<span class="built_in">console</span>.log(<span class="string">'tap i see!'</span>);</span><br><span class="line">					<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">				&#125;,</span><br><span class="line">				cssClass:<span class="string">"color:danger"</span></span><br><span class="line">			&#125;,&#123;</span><br><span class="line">				text:<span class="string">'Cancel'</span>,</span><br><span class="line">				handler:<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">					<span class="built_in">console</span>.log(<span class="string">'tap cancel!'</span>);</span><br><span class="line">				&#125;,</span><br><span class="line">				cssClass:<span class="string">'danger'</span>,</span><br><span class="line">				role:<span class="string">'null'</span></span><br><span class="line">			&#125;],</span><br><span class="line">			inputs:[&#123;</span><br><span class="line">				<span class="keyword">type</span>:<span class="string">'checkbox'</span></span><br><span class="line">			&#125;,&#123;</span><br><span class="line">				<span class="keyword">type</span>:<span class="string">'checkbox'</span></span><br><span class="line">			&#125;]</span><br><span class="line">		&#125;);</span><br><span class="line">		alertPwdError.present();</span><br><span class="line">	&#125; </span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">this</span>.loadDefault();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><p><a href="https://github.com/nicky-lau/Ionic2-demo/tree/add-alert" target="_blank" rel="noopener">代码地址</a></p>
+<h1 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h1><blockquote>
+<p>Dismissing And Async Navigation<br>After an alert has been dismissed, the app may need to also transition to another page depending on the handler’s logic. However, because multiple transitions were fired at roughly the same time, it’s difficult for the nav controller to cleanly animate multiple transitions that may have been kicked off asynchronously. This is further described in the Nav Transition Promises section. For alerts, this means it’s best to wait for the alert to finish its transition out before starting a new transition on the same nav controller.<br>In the example below, after the alert button has been clicked, its handler waits on async operation to complete, then it uses pop to navigate back a page in the same stack. The potential problem is that the async operation may have been completed before the alert has even finished its transition out. In this case, it’s best to ensure the alert has finished its transition out first, then start the next transition.</p>
+</blockquote>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> alert = <span class="keyword">this</span>.alertCtrl.create(&#123;</span><br><span class="line">  title: <span class="string">'Hello'</span>,</span><br><span class="line">  buttons: [&#123;</span><br><span class="line">    text: <span class="string">'Ok'</span>,</span><br><span class="line">    handler: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// user has clicked the alert button</span></span><br><span class="line">      <span class="comment">// begin the alert's dismiss transition</span></span><br><span class="line">      <span class="keyword">let</span> navTransition = alert.dismiss();</span><br><span class="line"></span><br><span class="line">      <span class="comment">// start some async method</span></span><br><span class="line">      someAsyncOperation().then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// once the async operation has completed</span></span><br><span class="line">        <span class="comment">// then run the next nav transition after the</span></span><br><span class="line">        <span class="comment">// first transition has finished animating out</span></span><br><span class="line"></span><br><span class="line">        navTransition.then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="keyword">this</span>.nav.pop();</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;);</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;]</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">alert.present();</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>It’s important to note that the handler returns false. A feature of button handlers is that they automatically dismiss the alert when their button was clicked, however, we’ll need more control regarding the transition. Because the handler returns false, then the alert does not automatically dismiss itself. Instead, you now have complete control of when the alert has finished transitioning, and the ability to wait for the alert to finish transitioning out before starting a new transition.</p>
+</blockquote>
+<p>官方文档中还大篇幅的写了关闭alert和异步操作的一些注意事项。<br>大体意思就是说，在你按下alert组件中的按钮后，可能会有一些异步事件，给出了一些解决方案和思路。<br>比如说，可以在handler中<code>return false</code>,这样的话，就不会一按下按钮就关闭alert了。<br>然后给出了一个利用promise的demo。(正好借这个机会把promise也好好学习一下，就不在这里展开了。)</p>
+
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2016/12/05/Ionic2-Study-八/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"liuzhuang"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<script>
+
+(function(){
+var bp = document.createElement('script');
+var curProtocol = window.location.protocol.split(':')[0];
+if (curProtocol === 'https') {
+bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+}
+else {
+bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+}
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Hits
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

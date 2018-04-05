@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Vue-js组件 | MARVEL 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="刘荘">
+    
+    
+
+    <meta name="description" content="前言Vue除了数据绑定之外，还有一个很强大的功能就是组件。在本文中，暂时先不管以.vue为后缀的组件文件，讲讲组件的基本用法 注册有全局和局部两种注册组件的方式。 全局注册顾名思义，就是这个组件在所有的Vue实例中都可以使用。通过Vue.component(tagname,option)的形式。例如：123Vue.component(&apos;my-component&apos;,&amp;#123;// 选项 诸如tem">
+<meta name="keywords" content="Vue Vue2.0 组件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue-js组件 | MARVEL">
+<meta property="og:url" content="http://liuz.top/2017/02/03/Vue-js组件/index.html">
+<meta property="og:site_name" content="MARVEL">
+<meta property="og:description" content="前言Vue除了数据绑定之外，还有一个很强大的功能就是组件。在本文中，暂时先不管以.vue为后缀的组件文件，讲讲组件的基本用法 注册有全局和局部两种注册组件的方式。 全局注册顾名思义，就是这个组件在所有的Vue实例中都可以使用。通过Vue.component(tagname,option)的形式。例如：123Vue.component(&apos;my-component&apos;,&amp;#123;// 选项 诸如tem">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-03-16T14:02:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue-js组件 | MARVEL">
+<meta name="twitter:description" content="前言Vue除了数据绑定之外，还有一个很强大的功能就是组件。在本文中，暂时先不管以.vue为后缀的组件文件，讲讲组件的基本用法 注册有全局和局部两种注册组件的方式。 全局注册顾名思义，就是这个组件在所有的Vue实例中都可以使用。通过Vue.component(tagname,option)的形式。例如：123Vue.component(&apos;my-component&apos;,&amp;#123;// 选项 诸如tem">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">MARVEL</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          大叔笔记
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="http://liuz.top" title="" class="">主页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/nicky-lau" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Vue-js组件</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-02-03" class="post-meta__date date">2017-02-03</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/Vue-Vue2-0-组件/">Vue Vue2.0 组件</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Vue除了数据绑定之外，还有一个很强大的功能就是组件。<br>在本文中，暂时先不管以<code>.vue</code>为后缀的组件文件，讲讲组件的基本用法</p>
+<h1 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h1><p>有全局和局部两种注册组件的方式。</p>
+<h2 id="全局注册"><a href="#全局注册" class="headerlink" title="全局注册"></a>全局注册</h2><p>顾名思义，就是这个组件在所有的Vue实例中都可以使用。<br>通过<code>Vue.component(tagname,option)</code>的形式。例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">'my-component'</span>,&#123;</span><br><span class="line"><span class="comment">// 选项 诸如template等等</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>注意：tagname根据w3c要求，最好是小写加一个短杠</p>
+</blockquote>
+<p>另外，即使是全局注册，也一定要保证组件注册在vue实例声明之前，否则在这个vue实例中是无法使用该组件的。</p>
+<p>比如:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm1 = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">el: <span class="string">"#div1"</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 组件注册在实例声明的下面</span></span><br><span class="line">Vue.component(<span class="string">"my-component"</span>,&#123;</span><br><span class="line">template: <span class="string">"&lt;div&gt;this is a component&lt;/div&gt;"</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>这时如果在页面上的<code>div1</code>里面使用<code>&lt;my-component&gt;&lt;/my-component&gt;</code>,Vue将会报错说该组件没有正确注册</p>
+<h2 id="局部注册"><a href="#局部注册" class="headerlink" title="局部注册"></a>局部注册</h2><p>不在全局注册组件，而是在实例的选项中注册，使组件仅在一个实例/组件的作用域可用：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myComponent = &#123;</span><br><span class="line">	template: <span class="string">'&lt;div&gt;this is a component&lt;/div&gt;'</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> vm1 = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">	el: <span class="string">'#div1'</span>,</span><br><span class="line">	components: &#123;</span><br><span class="line">	<span class="string">'my-component'</span>: myComponent</span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h1 id="data-必须是函数"><a href="#data-必须是函数" class="headerlink" title="data 必须是函数"></a>data 必须是函数</h1><p>组件的选项几乎和vue的选项一模一样，除了<code>data</code>属性必须为函数:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">'my-component'</span>,&#123;</span><br><span class="line">	template: <span class="string">'&lt;div&gt;&#123;&#123;msg&#125;&#125;&#125;&lt;/div&gt;'</span>,</span><br><span class="line">	data: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> &#123;</span><br><span class="line">		msg: <span class="string">'this is my-component'</span></span><br><span class="line">&#125;;</span><br><span class="line">&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>这是为了让每个data有自己独立的实例，否则所有的组件将共用同一个data</p>
+<h1 id="构成组件"><a href="#构成组件" class="headerlink" title="构成组件"></a>构成组件</h1><p>为了将组件间解耦，父子组件间的通信以以下方式进行：<br>父组件通过<code>props</code>将数据传递给子组件，子组件通过<code>$emit</code>触发事件给父组件发送消息。</p>
+<h2 id="单向数据流"><a href="#单向数据流" class="headerlink" title="单向数据流"></a>单向数据流</h2><p><code>props</code>是单向绑定的：当父组件的属性变化时，将传导给子组件，但是不会反过来。另外，当每次父组件更新时，子组件中的<code>props</code>均会更新为最新值，因此，vue规定绝对不要在子组件中修改<code>props</code>的值(<code>props</code>是数组或者对象，也就是引用类型，子组件和父组件都指向同一个内存空间，在子组件中改变会影响父组件的状态)</p>
+<p>那么问题来了，有可能从父组件传入的<code>props</code>数据并不是子组件中直接能用的数据，或者确实需要修改要怎么办呢？<br>官方给出了两种解决方案：<br>方案一：定义一个局部变量，并用<code>props</code>的值初始化它<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">props: [<span class="string">'propData'</span>],</span><br><span class="line">data: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> &#123;</span><br><span class="line">	 componentData: <span class="keyword">this</span>.propData</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>方案二：定义一个计算属性，来返回组件中所需要的数据<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">props: [<span class="string">'propData'</span>],</span><br><span class="line">computed: &#123;</span><br><span class="line">	computedData: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	  <span class="keyword">return</span> <span class="keyword">this</span>.propData.trim();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="camerlClass-vs-kebab-case-驼峰式命名和短横线隔开式命名"><a href="#camerlClass-vs-kebab-case-驼峰式命名和短横线隔开式命名" class="headerlink" title="camerlClass vs kebab-case (驼峰式命名和短横线隔开式命名)"></a>camerlClass vs kebab-case (驼峰式命名和短横线隔开式命名)</h2><p>HTML特性是不区分大小写的，因此，当使用的不是字符串模板时，驼峰式命名的prop需要转为相对应的短横线隔开式命名：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Vue.component('my-component',&#123;</span><br><span class="line">	template: '<span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123;myMessage&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span>',</span><br><span class="line">	props: ['myMessage']</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">my-component</span> <span class="attr">:my-message-</span>"<span class="attr">this</span> <span class="attr">is</span> <span class="attr">prop</span> <span class="attr">data</span>"&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Prop验证"><a href="#Prop验证" class="headerlink" title="Prop验证"></a>Prop验证</h2><p>当组件给很多人使用时，可能需要为组件的<code>props</code>指定验证规格。如果传入的数据不符合规格，vue会给出警告。<br>要为<code>props</code>验证规格时，就不能数组的形式接收<code>props</code>了,而是要以对象的形式:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">function UserInfo (id,name) &#123;</span><br><span class="line">	this.Id = id;</span><br><span class="line">	this.Name = name;</span><br><span class="line">&#125;</span><br><span class="line">var lz = new UserInfo(1,'liuzhuang');</span><br><span class="line">var xyy = &#123;id:2,name:'xyy'&#125;;</span><br><span class="line"></span><br><span class="line">var myComponent = &#123;</span><br><span class="line">	template: '<span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123;propNull&#125;&#125;-&#123;&#123;propNumber&#125;&#125;-&#123;&#123;propRequired&#125;&#125;-&#123;&#123;propDefault&#125;&#125;--&#123;&#123;propDefaultFunc.message&#125;&#125;-&#123;&#123;propCustomValidate&#125;&#125;-&#123;&#123;propCustomType&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span>',</span><br><span class="line">	props: &#123;</span><br><span class="line">		propNull: null, // 不做任何验证</span><br><span class="line">		propNumber: Number, // Number验证</span><br><span class="line">		propMuli: [String, Number], // 多种类型</span><br><span class="line">		propRequired: &#123;</span><br><span class="line">			type: null,</span><br><span class="line">			required: true</span><br><span class="line">		&#125;, // 类型随意，必填</span><br><span class="line">		propDefault: &#123;</span><br><span class="line">			type: Number,</span><br><span class="line">			default: 100</span><br><span class="line">		&#125;, // 有默认值的</span><br><span class="line">		propDefaultFunc: &#123;</span><br><span class="line">			type: Object,</span><br><span class="line">			default: function () &#123;</span><br><span class="line">				return &#123;message:'this is default message'&#125;;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;, // 默认值是一个函数的</span><br><span class="line">		propCustomValidate: &#123;</span><br><span class="line">			type: Number,</span><br><span class="line">			validator: function (val) &#123;</span><br><span class="line">				return val &gt; 10;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;, // 自定义验证</span><br><span class="line">		propCustomType: &#123;</span><br><span class="line">			type: UserInfo</span><br><span class="line">		&#125; // 自定义类型验证 使用Vue内部使用instanceof方法check</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">var vm1 = new Vue(&#123;</span><br><span class="line">	el: '#div2',</span><br><span class="line">	components: &#123;</span><br><span class="line">		'my-component': myComponent</span><br><span class="line">	&#125;,</span><br><span class="line">	data: &#123;</span><br><span class="line">		propNull: &#123;a:1&#125;,</span><br><span class="line">		propNumber: 1,</span><br><span class="line">		propRequired: 1,</span><br><span class="line">		propCustomValidate:11,</span><br><span class="line">		user: lz</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div2"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">my-component</span> <span class="attr">:prop-null</span>=<span class="string">"propNull"</span> <span class="attr">:prop-number</span>=<span class="string">"propNumber"</span> <span class="attr">:prop-required</span>=<span class="string">"propRequired"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">:prop-custom-validate</span>=<span class="string">"propCustomValidate"</span> <span class="attr">:prop-custom-type</span>=<span class="string">"user"</span>&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>上述代码最终在屏幕显示为：<code>{ &quot;a&quot;: 1 }-1-1-100--this is default message-11-{ &quot;Id&quot;: 1, &quot;Name&quot;: &quot;liuzhuang&quot; }</code></p>
+<p>附录：type可以是以下原生构造器：</p>
+<ul>
+<li>String</li>
+<li>Number</li>
+<li>Boolean</li>
+<li>Function </li>
+<li>Object</li>
+<li>Array</li>
+</ul>
+<h1 id="自定义事件"><a href="#自定义事件" class="headerlink" title="自定义事件"></a>自定义事件</h1><p>上面讲了父组件通过<code>prop</code>向子组件传递数据，接下来就要说说如何从子组件将数据传递回父组件了</p>
+<p>首先有个基本概念，就是每个Vue实例都实现了事件接口： </p>
+<ul>
+<li>使用$on(eventName) 监听事件</li>
+<li>使用$emit(eventName) 触发事件</li>
+</ul>
+<p>注意，这个$on要和<code>v-on</code>区分开来<br>因为，父组件不能直接通过<code>$on</code>来监听子组件的事件，只能在使用子组件的地方，通过<code>v-on</code>来监听子组件内部通过<code>$emit</code>触发的事件。</p>
+<h2 id="给组件绑定原生事件"><a href="#给组件绑定原生事件" class="headerlink" title="给组件绑定原生事件"></a>给组件绑定原生事件</h2><p>有时候，你可能想在某个组件的根元素上监听一个原生事件。可以使用<code>.native</code>修饰<code>v-on</code>:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;my-component v-on:click.native=<span class="string">"doTheThing"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<h2 id="使用自定义事件的的表单输入组件"><a href="#使用自定义事件的的表单输入组件" class="headerlink" title="使用自定义事件的的表单输入组件"></a>使用自定义事件的的表单输入组件</h2><p>说白了就是怎么在组件上实现<code>v-model</code>的双向绑定</p>
+<p>首先要知道一个基础知识：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input v-model=&quot;something&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>上面这个只不过是以下内容的语法糖：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input v-bind:value=&quot;something&quot; v-on:input=&quot;something = $event.target.value&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>把这个逻辑用在组件中就是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;custom-input v-bind:value=&quot;something&quot; v-on:input=&quot;something = arguments[0]&quot;&gt;&lt;/custom-input&gt;</span><br></pre></td></tr></table></figure></p>
+<p>首先给组件绑定value为”something”,然后在触发”input”事件时，将事件的值返回给”something”</p>
+<p>接下来看看一个简单的例子：</p>
+
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2017/02/03/Vue-js组件/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"liuzhuang"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<script>
+
+(function(){
+var bp = document.createElement('script');
+var curProtocol = window.location.protocol.split(':')[0];
+if (curProtocol === 'https') {
+bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+}
+else {
+bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+}
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Hits
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
