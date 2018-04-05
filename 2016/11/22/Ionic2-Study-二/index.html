@@ -26,7 +26,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://liuz.top/2016/11/22/Ionic2-Study-二/ionic1.png">
 <meta property="og:image" content="http://liuz.top/2016/11/22/Ionic2-Study-二/ionic-log.png">
-<meta property="og:updated_time" content="2016-11-24T12:46:09.000Z">
+<meta property="og:updated_time" content="2018-04-05T09:51:58.366Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ionic2-Study(二) | MARVEL">
 <meta name="twitter:description" content="Ionic页面的生命周期官方文档:Lifecycle events 如官网文档所示，常用的生命周期有如下6个：     Event Desc     ionViewDidLoad 当页面加载的时候触发，仅在页面创建的时候触发一次，如果被缓存了，那么下次再打开这个页面则不会触发   ionViewWillEnter 顾名思义，当将要进入页面时触发   ionViewDidEnter 当进入页面时触发">
@@ -227,7 +227,7 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <h1 id="Ionic页面的生命周期"><a href="#Ionic页面的生命周期" class="headerlink" title="Ionic页面的生命周期"></a>Ionic页面的生命周期</h1><p><a href="http://ionicframework.com/docs/v2/api/navigation/NavController/" target="_blank" rel="noopener">官方文档:Lifecycle events</a><br><img src="ionic1.png" alt="document"></p>
+    <h1 id="Ionic页面的生命周期"><a href="#Ionic页面的生命周期" class="headerlink" title="Ionic页面的生命周期"></a>Ionic页面的生命周期</h1><p><a href="http://ionicframework.com/docs/v2/api/navigation/NavController/" target="_blank" rel="noopener">官方文档:Lifecycle events</a><br><img src="/2016/11/22/Ionic2-Study-二/ionic1.png" alt="document"></p>
 <p>如官网文档所示，常用的生命周期有如下6个： </p>
 <table>
 <thead>
@@ -267,7 +267,7 @@ classes that you can use:
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">ionViewLoaded()&#123;</span><br><span class="line">		debugger;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"1.0 homepage loaded!"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	ionViewWillEnter()&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"2.0 homepage will Enter!"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	ionViewDidEnter()&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"3.0 homepage did enter"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	ionViewWillLeave()&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"4.0 homepage will leave"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	ionViewDidLeave()&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"5.0 homepage did leave"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	ionViewWillUnload()&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"6.0 homepage did leave"</span>);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 <p>加载页面和切换页面并不会触发ionViewLoaded和ionViewWillUnload这两个方法。具体怎么才能触发还要再去研究。<br>但是ionViewLoaded方法可以使用angular的生命周期方法替换，如下所示：<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ngOnInit()&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"ng on init..."</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>可以看到日志文件如下所示：</p>
-<p><img src="ionic-log.png" alt="log"></p>
+<p><img src="/2016/11/22/Ionic2-Study-二/ionic-log.png" alt="log"></p>
 
   </section>
 

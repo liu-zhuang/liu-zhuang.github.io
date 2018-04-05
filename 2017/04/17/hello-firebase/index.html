@@ -29,7 +29,7 @@
 <meta property="og:image" content="http://liuz.top/2017/04/17/hello-firebase/firebase1.png">
 <meta property="og:image" content="http://liuz.top/2017/04/17/hello-firebase/firebase2.png">
 <meta property="og:image" content="http://liuz.top/2017/04/17/hello-firebase/realtime%20database2.gif">
-<meta property="og:updated_time" content="2017-04-17T14:55:40.000Z">
+<meta property="og:updated_time" content="2018-04-05T09:51:58.386Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hello firebase | MARVEL">
 <meta name="twitter:description" content="前言由于多说即将关闭，要给博客找个新的评论工具了，没有找到特别喜欢的，所以打算自己做一个算了。于是，想到了为数不多的被孤🐩(google)收购之后没有改名FireBase（魂淡，虽然名字没有改，但是域名改成google了啊，你懂的），去年还没有自己搭VPS科学上网，蓝灯侠出专业版之后也极其不给力，所以虽然关注过一段时间之后就淡忘了。今年，呵呵，我有梯子我怕谁？ 实战关于firebase的介绍就不">
@@ -230,10 +230,10 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>由于多说即将关闭，要给博客找个新的评论工具了，没有找到特别喜欢的，所以打算自己做一个算了。<br><img src="duoshuo.png" alt="duoshuo"><br>于是，想到了为数不多的被孤🐩(google)收购之后没有改名FireBase（魂淡，虽然名字没有改，但是域名改成google了啊，你懂的），去年还没有自己搭VPS科学上网，蓝灯侠出专业版之后也极其不给力，所以虽然关注过一段时间之后就淡忘了。今年，呵呵，我有梯子我怕谁？</p>
-<h1 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h1><p>关于firebase的介绍就不多说了，文案写的也是没谁了，开发一个app只需要30秒之类的，不过确实30分钟可以搞个聊天室出来了。<br>跟着官方文档一路下一步完成注册，就来到到Console首页，会问你是想将Firebase应用在什么地方：1.ios 2.android 3.web app。选择web app后将会把使用firebase所需要写的代码的30%贴给你(ノへ￣、)捂脸<br><img src="firebase.png" alt="firebase"><br>当然了，如果是使用module化JavaScript，不能这样写。不过也差不大多。</p>
-<p>接下来利用上图给出的config实例化database:<br><img src="firebase1.png" alt="init"><br>这里用到了vuefire.js（在vue实例中增加了firebase属性,用法和vue原生的data,props一样)<br>然后也有CRUD这些方法:<br><img src="firebase2.png" alt="method"><br>这样就可以实现基本功能了。</p>
-<h1 id="realtime-database"><a href="#realtime-database" class="headerlink" title="realtime database"></a>realtime database</h1><p>来看张动图感受下毫秒级的实时数据库同步吧<br><img src="realtime database2.gif" alt="gif"></p>
+    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>由于多说即将关闭，要给博客找个新的评论工具了，没有找到特别喜欢的，所以打算自己做一个算了。<br><img src="/2017/04/17/hello-firebase/duoshuo.png" alt="duoshuo"><br>于是，想到了为数不多的被孤🐩(google)收购之后没有改名FireBase（魂淡，虽然名字没有改，但是域名改成google了啊，你懂的），去年还没有自己搭VPS科学上网，蓝灯侠出专业版之后也极其不给力，所以虽然关注过一段时间之后就淡忘了。今年，呵呵，我有梯子我怕谁？</p>
+<h1 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h1><p>关于firebase的介绍就不多说了，文案写的也是没谁了，开发一个app只需要30秒之类的，不过确实30分钟可以搞个聊天室出来了。<br>跟着官方文档一路下一步完成注册，就来到到Console首页，会问你是想将Firebase应用在什么地方：1.ios 2.android 3.web app。选择web app后将会把使用firebase所需要写的代码的30%贴给你(ノへ￣、)捂脸<br><img src="/2017/04/17/hello-firebase/firebase.png" alt="firebase"><br>当然了，如果是使用module化JavaScript，不能这样写。不过也差不大多。</p>
+<p>接下来利用上图给出的config实例化database:<br><img src="/2017/04/17/hello-firebase/firebase1.png" alt="init"><br>这里用到了vuefire.js（在vue实例中增加了firebase属性,用法和vue原生的data,props一样)<br>然后也有CRUD这些方法:<br><img src="/2017/04/17/hello-firebase/firebase2.png" alt="method"><br>这样就可以实现基本功能了。</p>
+<h1 id="realtime-database"><a href="#realtime-database" class="headerlink" title="realtime database"></a>realtime database</h1><p>来看张动图感受下毫秒级的实时数据库同步吧<br><img src="/2017/04/17/hello-firebase/realtime database2.gif" alt="gif"></p>
 <h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>猜测firebase是使用Websocket来实现realtime database效果的？<br>正如前面所说，使用Vue + FireBase 仅用30分钟就可以搭建一个聊天室。<br>打算接下来有空搭建一个玩玩。</p>
 
   </section>
